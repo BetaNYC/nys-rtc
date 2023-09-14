@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "name": "Non-member -- Labor",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84", "member": false }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "Name": "UFCW Local 2013", "org":"labor" },
+      "geometry": { "type": "Point", "coordinates": [-74.0302402, 40.6173055] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "New York State Federation of Labor - Albany", "org":"labor" },
+      "geometry": { "type": "Point", "coordinates": [-73.761048, 42.6525791] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "New York State Federation of Labor", "org":"labor" },
+      "geometry": { "type": "Point", "coordinates": [-74.0125217, 40.7063491] }
+    }
+  ]
+}

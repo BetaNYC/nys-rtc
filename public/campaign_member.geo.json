@@ -1,0 +1,215 @@
+{
+  "type": "FeatureCollection",
+  "name": "Campaign Member",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84", "member": true }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "Name": "Westchester Residential Opps" },
+      "geometry": { "type": "Point", "coordinates": [-73.7600588, 41.0223808] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Solidarity Committee of the Capital District" },
+      "geometry": { "type": "Point", "coordinates": [-73.7562317, 42.6525793] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "The Alternative to Economic and Housing Displacement, Inc."
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7562317, 42.6525793] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Westchester Jewish Coalition for Immigration" },
+      "geometry": { "type": "Point", "coordinates": [-73.7622651, 40.9304949] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "JustCause" },
+      "geometry": { "type": "Point", "coordinates": [-77.6127132, 43.1554284] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "For the Many" },
+      "geometry": { "type": "Point", "coordinates": [-73.9261072, 41.7041636] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Churches United For Fair Housing" },
+      "geometry": { "type": "Point", "coordinates": [-73.9413934, 40.6998064] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Met Council on Housing" },
+      "geometry": { "type": "Point", "coordinates": [-73.9943202, 40.7260327] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "UAW Local 2325 - Association of Legal Aid Attorneys"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0124639, 40.7062313] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Asian Americans for Equality (AAFE)\n" },
+      "geometry": { "type": "Point", "coordinates": [-73.986804, 40.718933] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Neighbors Helping Neighbors" },
+      "geometry": { "type": "Point", "coordinates": [-73.9827093, 40.6791344] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Astoria Tenants Union" },
+      "geometry": { "type": "Point", "coordinates": [-73.9234619, 40.7643574] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Long Island Housing Services Inc" },
+      "geometry": { "type": "Point", "coordinates": [-73.0978109, 40.7811874] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Long Island Activists" },
+      "geometry": { "type": "Point", "coordinates": [-73.134961, 40.789142] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Housing Help Inc" },
+      "geometry": { "type": "Point", "coordinates": [-73.3647485, 40.8663271] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "JustFix.nyc" },
+      "geometry": { "type": "Point", "coordinates": [-73.9883345, 40.7008302] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Neighborhood Preservation Coalition of New York State, Inc."
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7546578, 42.6504514] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Hudson Catskill Housing Coalition" },
+      "geometry": { "type": "Point", "coordinates": [-73.8654984, 42.2184625] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Rockland Housing Action Coalition, Inc." },
+      "geometry": { "type": "Point", "coordinates": [-73.9920245, 41.1308175] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Mt Vernon United Tenants" },
+      "geometry": { "type": "Point", "coordinates": [-73.8377984, 40.9123474] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Long Island Progressive Coalition" },
+      "geometry": { "type": "Point", "coordinates": [-73.4721655, 40.6786525] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Partners for Dignity and Rights" },
+      "geometry": { "type": "Point", "coordinates": [-74.0130305, 40.7068263] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Prevent Child Abuse New York" },
+      "geometry": { "type": "Point", "coordinates": [-73.7516054, 42.6520354] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Center for Elder Law & Justice" },
+      "geometry": { "type": "Point", "coordinates": [-78.8745391, 42.8862326] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Volunteer Lawyers Project" },
+      "geometry": { "type": "Point", "coordinates": [-78.874673, 42.886077] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Lenox Hill Neighborhood House" },
+      "geometry": { "type": "Point", "coordinates": [-73.9577778, 40.7669444] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Legal Aid Society of Rochester" },
+      "geometry": { "type": "Point", "coordinates": [-77.6127132, 43.1554284] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Volunteer Lawyers Project of CNY" },
+      "geometry": { "type": "Point", "coordinates": [-76.1503664, 43.0490833] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "United Tenants of Albany Inc" },
+      "geometry": { "type": "Point", "coordinates": [-73.7585039, 42.6586024] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "CAAAV: Organizing Asian Communities" },
+      "geometry": { "type": "Point", "coordinates": [-73.9901193, 40.7157632] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "City-Wide Tenant Union of Rochester" },
+      "geometry": { "type": "Point", "coordinates": [-77.6058069, 43.1482024] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Syracuse Tenant Union" },
+      "geometry": { "type": "Point", "coordinates": [-76.1474244, 43.0481221] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Community Resource Center of Larchmont and Mamaroneck (CRC)"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7397641, 40.9535994] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Capital District Democratic Socialists of America"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7562317, 42.6525793] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Empire Justice Center - Long Island" },
+      "geometry": { "type": "Point", "coordinates": [-73.1960468, 40.7667393] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Empire Justice Center - Rochester" },
+      "geometry": { "type": "Point", "coordinates": [-77.6127132, 43.1554284] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Empire Justice Center - Yonkers" },
+      "geometry": { "type": "Point", "coordinates": [-73.8986135, 40.9329169] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Empire Justice Center - White Plains" },
+      "geometry": { "type": "Point", "coordinates": [-73.7665173, 41.0401042] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Empire Justice Center - Albany" },
+      "geometry": { "type": "Point", "coordinates": [-73.7600588, 42.6555015] }
+    }
+  ]
+}

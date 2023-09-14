@@ -1,0 +1,197 @@
+{
+  "type": "FeatureCollection",
+  "name": "Non-member -- Legal Services",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84", "member": false }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "Name": "Bronx Legal Services", "org": "legal services" },
+      "geometry": { "type": "Point", "coordinates": [-73.9191732, 40.8323832] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Brooklyn Bar Association Volunteer Lawyers Project, Inc.",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9913129, 40.6927556] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Access Justice Brooklyn",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9911479, 40.6928027] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Western New York Law Center Inc",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-78.8777905, 42.8815891] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Manhattan Legal Services",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9424573, 40.8067696] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New York County Lawyers Association",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0119311, 40.7134166] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Youth Represent", "org": "legal services" },
+      "geometry": { "type": "Point", "coordinates": [-74.0083735, 40.7129789] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New York Lawyers for the Public Interest",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9917764, 40.7484352] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Legal Project Inc", "org": "legal services" },
+      "geometry": { "type": "Point", "coordinates": [-73.8028513, 42.7156245] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Queens Legal Services",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8088879, 40.7034997] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Queens County Bar Association Volunteer Lawyers Project (QVLP)",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8093621, 40.7044578] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Legal Assistance of Western New York (LawNY)",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.9847386, 42.866439] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Pro Bono Net", "org": "legal services" },
+      "geometry": { "type": "Point", "coordinates": [-73.9917764, 40.7484352] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Rural Law Center of New York",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.4464882, 44.6847407] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Volunteers of Legal Service Inc",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0069891, 40.7172951] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Center for Resolution and Justice",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-78.8423608, 42.9346782] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Center-Family Representation",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0069028, 40.7169985] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Catholic Charities of the Archdiocese of New York",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9639978, 40.7574566] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Queens Volunteer Lawyers Project, Inc.",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8068786, 40.7022808] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "City Bar Justice Center",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.982205, 40.755472] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "The Family Center", "org": "legal services" },
+      "geometry": { "type": "Point", "coordinates": [-73.94941, 40.680548] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Queens Defenders", "org": "legal services" },
+      "geometry": { "type": "Point", "coordinates": [-73.831523, 40.7150909] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Community Legal Advocates of New York",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.647839, 40.7371518] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "JASA", "org": "legal services" },
+      "geometry": { "type": "Point", "coordinates": [-73.9913129, 40.7540772] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Journey's End Refugee Services",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-78.8424802, 42.9350122] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Long Island Advocacy Center",
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.6605098, 40.7591203] }
+    }
+  ]
+}

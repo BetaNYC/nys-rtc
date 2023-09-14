@@ -1,4 +1,4 @@
-type geoFormat = {
+type GeoJson = {
     type: "FeatureCollection",
     name: string,
     crs: {}

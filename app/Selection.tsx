@@ -13,8 +13,8 @@ function Selection() {
 
     const { map } = useContext(MapContext) as MapContextType
 
-    const senateFeatures = (senate as geoFormat).features
-    const assemblyFeatures = (assembly as geoFormat).features
+    const senateFeatures = (senate as GeoJson).features
+    const assemblyFeatures = (assembly as GeoJson).features
 
     const changeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const value = e.target.value

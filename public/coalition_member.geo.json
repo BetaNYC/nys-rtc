@@ -1,0 +1,213 @@
+{
+  "type": "FeatureCollection",
+  "name": "Coalition Member",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84", "member": true }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "Name": "Housing Conservation Coordinators" },
+      "geometry": { "type": "Point", "coordinates": [-73.990928, 40.766337] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Center For Independence of the Disabled, New York"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9857983, 40.7521486] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Coalition for the Homeless" },
+      "geometry": { "type": "Point", "coordinates": [-74.0073925, 40.7102655] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Community Service Society" },
+      "geometry": { "type": "Point", "coordinates": [-73.974661, 40.7496874] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "LiveOn NY" },
+      "geometry": { "type": "Point", "coordinates": [-73.981396, 40.7563745] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "NY City Central Labor Council, AFL-CIO" },
+      "geometry": { "type": "Point", "coordinates": [-73.9968273, 40.7509284] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "The Bronx Defenders" },
+      "geometry": { "type": "Point", "coordinates": [-73.9152726, 40.8244365] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Interfaith Assembly On Homelessness and Housing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9658614, 40.799774] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Brooklyn Defender Services" },
+      "geometry": { "type": "Point", "coordinates": [-73.9866476, 40.6903774] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Brooklyn Legal Services Corporation A" },
+      "geometry": { "type": "Point", "coordinates": [-73.9595084, 40.7088146] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "CAMBA" },
+      "geometry": { "type": "Point", "coordinates": [-73.9574276, 40.6483686] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Neighborhood Defender Service of Harlem" },
+      "geometry": { "type": "Point", "coordinates": [-73.9453802, 40.8083906] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Communities Resist" },
+      "geometry": { "type": "Point", "coordinates": [-73.9575809, 40.7081787] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Legal Services NYC" },
+      "geometry": { "type": "Point", "coordinates": [-74.0069891, 40.7172951] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Safety Net Project of the Urban Justice Center"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0147259, 40.7084275] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Take Root Justice" },
+      "geometry": { "type": "Point", "coordinates": [-74.0072955, 40.7094756] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "The Legal Aid Society" },
+      "geometry": { "type": "Point", "coordinates": [-74.0045058, 40.7069203] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Mobilization For Justice" },
+      "geometry": { "type": "Point", "coordinates": [-73.9576812, 40.708469] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "New York Legal Assistance Group" },
+      "geometry": { "type": "Point", "coordinates": [-74.0097395, 40.7039923] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "CASA: Community Action for Safe Apartments" },
+      "geometry": { "type": "Point", "coordinates": [-73.9171353, 40.8386407] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Northwest Bronx Community & Clergy" },
+      "geometry": { "type": "Point", "coordinates": [-73.8938217, 40.8683624] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Crown Heights Tenant Union" },
+      "geometry": { "type": "Point", "coordinates": [-73.9595858, 40.6750749] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Housing Organizers for People Empowerment (HOPE) at UHAB"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0059883, 40.7047178] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Goddard Riverside Law Project" },
+      "geometry": { "type": "Point", "coordinates": [-73.9602254, 40.8007628] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Northern Manhattan Improvement Corporation" },
+      "geometry": { "type": "Point", "coordinates": [-73.9373049, 40.8461314] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Catholic Migration Services" },
+      "geometry": { "type": "Point", "coordinates": [-73.9173756, 40.7434212] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Ridgewood Tenant Union" },
+      "geometry": { "type": "Point", "coordinates": [-73.9018292, 40.7043986] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Young Communist League" },
+      "geometry": { "type": "Point", "coordinates": [-73.9967446, 40.7448704] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "District Council 37 Municipal Employees Legal Services (DC37)"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0059728, 40.7127753] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "District Council 37 Municipal Employees Legal Services (DC37)"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7948516, 41.1220194] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "District Council 37 Municipal Employees Legal Services (DC37)"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9830029, 41.1489458] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "District Council 37 Municipal Employees Legal Services (DC37)"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.5594128, 40.6546145] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "District Council 37 Municipal Employees Legal Services (DC37)"
+      },
+      "geometry": { "type": "Point", "coordinates": [-72.6151169, 40.9848784] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Housing Court Answers - The Bronx" },
+      "geometry": { "type": "Point", "coordinates": [-73.9190645, 40.832399] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Housing Court Answers - Brooklyn" },
+      "geometry": { "type": "Point", "coordinates": [-73.9880516, 40.6906484] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Housing Court Answers - Manhattan" },
+      "geometry": { "type": "Point", "coordinates": [-74.001437, 40.716824] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "Housing Court Answers - Queens" },
+      "geometry": { "type": "Point", "coordinates": [-73.8081972, 40.703517] }
+    }
+  ]
+}
