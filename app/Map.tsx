@@ -4,10 +4,11 @@ import { useState, useRef, useEffect, useContext } from "react";
 import { MapContext, MapContextType } from "./Context/MapContext";
 
 import mapboxgl from 'mapbox-gl';
-import senate from "../public/state_senate.geo.json"
-import coalitionMember from "../public/coalition_member.geo.json"
-import campaignMember from "../public/campaign_member.geo.json"
+
+import senate from "../public/nys_senate.geo.json"
+import member from "../public/member.geo.json"
 import nonMember from "../public/non_member.geo.json"
+import coalition from "../public/rtc_coalition.geo.json"
 
 import marker from "/public/marker.png"
 
@@ -17,13 +18,15 @@ const Map = () => {
     const { setMap } = useContext(MapContext) as MapContextType
 
     const senateFeatures = (senate as GeoJson).features
-    const coalitionMemberFeatures = (coalitionMember as GeoJson).features
-    const campaignMemberFeatures = (campaignMember as GeoJson).features
+    const memberFeatures = (member as GeoJson).features
     const nonMemberFeatures = (nonMember as GeoJson).features
+    const coalitionFeatures = (coalition as GeoJson).features
 
-    const [lng, setLng] = useState<number>(-75.914);
-    const [lat, setLat] = useState<number>(42.84);
-    const [zoom, setZoom] = useState<number>(6.6);
+    console.log(coalitionFeatures)
+
+    const [lng, setLng] = useState(-75.914);
+    const [lat, setLat] = useState(42.84);
+    const [zoom, setZoom] = useState(6.6);
 
     useEffect(() => {
         mapboxgl.accessToken =
@@ -53,20 +56,12 @@ const Map = () => {
                 },
             })
 
-            m.addSource("coalition_member", {
+            m.addSource("member", {
                 type: "geojson",
                 data: {
                     type: "FeatureCollection",
-                    features: coalitionMemberFeatures,
-                },
-            })
-
-            m.addSource("campaign_member", {
-                type: "geojson",
-                data: {
-                    type: "FeatureCollection",
-                    features: campaignMemberFeatures,
-                },
+                    features: memberFeatures,
+                }
             })
 
             m.addSource("non_member", {
@@ -74,6 +69,15 @@ const Map = () => {
                 data: {
                     type: "FeatureCollection",
                     features: nonMemberFeatures,
+                },
+            })
+
+
+            m.addSource("coalition", {
+                type: "geojson",
+                data: {
+                    type: "FeatureCollection",
+                    features: coalitionFeatures,
                 },
             })
 
@@ -87,6 +91,7 @@ const Map = () => {
             //     });
             // });
 
+
             m.addLayer({
                 'id': 'districts',
                 'type': 'fill',
@@ -94,8 +99,8 @@ const Map = () => {
                 'layout': {},
                 'paint': {
                     'fill-color': '#ffb8c2',
-                    'fill-opacity': 0.2
-                }
+                    'fill-opacity': 0,
+                },
             });
 
             m.addLayer({
@@ -109,44 +114,52 @@ const Map = () => {
                 }
             });
 
-            // m.addLayer({
-            //     id: 'coalition_member',
-            //     type: 'circle',
-            //     source: 'coalition_member',
-            //     layout: {},
-            //     paint: {
-            //         "circle-radius": 4,
-            //         "circle-stroke-width": 1,
-            //         "circle-opacity": 0.8,
-            //         "circle-color": "#FFBF00"
-            //     },
-            // })
-
-            // m.addLayer({
-            //     id: 'campaign_member',
-            //     type: 'circle',
-            //     source: 'campaign_member',
-            //     layout: {},
-            //     paint: {
-            //         "circle-radius": 4,
-            //         "circle-stroke-width": 1,
-            //         "circle-opacity": 0.8,
-            //         "circle-color": "#ff7f7f"
-            //     },
-            // })
 
             m.addLayer({
-                id: 'non_member',
+                'id': 'districts_legislation',
+                'type': 'fill',
+                'source': 'districts',
+                'layout': {},
+                'paint': {
+                    'fill-color': '#ffb8c2',
+                    'fill-opacity': [
+                        "case",
+                        ["in", "Statewide RTC", ["get", "HCMC support"]],
+                        1, 0
+                    ]
+                },
+            });
+
+            m.addLayer({
+                id: 'coalition',
                 type: 'circle',
-                source: 'non_member',
+                source: 'coalition',
                 layout: {},
                 paint: {
-                    "circle-radius": 4,
-                    "circle-stroke-width": 1,
-                    "circle-opacity": 0.8,
-                    "circle-color": "#FFBF00"
+                    "circle-radius": 5,
+                    "circle-stroke-width": 0,
+                    "circle-opacity": 0.75,
+                    "circle-color": [
+                        "case",
+                        ["all", ["==", ["get", "member"], true]],
+                        "#ffd4d2",
+                        "#7DCEA0"
+                    ]
                 },
             })
+
+            // m.addLayer({
+            //     id: 'non_member',
+            //     type: 'circle',
+            //     source: 'non_member',
+            //     layout: {},
+            //     paint: {
+            //         "circle-radius": 5,
+            //         "circle-stroke-width": 0,
+            //         "circle-opacity": 0.8,
+            //         "circle-color": "#7DCEA0 "
+            //     },
+            // })
         })
         return () => {
             m.remove();

@@ -1,0 +1,1695 @@
+{
+  "type": "FeatureCollection",
+  "name": "rtc-coalition",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Westchester Residential Opps",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7600588, 41.0223808] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Solidarity Committee of the Capital District",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7562317, 42.6525793] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "The Alternative to Economic and Housing Displacement, Inc.",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7562317, 42.6525793] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Westchester Jewish Coalition for Immigration",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7622651, 40.9304949] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "JustCause", "member": true, "org": "campaign" },
+      "geometry": { "type": "Point", "coordinates": [-77.6127132, 43.1554284] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "For the Many",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9261072, 41.7041636] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Churches United For Fair Housing",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9413934, 40.6998064] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Met Council on Housing",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9943202, 40.7260327] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "UAW Local 2325 - Association of Legal Aid Attorneys",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0124639, 40.7062313] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Asian Americans for Equality (AAFE)\n",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.986804, 40.718933] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Neighbors Helping Neighbors",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9827093, 40.6791344] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Astoria Tenants Union",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9234619, 40.7643574] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Long Island Housing Services Inc",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.0978109, 40.7811874] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Long Island Activists",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.134961, 40.789142] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Housing Help Inc",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.3647485, 40.8663271] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "JustFix.nyc",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9883345, 40.7008302] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Neighborhood Preservation Coalition of New York State, Inc.",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7546578, 42.6504514] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hudson Catskill Housing Coalition",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8654984, 42.2184625] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Rockland Housing Action Coalition, Inc.",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9920245, 41.1308175] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mt Vernon United Tenants",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8377984, 40.9123474] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Long Island Progressive Coalition",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.4721655, 40.6786525] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Partners for Dignity and Rights",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0130305, 40.7068263] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Prevent Child Abuse New York",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7516054, 42.6520354] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Center for Elder Law & Justice",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-78.8745391, 42.8862326] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Volunteer Lawyers Project",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-78.874673, 42.886077] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lenox Hill Neighborhood House",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9577778, 40.7669444] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Legal Aid Society of Rochester",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-77.6127132, 43.1554284] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Volunteer Lawyers Project of CNY",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.1503664, 43.0490833] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "United Tenants of Albany Inc",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7585039, 42.6586024] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "CAAAV: Organizing Asian Communities",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9901193, 40.7157632] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "City-Wide Tenant Union of Rochester",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-77.6058069, 43.1482024] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Syracuse Tenant Union",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.1474244, 43.0481221] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Community Resource Center of Larchmont and Mamaroneck (CRC)",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7397641, 40.9535994] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Capital District Democratic Socialists of America",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7562317, 42.6525793] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Empire Justice Center - Long Island",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.1960468, 40.7667393] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Empire Justice Center - Rochester",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-77.6127132, 43.1554284] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Empire Justice Center - Yonkers",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8986135, 40.9329169] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Empire Justice Center - White Plains",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7665173, 41.0401042] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Empire Justice Center - Albany",
+        "member": true,
+        "org": "campaign"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7600588, 42.6555015] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Housing Conservation Coordinators",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.990928, 40.766337] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Center For Independence of the Disabled, New York",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9857983, 40.7521486] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Coalition for the Homeless",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0073925, 40.7102655] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Community Service Society",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.974661, 40.7496874] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "LiveOn NY", "member": true, "org": "coalition" },
+      "geometry": { "type": "Point", "coordinates": [-73.981396, 40.7563745] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "NY City Central Labor Council, AFL-CIO",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9968273, 40.7509284] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "The Bronx Defenders",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9152726, 40.8244365] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Interfaith Assembly On Homelessness and Housing",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9658614, 40.799774] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Brooklyn Defender Services",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9866476, 40.6903774] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Brooklyn Legal Services Corporation A",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9595084, 40.7088146] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "CAMBA", "member": true, "org": "coalition" },
+      "geometry": { "type": "Point", "coordinates": [-73.9574276, 40.6483686] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Neighborhood Defender Service of Harlem",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9453802, 40.8083906] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Communities Resist",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9575809, 40.7081787] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Legal Services NYC",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0069891, 40.7172951] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Safety Net Project of the Urban Justice Center",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0147259, 40.7084275] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Take Root Justice",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0072955, 40.7094756] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "The Legal Aid Society",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0045058, 40.7069203] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mobilization For Justice",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9576812, 40.708469] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New York Legal Assistance Group",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0097395, 40.7039923] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "CASA: Community Action for Safe Apartments",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9171353, 40.8386407] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Northwest Bronx Community & Clergy",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8938217, 40.8683624] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Crown Heights Tenant Union",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9595858, 40.6750749] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Housing Organizers for People Empowerment (HOPE) at UHAB",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0059883, 40.7047178] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Goddard Riverside Law Project",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9602254, 40.8007628] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Northern Manhattan Improvement Corporation",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9373049, 40.8461314] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Catholic Migration Services",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9173756, 40.7434212] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ridgewood Tenant Union",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9018292, 40.7043986] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Young Communist League",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9967446, 40.7448704] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "District Council 37 Municipal Employees Legal Services (DC37)",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0059728, 40.7127753] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "District Council 37 Municipal Employees Legal Services (DC37)",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7948516, 41.1220194] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "District Council 37 Municipal Employees Legal Services (DC37)",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9830029, 41.1489458] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "District Council 37 Municipal Employees Legal Services (DC37)",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.5594128, 40.6546145] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "District Council 37 Municipal Employees Legal Services (DC37)",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-72.6151169, 40.9848784] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Housing Court Answers - The Bronx",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9190645, 40.832399] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Housing Court Answers - Brooklyn",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9880516, 40.6906484] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Housing Court Answers - Manhattan",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.001437, 40.716824] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Housing Court Answers - Queens",
+        "member": true,
+        "org": "coalition"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8081972, 40.703517] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Showing Up for Racial Justice",
+        "member": false,
+        "org": "advocacy"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9441579, 40.6781784] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New Economy Project",
+        "member": false,
+        "org": "advocacy"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9919957, 40.7461073] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Housing Rights Initiative",
+        "member": false,
+        "org": "advocacy"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9832989, 40.7697048] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New York Progressive Action Network",
+        "member": false,
+        "org": "advocacy"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0084482, 40.7118188] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "University Settlement Society",
+        "member": false,
+        "org": "advocacy"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9905585, 40.7205719] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New York Immigration Coalition",
+        "member": false,
+        "org": "advocacy"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9895422, 40.7500642] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Capital Area Council of Churches",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7756666, 42.6619104] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Westminster Presbyterian Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7614181, 42.6534853] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Latino Pastoral Action Center Inc",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.918565, 40.840274] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "The Church of the Village",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0002415, 40.7381352] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "First Presbyterian Church of Forest Hills",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8391543, 40.723333] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Gates Presbyterian Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-77.7125818, 43.1492935] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Rochester ACTS Religious Leaders",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-77.616303, 43.157512] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hebrew Institute-White Plains",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7658939, 41.025514] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Asbury First United Methodist Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-77.5759401, 43.1510186] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Congregation B'nai Yisrael",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.6843011, 41.1324514] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Congregational Church of South Hempstead",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.6207859, 40.6864417] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Episcopal Diocese of Western New York",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-78.8332708, 42.9912596] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "First Presbyterian Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7652778, 42.6561111] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Greater Mount Calvary Church of God in Christ",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7585649, 40.6994027] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Greater New York Labor-Religion Coalition",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0021019, 40.7096219] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Messiah Lutheran Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9706555, 42.7850395] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New York Disaster Interfaith Services (NYDIS)",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.981205, 40.754344] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Presbytery of New York City",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9640282, 40.8108449] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Shaarei Tikvah Scarsdale",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8021566, 40.9955508] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "St David's Episcopal Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9148223, 40.8235676] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "St Timothy Lutheran Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9106925, 41.8053587] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "True Vine Ministries COGIC",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.5875003, 40.6764451] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upper Room Inclusive Catholic Community",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.842055, 42.7379788] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Wakefield Grace United Methodist",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8492505, 40.9047619] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Wantagh Memorial Congregational Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.5093798, 40.6761266] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New Tabernacle Baptist Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8787799, 40.8439194] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Judson Memorial Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9983832, 40.7302192] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Walker Memorial Baptist Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9170742, 40.8366485] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Labor-Religion Coalition",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7613522, 42.6535143] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "United Methodist Church of Queensbury",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.6873053, 43.3290893] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bethel Lutheran Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-78.3319214, 42.0387368] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Rhema Fellowship Ministries",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8648268, 40.8447819] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Faith Family Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0255385, 41.5122308] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "St. Paul & St. Andrew United Methodist Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9772585, 40.788876] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kairos Center",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9619, 40.8112383] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sisters of St Dominic",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9534575, 41.0529802] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bethlehem Lutheran Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-79.2015096, 42.1168887] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "The Reformed Church of Prince Bay",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.1974568, 40.5208829] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New York State Chaplain Task Force",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.5838903, 40.7201982] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Staten Island Council-Churches",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.163035, 40.5984603] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Gloria Dei Lutheran Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.6813586, 40.737991] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upstate NY Synod",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.0488393, 43.0482015] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "The Sanctuary Church, Inc.",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-78.7248058, 42.9181408] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Covenant United Methodist Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-77.5622627, 43.1658692] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ft Tryon Jewish Center",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9374976, 40.8509998] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Fairport United Methodist Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-77.4445972, 43.0983089] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Episcopal Diocese of NY",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9618358, 40.8038206] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lifehouse Community Church",
+        "member": false,
+        "org": "faith"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.909087, 40.695724] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "UFCW Local 2013",
+        "member": false,
+        "org": "labor"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0302402, 40.6173055] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New York State Federation of Labor - Albany",
+        "member": false,
+        "org": "labor"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.761048, 42.6525791] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New York State Federation of Labor",
+        "member": false,
+        "org": "labor"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0125217, 40.7063491] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bronx Legal Services",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9191732, 40.8323832] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Brooklyn Bar Association Volunteer Lawyers Project, Inc.",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9913129, 40.6927556] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Access Justice Brooklyn",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9911479, 40.6928027] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Western New York Law Center Inc",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-78.8777905, 42.8815891] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Manhattan Legal Services",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9424573, 40.8067696] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New York County Lawyers Association",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0119311, 40.7134166] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Youth Represent",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0083735, 40.7129789] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New York Lawyers for the Public Interest",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9917764, 40.7484352] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Legal Project Inc",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8028513, 42.7156245] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Queens Legal Services",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8088879, 40.7034997] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Queens County Bar Association Volunteer Lawyers Project (QVLP)",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8093621, 40.7044578] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Legal Assistance of Western New York (LawNY)",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.9847386, 42.866439] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Pro Bono Net",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9917764, 40.7484352] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Rural Law Center of New York",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.4464882, 44.6847407] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Volunteers of Legal Service Inc",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0069891, 40.7172951] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Center for Resolution and Justice",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-78.8423608, 42.9346782] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Center-Family Representation",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0069028, 40.7169985] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Catholic Charities of the Archdiocese of New York",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9639978, 40.7574566] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Queens Volunteer Lawyers Project, Inc.",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8068786, 40.7022808] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "City Bar Justice Center",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.982205, 40.755472] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "The Family Center",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.94941, 40.680548] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Queens Defenders",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.831523, 40.7150909] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Community Legal Advocates of New York",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.647839, 40.7371518] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "JASA",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9913129, 40.7540772] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Journey's End Refugee Services",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-78.8424802, 42.9350122] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Long Island Advocacy Center",
+        "member": false,
+        "org": "legal services"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.6605098, 40.7591203] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Cooper Square Committee",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9908038, 40.7269761] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Carroll Gardens Association, Inc.",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9991637, 40.6795331] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "NYS Tenants & Neighbors",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9915965, 40.7532416] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Name": "FIERCE", "member": false, "org": "organizing" },
+      "geometry": { "type": "Point", "coordinates": [-73.9003685, 40.8613261] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Banana Kelly Community Improvement Association",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9016766, 40.8204359] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mirabal Sisters Cultural & Community Center",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.953199, 40.8249814] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mothers On The Move",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8965677, 40.825612] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Brooklyn Eviction Defense",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9441579, 40.6781784] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "IMPACCT Brooklyn",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9573907, 40.6777022] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ithaca Tenant Union",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.5018807, 42.4439614] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New York Communities for Change",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9680195, 40.6830766] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Greater Syracuse Tenants Network",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.1451055, 43.0484365] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Westchester Right to Counsel Coalition",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7948516, 41.1220194] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Good Old Lower East Side (GOLES)",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9793669, 40.7272085] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Story Run Tenants Union",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9973608, 41.9270367] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Neighbors Together",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9138412, 40.6782875] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Housing Committee of Riverside \nEdgecombe Neighborhood \nAssociation (RENA)\n",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9447305, 40.8304331] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Cizen Action of New York - Central New York",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-75.2427331, 43.0969724] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Citizen Action of New York - Rochester",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-77.559996, 43.170899] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Citizen Action of New York - Long Island",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9998806, 41.9283749] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Citizen Action of New York - Long Island",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.4721818, 40.6786932] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Citizen Action of New York - New York City",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.0069891, 40.7172951] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Citizen Action of New York - Western New York",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-78.8651267, 42.9128456] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Citizen Action of New York - Albany",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.7668057, 42.6595422] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Linden Plaza Tenants",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.8661689, 40.6728365] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Citizen Action of New York - Southern Tier",
+        "member": false,
+        "org": "organizing"
+      },
+      "geometry": { "type": "Point", "coordinates": [-75.9038082, 42.1087849] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New York Working Families Party (WFP)",
+        "member": false,
+        "org": "other"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9874324, 40.7003477] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Nassau County DSA",
+        "member": false,
+        "org": "other"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.5594128, 40.6546145] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Huntington Township Housing Coalition",
+        "member": false,
+        "org": "other"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.425676, 40.8681539] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bensonhurst Tenants Council",
+        "member": false,
+        "org": "other"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.9921833, 40.6139307] }
+    }
+  ]
+}

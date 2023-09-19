@@ -2,10 +2,10 @@
 import React, { useState, useContext } from 'react'
 import { MapContext, MapContextType } from './Context/MapContext'
 
-import assembly from "../public/state_assembly_districts.geo.json"
-import senate from "../public/state_senate.geo.json"
+import assembly from "../public/nys_assembly.geo.json"
+import senate from "../public/nys_senate.geo.json"
 
-import { GeoJSONSource, GeoJSONSourceRaw } from 'mapbox-gl';
+import { GeoJSONSource } from 'mapbox-gl';
 import { type } from 'os';
 
 
@@ -16,9 +16,9 @@ function Selection() {
     const senateFeatures = (senate as GeoJson).features
     const assemblyFeatures = (assembly as GeoJson).features
 
-    const changeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const value = e.target.value
-        switch (value) {
+    const districtsChangeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const districts = e.target.value
+        switch (districts) {
             case "senate":
                 (map?.getSource("districts") as GeoJSONSource).setData({
                     type: "FeatureCollection",
@@ -32,14 +32,31 @@ function Selection() {
                 });
                 break
         }
+
+
+    }
+
+    const legislationsChnageHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const legislations = e.target.value
+
+        map?.setPaintProperty("districts_legislation", "fill-opacity", [
+            "case",
+            ["in", `${legislations}`, ["get", "HCMC support"]],
+            1, 0
+        ])
     }
 
 
     return (
         <>
-            <select className='absolute py-[5px] top-[40px] left-[20px] text-black z-50' onChange={changeHandler}>
+            <select className='absolute py-[5px] top-[40px] left-[20px] text-black z-50' onChange={districtsChangeHandler}>
                 <option value="senate">Senate</option>
                 <option value="assembly">Assembly</option>
+            </select>
+            <select className='absolute py-[5px] top-[120px] left-[20px] text-black z-50' onChange={legislationsChnageHandler}>
+                <option value="Statewide RTC">Statewide RTC</option>
+                <option value="Winter Eviction Moratorium">Winter Eviction Moratorium</option>
+                <option value="DEFEND RTC">Defend RTC</option>
             </select>
         </>
 
