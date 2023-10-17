@@ -16,6 +16,7 @@ import DistrictsBtns from "./DistrictsBtns";
 import Legend from "./Legend";
 
 import Image from 'next/image'
+
 import "./Map.css"
 
 const Map = () => {
@@ -229,53 +230,53 @@ const Map = () => {
                 },
             })
 
-            // m.on("click", "districts", (e: MapMouseEvent & EventData) => {
-            //     const { properties } = e.features[0]
+            m.on("click", "districts", (e: MapMouseEvent & EventData) => {
+                const { properties } = e.features[0]
 
-            //     // console.log(properties)
-            //     // ${properties.Geography.replaceAll("/"," ")}
-            //     let content = `<div class="content">
-            //     <div class="grid grid-cols-[1fr_0.3fr] justify-between items-start px-[17px] py-[10px] width-full text-white ${properties.Party_x === "Democratic" ? "bg-[#0058AB]" : "bg-[#B60000]"}   rounded-t-[20px]">
-            //     <div class="col-start-1 col-end-2 font-bold text-[18px]">District ${properties.District}</div>
-            //     <div class="col-start-3 col-end-4 font-bold text-[14px] text-start ">${properties.Name}</div>
-            //     <div class="col-start-1 col-end-2 font-bold text-[11px] ">${properties.City}</div>
-            //     <div class="col-start-3 col-end-4 font-bold text-[11px] text-start ">${properties.Party_y}</div>
-            //     </div>
-            // <div class="px-[17px] pt-[8px] pb-[12px] text-black bg-white rounded-b-[20px]">
-            //     <div class="font-regular text-[8px] text-[#7F7F7F]">Housing Courts Must Change! Campaign Support</div>
-            //     <div class="flex flex-col gap-[5px] mt-[6px] mb-[8px]">
-            //         <div class="flex items-center gap-[5px]">
-            //             <img src=${properties["HCMC support"].includes("Statewide RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-            //             <div class="font-bold text-[12px]">Statewide RTC</div>
-            //         </div>
-            //         <div class="flex items-center gap-[5px]">
-            //             <img src=${properties["HCMC support"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"}  alt="" className="w-[16px] h-[16px]" />
-            //             <div class="font-bold text-[12px]">Winter Eviction Moratorium</div>
-            //         </div>
-            //         <div class="flex items-center gap-[5px]">
-            //             <img src=${properties["HCMC support"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-            //             <div class="font-bold text-[12px]">Defend RTC</div>
-            //         </div>
-            //         <div class="flex items-center gap-[5px]">
-            //             <img src=${properties["HCMC support"].includes("Fund Local Law 53") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-            //             <div class="font-bold text-[12px]">Power to Organize:<br /> Fund Local Law 53</div>
-            //         </div>
-            //     </div>
-            //     <a href="" class="font-regular text-[12px]">
-            //         More Details
-            //     </a>
-            // </div></div>`
+                // console.log(properties)
+                // ${properties.Geography.replaceAll("/"," ")}
+                let content = `<div class="content">
+                <div class="grid grid-cols-[1fr_0.3fr] justify-between items-start px-[17px] py-[10px] width-full text-white ${properties.Party_x === "Democratic" ? "bg-[#0058AB]" : "bg-[#B60000]"}   rounded-t-[20px]">
+                <div class="col-start-1 col-end-2 font-bold text-[18px]">District ${properties.District}</div>
+                <div class="col-start-3 col-end-4 font-bold text-[14px] text-start ">${properties.Name}</div>
+                <div class="col-start-1 col-end-2 font-bold text-[11px] ">${properties.City}</div>
+                <div class="col-start-3 col-end-4 font-bold text-[11px] text-start ">${properties.Party_y}</div>
+                </div>
+            <div class="px-[17px] pt-[8px] pb-[12px] text-black bg-white rounded-b-[20px]">
+                <div class="font-regular text-[8px] text-[#7F7F7F]">Housing Courts Must Change! Campaign Support</div>
+                <div class="flex flex-col gap-[5px] mt-[6px] mb-[8px]">
+                    <div class="flex items-center gap-[5px]">
+                        <img src=${properties["HCMC support"].includes("Statewide RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                        <div class="font-bold text-[12px]">Statewide RTC</div>
+                    </div>
+                    <div class="flex items-center gap-[5px]">
+                        <img src=${properties["HCMC support"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"}  alt="" className="w-[16px] h-[16px]" />
+                        <div class="font-bold text-[12px]">Winter Eviction Moratorium</div>
+                    </div>
+                    <div class="flex items-center gap-[5px]">
+                        <img src=${properties["HCMC support"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                        <div class="font-bold text-[12px]">Defend RTC</div>
+                    </div>
+                    <div class="flex items-center gap-[5px]">
+                        <img src=${properties["HCMC support"].includes("Fund Local Law 53") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                        <div class="font-bold text-[12px]">Power to Organize:<br /> Fund Local Law 53</div>
+                    </div>
+                </div>
+                <a href="" class="font-regular text-[12px]">
+                    More Details
+                </a>
+            </div></div>`
 
-            //     const popup = new mapboxgl.Popup({
-            //         offset: [0, -25],
-            //         anchor: "bottom",
-            //         closeButton: false,
-            //         closeOnClick: true,
-            //     })
+                const popup = new mapboxgl.Popup({
+                    offset: [0, -25],
+                    anchor: "bottom",
+                    closeButton: false,
+                    closeOnClick: true,
+                })
 
-            //     popup.setMaxWidth("1200px")
-            //     popup.setLngLat([e.lngLat['lng'], e.lngLat["lat"]]).setHTML(content).addTo(m)
-            // })
+                popup.setMaxWidth("1200px")
+                popup.setLngLat([e.lngLat['lng'], e.lngLat["lat"]]).setHTML(content).addTo(m)
+            })
 
             m.on("click", "organizations_members", (e: MapMouseEvent & EventData) => {
 
