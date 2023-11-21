@@ -21,7 +21,7 @@ jobs:
           pip install -r requirements.txt  # If you have dependencies
   
       - name: Run legislation info generator script
-        run: python nys-rtc/scripts/legislation_info_generator.py
+        run: python scripts/legislation_info_generator.py
 
       - name: Commit and push if changes
         run: |
