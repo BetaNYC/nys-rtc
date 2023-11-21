@@ -1,0 +1,13 @@
+os
+pyairtable
+json
+geopandas
+pandas
+requests
+PyPDF2
+re
+time
+pickle
+pathlib
+shapely
+numpy
