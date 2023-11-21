@@ -1,4 +1,4 @@
-name: Run Legislation Info Script and Commit Changes
+name: Update Legislation Info 
 
 on:
     workflow_dispatch:  # This enables manual triggering from the GitHub UI
