@@ -31,6 +31,6 @@ jobs:
           # Git commands to add, commit, and push
           git config --local user.email "bot@example.com"
           git config --local user.name "bot"
-          git add r".\public\legislation_info.json"
+          git add public/legislation_info.json"
           git commit -m "Update legislation_info.json"
           git push
