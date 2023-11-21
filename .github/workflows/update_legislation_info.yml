@@ -26,11 +26,11 @@ jobs:
       - name: Commit and push if changes
         run: |
           # Set up Git to use the GITHUB_TOKEN for authentication
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-
-          # Git commands to add, commit, and push
           git config --local user.email "bot@example.com"
           git config --local user.name "bot"
-          git add public/legislation_info.json"
-          git commit -m "Update legislation_info.json"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+      
+          # Git commands to add, commit, and push
+          git add public/legislation_info.json
+          git commit -m "Update legislation_info.json" || echo "No changes to commit"
           git push
