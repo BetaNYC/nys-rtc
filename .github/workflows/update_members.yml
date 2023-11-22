@@ -26,7 +26,7 @@ jobs:
           pip install -r requirements.txt  # If you have dependencies
   
       - name: Run legislation info generator script
-        run: python scripts/legislative_support_generator.py scripts/legislation_votes_generator.py
+        run: python scripts/members_geocoder.py 
 
       - name: Commit and push if changes
         run: |
