@@ -200,7 +200,7 @@ if (old_members_list != members_list):
     with open(path / "rtc_members_info.json", 'w') as fout:
         json.dump(members_list, fout, cls=NpEncoder)
 
-    address_cache.to_csv(path / "address_cache.csv")
+    address_cache.dropna(axis=1, how='all').to_csv(path / "address_cache.csv")
 
     nongeocoded_members.to_csv(path / "nongeocoded_members.csv")
 
