@@ -20,9 +20,9 @@ GEOCODER_KEY = os.environ['GEOCODER_KEY']
 
 api = pyairtable.Api(MEMBERS_INFO)
 
-table = api.table('appsZsPVQ4n7ujxSJ','tblvVPeXE15ZbA68T', 'viwn6b1qQHxfxvTXX')
+table = api.table('appsZsPVQ4n7ujxSJ','tblvVPeXE15ZbA68T')
 
-members = table.all()
+members = table.all(view='viwn6b1qQHxfxvTXX')
 
 members_list = [x['fields'] for x in members]
 
