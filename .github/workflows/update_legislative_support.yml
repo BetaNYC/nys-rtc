@@ -9,7 +9,7 @@ jobs:
       
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        LEGISLATION_INFO: ${{ secrets.LEGISLATIVE_SUPPORT }}
+        LEGISLATIVE_SUPPORT: ${{ secrets.LEGISLATIVE_SUPPORT }}
 
       steps:
       - name: Check out repository
