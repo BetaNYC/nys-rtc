@@ -26,7 +26,7 @@ members = table.all()
 
 members_list = [x['fields'] for x in members]
 
-path = Path("..\public")
+path = Path("public")
 
 if os.path.isfile(path / "airtable.pkl"):
     with open(path / "airtable.pkl", 'rb') as f:
@@ -55,10 +55,10 @@ if (old_members_list != members_list):
         
     #count = 0
 
-    senate_geojson = r"..\public\NYS_Senate_Districts.geojson"
-    assembly_geojson = r"..\public\NYS_Assembly_Districts.geojson"
-    counties_geojson = r"..\public\nys_counties.geo.json"
-    zipcode_geojson = r"..\public\nys_zipcodes.geo.json"
+    senate_geojson = "public/NYS_Senate_Districts.geojson"
+    assembly_geojson = "public/NYS_Assembly_Districts.geojson"
+    counties_geojson = "public/nys_counties.geo.json"
+    zipcode_geojson = "public/nys_zipcodes.geo.json"
 
     senate_key = 'DISTRICT'
     assembly_key = 'District'
