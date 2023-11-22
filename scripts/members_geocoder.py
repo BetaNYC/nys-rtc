@@ -22,7 +22,7 @@ api = pyairtable.Api(MEMBERS_INFO)
 
 table = api.table('appsZsPVQ4n7ujxSJ','tblvVPeXE15ZbA68T')
 
-members = table.all(view='viwn6b1qQHxfxvTXX')
+members = table.all()
 
 members_list = [x['fields'] for x in members]
 
