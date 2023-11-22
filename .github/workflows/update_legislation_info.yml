@@ -6,7 +6,11 @@ on:
 jobs:
     update-legislation-info:
       runs-on: ubuntu-latest
-  
+      
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        LEGISLATION_INFO: ${{ secrets.LEGISLATION_INFO }}
+
       steps:
       - name: Check out repository
         uses: actions/checkout@v2

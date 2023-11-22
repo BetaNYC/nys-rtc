@@ -3,10 +3,10 @@ import pandas as pd
 import json
 
 senate_data = []
-with open(r"..\public\senate.geo.json", 'r') as f:
+with open("public/senate.geo.json", 'r') as f:
   senate_data = json.load(f)
 assembly_data = []
-with open(r"..\public\assembly.geo.json", 'r') as f:
+with open("public/assembly.geo.json", 'r') as f:
   assembly_data = json.load(f)
   
 # Function to extract unique bill names from "HCMC support"
@@ -63,7 +63,7 @@ summary_data_assembly = create_summary_data(assembly_bills_counts, "Assembly")
 final_summary_data = summary_data_senate + summary_data_assembly
 
 # Path for the new JSON file
-output_file_path_dynamic = r"..\public\legislation_votes.json"
+output_file_path_dynamic = "public/legislation_votes.json"
 
 # Writing the data to a new JSON file
 with open(output_file_path_dynamic, 'w') as file:

@@ -15,8 +15,8 @@ for row in table_dict:
     rows.append(row['fields'])
 df = pd.DataFrame(rows)
 # Load GeoJSONs
-gdf_assembly = gpd.read_file(r"..\public\NYS_Assembly_Districts.geojson")
-gdf_senate = gpd.read_file(r"..\public\NYS_Senate_Districts.geojson").rename(columns={'DISTRICT':'District'})
+gdf_assembly = gpd.read_file("public/NYS_Assembly_Districts.geojson")
+gdf_senate = gpd.read_file("public/NYS_Senate_Districts.geojson").rename(columns={'DISTRICT':'District'})
 
 # Split your dataframe by house
 df_assembly = df[df['House'] == 'Assembly']
@@ -36,5 +36,5 @@ gdf_senate = gdf_senate.rename(columns = {'Which HCMC legislation do they suppor
 gdf_assembly = gdf_assembly.rename(columns = {'Which HCMC legislation do they support?':'HCMC support'})
 
 # Export the new GeoJSONs
-gdf_assembly.to_file(r'..\public\assembly.geo.json', driver='GeoJSON')
-gdf_senate.to_file(r'..\public\senate.geo.json', driver='GeoJSON')
+gdf_assembly.to_file('public/assembly.geo.json', driver='GeoJSON')
+gdf_senate.to_file('public/senate.geo.json', driver='GeoJSON')
