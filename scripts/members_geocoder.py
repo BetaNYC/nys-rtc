@@ -198,7 +198,7 @@ if (old_members_list != members_list):
             return super(NpEncoder, self).default(obj)
 
     with open(path / "rtc_members_info.json", 'w') as fout:
-        json.dumps(members_list, fout, cls=NpEncoder)
+        json.dump(members_list, fout, cls=NpEncoder)
 
     address_cache.to_csv(path / "address_cache.csv")
 
