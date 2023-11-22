@@ -15,7 +15,10 @@ from shapely.geometry import Point
 from types import NoneType
 import numpy as np
 
-api = pyairtable.Api('pat9EEoGmED7rgj5p.639bb7ec24ea6562cdf862e3c71b62b68ea6d00a120b5414eed6b5a56f176a9e')
+MEMBERS_INFO = os.environ['MEMBERS_INFO']
+GEOCODER_KEY = os.environ['GEOCODER_KEY']
+
+api = pyairtable.Api(MEMBERS_INFO)
 
 table = api.table('appsZsPVQ4n7ujxSJ','tblvVPeXE15ZbA68T')
 
@@ -148,7 +151,7 @@ if (old_members_list != members_list):
         
         else: 
             #member['address_code'] = address_code
-            url = f'https://api.geoapify.com/v1/geocode/search?text={address_code}&lang=en&limit=1&type=amenity&format=json&apiKey=e9ee44f51294400aa43dda17cce52c69'
+            url = f'https://api.geoapify.com/v1/geocode/search?text={address_code}&lang=en&limit=1&type=amenity&format=json&apiKey={GEOCODER_KEY}'
             headers = CaseInsensitiveDict()
             headers["Accept"] = "application/json"
 
