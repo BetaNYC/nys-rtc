@@ -25,7 +25,7 @@ jobs:
         run: |
           pip install -r requirements.txt  # If you have dependencies
   
-      - name: Run legislation info generator script
+      - name: Run members geocoder script
         run: python scripts/members_geocoder.py 
 
       - name: Commit and push if changes
