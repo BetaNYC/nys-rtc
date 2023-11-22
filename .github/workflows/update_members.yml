@@ -37,5 +37,5 @@ jobs:
       
           # Git commands to add, commit, and push
           git add 'public/rtc_members_info.json' 'public/address_cache.csv' "public/airtable.pkl" "public/nongeocoded_members.csv"
-          git commit -m "Update legislative support jsons" || echo "No changes to commit"
+          git commit -m "Update RTC member files" || echo "No changes to commit"
           git push
