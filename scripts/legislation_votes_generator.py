@@ -63,7 +63,7 @@ summary_data_assembly = create_summary_data(assembly_bills_counts, "Assembly")
 final_summary_data = summary_data_senate + summary_data_assembly
 
 # Path for the new JSON file
-output_file_path_dynamic = "public/legislation_votes.json"
+output_file_path_dynamic = "public/legislations_votes.json"
 
 # Writing the data to a new JSON file
 with open(output_file_path_dynamic, 'w') as file:
