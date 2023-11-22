@@ -1,0 +1,40 @@
+name: Update Legislative Support 
+
+on:
+    workflow_dispatch:  # This enables manual triggering from the GitHub UI
+  
+jobs:
+    update-legislation-info:
+      runs-on: ubuntu-latest
+      
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        LEGISLATION_INFO: ${{ secrets.LEGISLATIVE_SUPPORT }}
+
+      steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+  
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Specify the Python version if needed
+  
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # If you have dependencies
+  
+      - name: Run legislation info generator script
+        run: python scripts/legislative_support_generator.py scripts/legislation_votes_generator.py
+
+      - name: Commit and push if changes
+        run: |
+          # Set up Git to use the GITHUB_TOKEN for authentication
+          git config --local user.email "bot@example.com"
+          git config --local user.name "bot"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+      
+          # Git commands to add, commit, and push
+          git add 'public/assembly.geo.json' 'public/senate.geo.json' "public/legislation_votes.json"
+          git commit -m "Update legislative support jsons" || echo "No changes to commit"
+          git push

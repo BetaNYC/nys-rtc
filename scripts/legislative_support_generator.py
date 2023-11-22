@@ -3,7 +3,9 @@ import pyairtable
 import pandas as pd
 import geopandas as gpd
 
-api = pyairtable.Api('pat9s45vy4ChkddxC.f24f293946f6ad20956822adf2e085fa6d6b211ffb529522c86ad90fe39c5570')
+LEGISLATIVE_SUPPORT = os.environ['LEGISLATIVE_SUPPORT']
+
+api = pyairtable.Api(LEGISLATIVE_SUPPORT)
 
 table = api.table('appD3YhFHjmqJKtZ6','tblgyOlrTfYRaodyb')
 
