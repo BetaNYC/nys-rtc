@@ -17,8 +17,8 @@ for row in table_dict:
     rows.append(row['fields'])
 df = pd.DataFrame(rows)
 # Load GeoJSONs
-gdf_assembly = gpd.read_file("public/NYS_Assembly_Districts.geojson").to_csr("EPSG:4326")
-gdf_senate = gpd.read_file("public/NYS_Senate_Districts.geojson").rename(columns={'DISTRICT':'District'}).to_csr("EPSG:4326")
+gdf_assembly = gpd.read_file("public/NYS_Assembly_Districts.geojson").to_crs("EPSG:4326")
+gdf_senate = gpd.read_file("public/NYS_Senate_Districts.geojson").rename(columns={'DISTRICT':'District'}).to_crs("EPSG:4326")
 
 # Split your dataframe by house
 df_assembly = df[df['House'] == 'Assembly']
