@@ -25,7 +25,7 @@ type Props = {
 type labels = "senateDemoVotes" | 'senateRepVotes' | 'assemblyDemoVotes' | 'assemblyRepVotes' | 'simpleMajority' | 'superMajority'
 
 const VotesVisualization = ({ legislation }: Props) => {
-    const { map, legislations, districts, setDistricts ,defaultMapHandler } = useContext(MapContext) as MapContextType
+    const { map, legislations, districts, setDistricts, defaultMapHandler } = useContext(MapContext) as MapContextType
 
     const [labelShown, setLabelShown] = useState(
         {
@@ -38,8 +38,9 @@ const VotesVisualization = ({ legislation }: Props) => {
         }
     )
 
-
+    /* @ts-ignore */
     const senateFeatures = (senateGeoJson as GeoJson).features
+    /* @ts-ignore */
     const assemblyFeatures = (assemblyGeoJson as GeoJson).features
 
 

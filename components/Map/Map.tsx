@@ -26,8 +26,9 @@ import pattern_demo from "../../public/icons/pattern_demo.svg"
 const Map = () => {
     const mapContainer = useRef<HTMLInputElement>(null);
     const { map, setMap, districts, setDistricts, panelShown, setPanelShown, legislations, mapClickHandler, defaultMapHandler } = useContext(MapContext) as MapContextType
-
+    /* @ts-ignore */
     const senateFeatures = (senate as GeoJson).features
+    /* @ts-ignore */
     const assemblyFeatures = (assembly as GeoJson).features
 
     const [lng, setLng] = useState(-78.5);

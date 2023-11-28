@@ -33,12 +33,12 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedDistrictFeatures, 
         /* @ts-ignore */
         map?.getSource("districts").setData({
             type: "FeatureCollection",
-                        /* @ts-ignore */
+            /* @ts-ignore */
             features: ((district === "assembly" ? assembly : senate) as GeoJson).features
         });
 
         const clickedDistrictData = {
-                        /* @ts-ignore */
+            /* @ts-ignore */
             features: ((district === "assembly" ? assembly : senate) as GeoJson).features.filter((d, i) => d.properties.District.toString() === selectedDistrict)
         }
 

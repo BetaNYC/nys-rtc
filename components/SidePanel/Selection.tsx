@@ -12,8 +12,9 @@ import { GeoJSONSource } from 'mapbox-gl';
 function Selection() {
 
     const { map } = useContext(MapContext) as MapContextType
-
+            /* @ts-ignore */
     const senateFeatures = (senate as GeoJson).features
+            /* @ts-ignore */
     const assemblyFeatures = (assembly as GeoJson).features
 
     const districtsChangeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
