@@ -78,6 +78,7 @@ const Geopanel = ({ selectedDistrictFeatures, setSelectedDistrictFeatures, selec
         /* @ts-ignore */
         map?.getSource("districts").setData({
             type: "FeatureCollection",
+              /* @ts-ignore */
             features: ((districts === "assembly" ? assembly : senate) as GeoJson).features
         });
 
