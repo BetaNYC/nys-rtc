@@ -9,7 +9,7 @@ type Props = {
 function Toggler({show, clickHandler}: Props) {
 
     return (
-        <div className={`flex ${show ? "justify-end bg-[#802948]" : "justify-start bg-[#D9D9D9]"} items-center p-[3px] w-[31px] h-[19px]  rounded-[38.5px] cursor-pointer`} onClick={clickHandler}>
+        <div className={`flex ${show ? "justify-end bg-[#802948]" : "justify-start bg-grey_1"} items-center p-[3px] w-[31px] h-[19px]  rounded-[38.5px] cursor-pointer`} onClick={clickHandler}>
             <div className={`w-[14px] h-[14px] bg-white rounded-full`}></div>
         </div>
     )

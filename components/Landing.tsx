@@ -27,22 +27,22 @@ function Landing() {
 
 
     return (
-        <div className={`${!shown ? "translate-x-[-100%] duration-200 ease-linear" : null} absolute px-[20px] py-[25px] w-[561px] h-full text-black bg-[#F1F4FA] z-30`}>
+        <div className={`${!shown ? "translate-x-[-100%] duration-200 ease-linear" : null} absolute px-[20px] py-[25px] w-[561px] h-full text-navy bg-[#F1F4FA] z-30`}>
             <div className='flex justify-between items-center mb-[20px] pl-[16px] w-full h-[48px]'>
                 <Image
-                    src="/rtc.png"
+                    src="/logos/RTC.png"
                     width={211}
                     height={50}
                     alt="RTC"
                 />
-                <ChevronLeftIcon className='w-[20px] h-[20px] text-[#7B7B7B]  cursor-pointer' onClick={showClickHandler}/>
+                <ChevronLeftIcon className='w-[20px] h-[20px] text-[#7B7B7B]  cursor-pointer' onClick={showClickHandler} />
             </div>
             <div className='mb-[150px]'>
                 <div className='mb-[20px] pl-[16px]'>
                     <h1 className='font-bold pb-[6px] text-[32px]'>Housing Courts Must Change!</h1>
                     <h2 className='font-bold text-[20px] text-[#878787]'>NYS Right to Counsel Map for HCMC Support</h2>
                 </div>
-                <div className='pr-[45px] pl-[16px] py-[20px]  w-full text-black bg-gray_background rounded-[8px]'>
+                <div className='pr-[45px] pl-[16px] py-[20px]  w-full text-navy bg-gray_background rounded-[8px]'>
                     <h3 className='font-semibold text-[16px]'>About the Map</h3>
                     <p className='pt-[7px] pb-[14px] font-regular text-[14px] leading-normal'>
                         Housing Courts Must Change! (HCMC) is a statewide campaign launched by the Right to Counsel NYC Coalition in 2020 to transform the courts from an “eviction machine” to a place that holds landlords accountable, upholds tenants’ rights, and enables tenants to remain in their homes.
@@ -78,15 +78,16 @@ function Landing() {
                     <div className='px-[12px] py-[15px] font-semibold text-[16px] text-white bg-[#983561] rounded-[8px] cursor-pointer' onClick={showClickHandler}>Explore The Map</div>
                     <div className='px-[12px] py-[15px] font-semibold text-[#983561] border-[1.5px] border-[#983561] rounded-[8px] cursor-pointer'>Right to Counsel</div>
                 </div>
-            </div>
-            <div className='absolute bottom-[10px] left-[26px] flex items-center gap-[5px] text-[14px]'>
-                <p>Developed by</p>
-                <Image
-                    src="/betaNYC.png"
-                    width={65}
-                    height={50}
-                    alt="BetaNYC"
-                />
+                <div className='absolute bottom-[-105px] left-[5px] flex items-center gap-[5px] text-[14px]'>
+                    <p>Developed by</p>
+                    <Image
+                        src="/logos/betaNYC.png"
+                        width={65}
+                        height={50}
+                        alt="BetaNYC"
+                    />
+                </div>
+
             </div>
 
         </div>
