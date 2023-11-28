@@ -32,6 +32,7 @@ const Geopanel = ({ selectedDistrictFeatures, setSelectedDistrictFeatures, selec
     const districtBtnClickHandler = (e: MouseEvent<HTMLElement>, district: Districts) => {
         const overlappedData = district === "senate" ? senateOverlapped : assemblyOverlapped
         const selectedDistrict = (e.target as HTMLElement).innerText
+        /* @ts-ignore */
         const clickedDistrictData = {
             features: ((district === "assembly" ? assembly : senate) as GeoJson).features.filter((d, i) => d.properties.District.toString() === selectedDistrict)
         }
