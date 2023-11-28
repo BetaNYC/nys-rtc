@@ -34,6 +34,7 @@ const Geopanel = ({ selectedDistrictFeatures, setSelectedDistrictFeatures, selec
         const selectedDistrict = (e.target as HTMLElement).innerText
         /* @ts-ignore */
         const clickedDistrictData = {
+            /* @ts-ignore */
             features: ((district === "assembly" ? assembly : senate) as GeoJson).features.filter((d, i) => d.properties.District.toString() === selectedDistrict)
         }
         /* @ts-ignore */
