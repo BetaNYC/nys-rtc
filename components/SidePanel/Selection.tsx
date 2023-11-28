@@ -2,8 +2,8 @@
 import React, { useState, useContext } from 'react'
 import { MapContext, MapContextType } from '../../context/MapContext'
 
-import assembly from "../../public/nys_assembly.geo.json"
-import senate from "../../public/nys_senate.geo.json"
+import assembly from "../../public/assembly.geo.json"
+import senate from "../../public/senate.geo.json"
 
 import { GeoJSONSource } from 'mapbox-gl';
 
