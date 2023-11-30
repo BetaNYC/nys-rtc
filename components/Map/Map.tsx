@@ -216,33 +216,25 @@ const Map = () => {
             m.moveLayer("districts_outline", "zipcodes")
             m.moveLayer("districts", "members")
             m.moveLayer("districts_outline", "members")
+
+
             m.on("click", "districts", (e: MapMouseEvent & EventData) => {
                 setSelectedDistrictFeatures(e.features[0])
                 setSelectedDistrictOverlappedData((districts === "senate" ? senateOverlapped : assemblyOverlapped).filter(d => +d.district === +e.features[0]?.properties.District)[0])
                 mapClickHandler(m, e, legislations)
+
             })
 
             m.on('click', "members", (e: MapMouseEvent & EventData) => {
                 setSelectedMemberFeatures(e.features[0])
                 setPanelShown({ geopanelShown: false, memberpanelShown: true })
-                m.flyTo({
-                    center: [e.features[0].properties.lon, e.features[0].properties.lat],
-                    zoom: 9.5
-                })
+                console.log([e.features[0].properties.lon, e.features[0].properties.lat])
+                // m.flyTo({
+                //     center: [e.features[0].properties.lon, e.features[0].properties.lat],
+                //     zoom: e.features[0].properties.lon > -74.15 && e.features[0].properties.lat < 41.05 ? 12 : 3
+                // })
 
-                // m.setPaintProperty("members", "circle-color", [
-                //     'case',
-                //     ['all', ["==", ['get', "Name"], e.features[0].properties.Name]],
-                //     "#ffe57f",
-                //     ["in", `Member`, ["get", "Membership Status"]],
-                //     "#802948", "#ffffff"
-                // ])
 
-                // m.setPaintProperty("members", "circle-stroke-color", [
-                //     'case',
-                //     ['all', ["==", ['get', "Name"], e.features[0].properties.Name]],
-                //     "#ffe57f", "#802948"
-                // ])
 
             })
 

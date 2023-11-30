@@ -103,6 +103,8 @@ const MapProvider = ({ children }: Props) => {
             ]
         }
 
+        console.log(targetCentroid)
+
         /* @ts-ignore */
         m.getSource("district_label").setData({
             type: "FeatureCollection",
@@ -114,7 +116,7 @@ const MapProvider = ({ children }: Props) => {
 
         m.flyTo({
             center: targetCentroid as [number, number],
-            zoom: 8
+            zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 12 : 8
         })
 
         setPanelShown({ geopanelShown: true, memberpanelShown: false })
