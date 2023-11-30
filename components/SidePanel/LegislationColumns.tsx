@@ -16,7 +16,7 @@ type Props = {
 const LegislationColumns = ({ legislation, name, number, content, expand, legislationsClickHandler }: Props) => {
 
     return (
-        <div className={`px-[25px] pt-[12px] lg:pt-[10.5px] pb-[20px] text-rtc_navy ${expand ? "bg-white  h-[calc(100vh-112px-280px)] xl:h-[calc(100vh-112px-240px)] overflow-y-scroll" : "h-[45px] bg-background_blue overflow-y-hidden"} border-b-[1px] border-grey_1  cursor-pointer`} onClick={legislationsClickHandler}>
+        <div className={`flex flex-col px-[25px] pt-[12px] lg:pt-[10.5px] pb-[20px] text-rtc_navy ${expand ? " h-[calc(100vh-112px-230px)] xl:h-[calc(100vh-112px-180px)] bg-white  overflow-y-hidden" : "h-[40px] bg-background_blue overflow-y-hidden"} border-b-[1px] border-grey_1  cursor-pointer`} onClick={legislationsClickHandler}>
             <div className={`flex justify-between items-center ${expand ? "mb-0" : "mb-5"}`}>
                 <h2 className="font-semibold  text-[13px] lg:text-title uppercase">{name}</h2>
                 {
@@ -24,10 +24,12 @@ const LegislationColumns = ({ legislation, name, number, content, expand, legisl
                 }
             </div>
             <div className='mb-[20px] font-regular text-label'>{number}</div>
-            <VotesVisualization legislation={legislation} />
-            <div>
-                <h2 className='mb-[14px] font-semibold text-title'>{name} ({number})</h2>
-                <p className='font-regular text-body overflow-y-scroll'>{content}</p>
+            <div className='flex-1 overflow-y-scroll'>
+                <VotesVisualization legislation={legislation} />
+                <div>
+                    <h2 className='mb-[14px] font-semibold text-[13px] lg:text-title'>{name} ({number})</h2>
+                    <p className='font-regular text-[12px] lg:text-body overflow-y-scroll'>{content}</p>
+                </div>
             </div>
         </div>
     )

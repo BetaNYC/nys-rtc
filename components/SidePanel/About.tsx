@@ -24,21 +24,21 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
 
 
     return (
-        <div className={`flex flex-col  px-[25px] pt-[12px] lg:pt-[10.5px] pb-[20px] text-rtc_navy ${expand["About"] ? "h-[calc(100vh-112px-240px)] xl:h-[calc(100vh-112px-200px)] bg-white overflow-y-scroll" : "h-[45px] bg-background_blue overflow-y-hidden"} border-y-[1px] border-grey_1 `}>
-            <div className="flex justify-between items-center">
+        <div className={`flex flex-col  px-[25px] pt-[12px] lg:pt-[10.5px] pb-[20px] text-rtc_navy ${expand["About"] ? "h-[calc(100vh-112px-230px)] xl:h-[calc(100vh-112px-180px)] bg-white overflow-y-hidden" : "h-[40px] bg-background_blue overflow-y-hidden"} border-y-[1px] border-grey_1 `}>
+            <div className={`flex justify-between items-center`}>
                 <h2 className="font-semibold text-[13px] lg:text-title ">ABOUT</h2>
                 {
                     expand["About"] ? <ChevronUpIcon className="w-[20px] h-[20px] cursor-pointer" onClick={() => legislationsClickHandler("About")} /> : <ChevronDownIcon className="w-[20px] h-[20px] cursor-pointer" onClick={() => legislationsClickHandler("About")} />
                 }
             </div>
-            <div className="flex justify-between items-start gap-[36px] my-[16px]">
-                <h2 className={`pb-[3px] font-semibold text-title border-b-2 leading-[1.5]  ${selectedContent === "intro" ? "text-rtc_navy  border-rtc_navy" : "text-grey_1 border-white "}  cursor-pointer`} onClick={() => contentClickHandler("intro")}>the HCMC! Campaign Legislation Map</h2>
-                <h2 className={`font-semibold text-title border-b-2 ${selectedContent === "credits" ? "text-rtc_navy  border-rtc_navy" : "text-grey_1 border-white "} cursor-pointer`} onClick={() => contentClickHandler("credits")}>Credits</h2>
+            <div className="flex justify-between items-start my-[16px]">
+                <h2 className={`pb-[3px] mr-12 font-semibold text-[13px] lg:text-title border-b-2 leading-[1.5]  ${selectedContent === "intro" ? "text-rtc_navy  border-rtc_navy" : "text-grey_1 border-white "}  cursor-pointer`} onClick={() => contentClickHandler("intro")}>the HCMC! Campaign Legislation Map</h2>
+                <h2 className={`font-semibold text-[13px] lg:text-title border-b-2 ${selectedContent === "credits" ? "text-rtc_navy  border-rtc_navy" : "text-grey_1 border-white "} cursor-pointer`} onClick={() => contentClickHandler("credits")}>Credits</h2>
             </div>
             {
                 selectedContent === "intro" && (
-                    <div className='flex-1 flex flex-col justify-between'>
-                        <div className="text-body">
+                    <div className='flex-1 flex flex-col justify-between overflow-y-scroll'>
+                        <div className="text-[12px] lg:text-body">
                             <p>
                                 Housing Courts Must Change! (HCMC) is a New York statewide campaign launched by the Right to Counsel NYC Coalition in 2020 to transform the courts from an “eviction machine” to a place that holds landlords accountable, upholds tenants’ rights, and enables tenants to remain in their homes.
                             </p>

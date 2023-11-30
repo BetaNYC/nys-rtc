@@ -220,12 +220,11 @@ const Map = () => {
                 setSelectedDistrictFeatures(e.features[0])
                 setSelectedDistrictOverlappedData((districts === "senate" ? senateOverlapped : assemblyOverlapped).filter(d => +d.district === +e.features[0]?.properties.District)[0])
                 mapClickHandler(m, e, legislations)
-                setPanelShown({ ...panelShown, geopanelShown: true })
             })
 
             m.on('click', "members", (e: MapMouseEvent & EventData) => {
                 setSelectedMemberFeatures(e.features[0])
-                setPanelShown({ ...panelShown, geopanelShown: false, memberpanelShown: true })
+                setPanelShown({ geopanelShown: false, memberpanelShown: true })
                 m.flyTo({
                     center: [e.features[0].properties.lon, e.features[0].properties.lat],
                     zoom: 9.5

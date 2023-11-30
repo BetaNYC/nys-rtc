@@ -92,7 +92,7 @@ const Geopanel = ({ selectedDistrictFeatures, setSelectedDistrictFeatures, selec
     return (
         <>
             {panelShown["geopanelShown"] && (
-                <div className='flex flex-col absolute top-0 right-0 w-[14%] h-full z-20 overflow-y-scroll'>
+                <div className='flex flex-col absolute top-0 right-0 w-[20%] lg:w-[15%] h-full z-20 '>
                     {/* @ts-ignore */}
                     <div className={`flex items-start justify-between p-[18px]  w-full ${selectedDistrictFeatures?.properties.Party_x === "Democratic" ? "bg-demo_1" : "bg-rep_1"} `}>
                         <div>
@@ -102,7 +102,7 @@ const Geopanel = ({ selectedDistrictFeatures, setSelectedDistrictFeatures, selec
                         </div>
                         <XMarkIcon className=' w-[20px] h-[20px] text-white cursor-pointer' onClick={() => defaultMapHandler(legislations)} />
                     </div>
-                    <div className='flex-1 p-[18px] w-full bg-white'>
+                    <div className='flex-1 p-[18px] w-full bg-white overflow-y-scroll'>
                         <div className='text-[10px] text-regular text-grey_1'>HCMC Campaign Support</div>
                         <div className="flex flex-col gap-[5px] mt-[6px] text-rtc_navy">
                             <div className="flex items-center gap-[5px] ">
@@ -174,7 +174,7 @@ const Geopanel = ({ selectedDistrictFeatures, setSelectedDistrictFeatures, selec
                         </div>
                         <div className='my-[16px]'>
                             <div className='mb-[5px] text-[10px] text-grey_1'>Counties</div>
-                            <div className='grid grid-cols-2 gap-[12px]'>
+                            <div className='grid grid-cols-1 gap-[12px]'>
                                 {
                                     selectedDistrictOverlappedData &&
                                     selectedDistrictOverlappedData.counties.map((c, i) =>
@@ -184,7 +184,7 @@ const Geopanel = ({ selectedDistrictFeatures, setSelectedDistrictFeatures, selec
                         </div>
                         <div>
                             <div className='mb-[5px] text-[10px] text-grey_1'>Zip Codes</div>
-                            <div className='grid grid-cols-3 gap-[12px]'>
+                            <div className='grid grid-cols-2 gap-[12px]'>
                                 {
                                     selectedDistrictOverlappedData &&
                                     selectedDistrictOverlappedData.zip_codes.map((z, i) =>

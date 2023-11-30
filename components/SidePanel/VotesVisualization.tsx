@@ -104,6 +104,8 @@ const VotesVisualization = ({ legislation }: Props) => {
     const assemblyRep = assemblyData.filter(s => s.Party === 'Republican')
 
 
+
+
     useEffect(() => {
 
         const height = senateRef.current!.clientHeight
@@ -116,6 +118,7 @@ const VotesVisualization = ({ legislation }: Props) => {
 
         const senateX = d3.scaleLinear().domain([0, 63]).range([0, width])
         const assemblyX = d3.scaleLinear().domain([0, 150]).range([0, width])
+
 
         senateSvg
             .append("rect")
@@ -269,7 +272,6 @@ const VotesVisualization = ({ legislation }: Props) => {
             .on("mouseover", () => labelMouseoverHandler("superMajority"))
             .on('mouseout', () => labelMouseoutHandler())
 
-
     })
 
 
@@ -278,7 +280,7 @@ const VotesVisualization = ({ legislation }: Props) => {
 
 
     return (
-        <div className='my-[20px] w-full  text-rtc_navy bg-white rounded-[8px] '>
+        <div className='mb-[20px] w-full  text-rtc_navy bg-white rounded-[8px] '>
             <div className='mb-[20px]'>
                 <div className='flex items-center gap-[8px] mb-[4px]'>
                     <Image
@@ -288,23 +290,23 @@ const VotesVisualization = ({ legislation }: Props) => {
                         alt="districts"
                         onClick={() => districtsClickHandler('senate')}
                     />
-                    <h3 className='font-semibold text-title'>Senate Support</h3>
+                    <h3 className='font-semibold text-[13px] lg:text-title'>Senate Support</h3>
                 </div>
-                <div className='relative mb-[2px] w-full font-regular text-label text-end'>
-                    <div className={`absolute top-0 left-0 font-semibold text-label`}>{Math.round(senateTotalVotes / 63 * 100)}%</div>
+                <div className='relative mb-[2px] w-full font-regular text-[10px] lg:text-label text-end'>
+                    <div className={`absolute top-0 left-0 font-semibold text-[10px] lg:text-label`}>{Math.round(senateTotalVotes / 63 * 100)}%</div>
                     <div>Total 63 seats</div>
                 </div>
                 <svg className='w-full h-[42px]' ref={senateRef}></svg>
                 <div className='relative'>
-                    <div className={`absolute top-0 left-[calc(50%+2px)] font-regular text-label text-grey_1 ${labelShown['simpleMajority'] ? 'opacity-1' : "opacity-0"}`}>32 votes<br />Simple Majority</div>
-                    <div className={`absolute top-0 left-[calc(75%+2px)] font-regular text-label text-grey_1 ${labelShown['superMajority'] ? 'opacity-1' : "opacity-0"}`}>42 votes<br />Super Majority</div>
+                    <div className={`absolute top-0 left-[calc(50%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['simpleMajority'] ? 'opacity-1' : "opacity-0"}`}>32 votes<br />Simple Majority</div>
+                    <div className={`absolute top-0 left-[calc(75%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['superMajority'] ? 'opacity-1' : "opacity-0"}`}>42 votes<br />Super Majority</div>
                     {
                         labelShown['senateDemoVotes'] ?
-                            (<div className={`font-semibold text-label text-demo`}>{+senateDemo[0][legislation]} Democratic votes</div>)
+                            (<div className={`font-semibold text-[10px] lg:text-label text-demo`}>{+senateDemo[0][legislation]} Democratic votes</div>)
                             : labelShown['senateRepVotes'] ?
-                                (<div className={`font-semibold text-label text-rep`}>{+senateRep[0][legislation]} Republican votes</div>)
+                                (<div className={`font-semibold text-[10px] lg:text-label text-rep`}>{+senateRep[0][legislation]} Republican votes</div>)
                                 :
-                                (<div className={`font-semibold text-label text-rtc_navy`}>{senateTotalVotes} votes</div>)
+                                (<div className={`font-semibold text-[10px] lg:text-label text-rtc_navy`}>{senateTotalVotes} votes</div>)
                     }
                 </div>
 
@@ -318,23 +320,23 @@ const VotesVisualization = ({ legislation }: Props) => {
                         alt="districts"
                         onClick={() => districtsClickHandler('assembly')}
                     />
-                    <h3 className='font-semibold text-title'>Assembly Support</h3>
+                    <h3 className='font-semibold text-[13px] lg:text-title'>Assembly Support</h3>
                 </div>
-                <div className='relative mb-[2px] w-full font-regular text-label text-end'>
-                    <div className={`absolute top-0 left-0 font-semibold text-label`}>{Math.round(assemblyTotalVotes / 150 * 100)}%</div>
+                <div className='relative mb-[2px] w-full font-regular text-[10px] lg:text-label text-end'>
+                    <div className={`absolute top-0 left-0 font-semibold text-[10px] lg:text-label`}>{Math.round(assemblyTotalVotes / 150 * 100)}%</div>
                     <div>Total 150 seats</div>
                 </div>
                 <svg className='w-full h-[42px]' ref={assemblyRef}></svg>
                 <div className='relative'>
-                    <div className={`absolute top-0 left-[calc(50%+2px)] font-regular text-label text-grey_1 ${labelShown['simpleMajority'] ? 'opacity-1' : "opacity-0"}`}>32 votes<br />Simple Majority</div>
-                    <div className={`absolute top-0 left-[calc(75%+2px)] font-regular text-label text-grey_1 ${labelShown['superMajority'] ? 'opacity-1' : "opacity-0"}`}>42 votes<br />Super Majority</div>
+                    <div className={`absolute top-0 left-[calc(50%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['simpleMajority'] ? 'opacity-1' : "opacity-0"}`}>75 votes<br />Simple Majority</div>
+                    <div className={`absolute top-0 left-[calc(75%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['superMajority'] ? 'opacity-1' : "opacity-0"}`}>100 votes<br />Super Majority</div>
                     {
                         labelShown['assemblyDemoVotes'] ?
-                            (<div className={`font-semibold text-label text-demo`}>{+assemblyDemo[0][legislation]} Democratic votes</div>)
+                            (<div className={`font-semibold text-[10px] lg:text-label text-demo`}>{+assemblyDemo[0][legislation]} Democratic votes</div>)
                             : labelShown['assemblyRepVotes'] ?
-                                (<div className={`font-semibold text-label text-rep`}>{+assemblyRep[0][legislation]} Republican votes</div>)
+                                (<div className={`font-semibold text-[10px] lg:text-label text-rep`}>{+assemblyRep[0][legislation]} Republican votes</div>)
                                 :
-                                (<div className={`font-semibold text-label text-rtc_navy`}>{assemblyTotalVotes} votes</div>)
+                                (<div className={`font-semibold text-[10px] lg:text-label text-rtc_navy`}>{assemblyTotalVotes} votes</div>)
                     }
                 </div>
 

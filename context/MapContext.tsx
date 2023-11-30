@@ -117,7 +117,7 @@ const MapProvider = ({ children }: Props) => {
             zoom: 8
         })
 
-        setPanelShown({ ...panelShown, geopanelShown: true })
+        setPanelShown({ geopanelShown: true, memberpanelShown: false })
 
     }
 
