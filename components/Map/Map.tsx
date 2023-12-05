@@ -9,8 +9,7 @@ import { GeoJSONSource } from 'mapbox-gl';
 import assembly from "../../public/assembly.geo.json"
 import senate from "../../public/senate.geo.json"
 
-import assemblyOverlapped from "../../public/assembly_overlapping_boundaries.json"
-import senateOverlapped from "../../public/senate_overlapping_boundaries.json"
+
 
 import Legend from "./Legend";
 import MapLayers from "./MapLayers";
@@ -35,10 +34,8 @@ const Map = () => {
     const [lat, setLat] = useState(43.05);
     const [zoom, setZoom] = useState(-6.25);
 
-    const [selectedDistrictFeatures, setSelectedDistrictFeatures] = useState<selectedDistrictFeatures | null>(null)
-    const [selectedMemberFeatures, setSelectedMemberFeatures] = useState<selectedMemberFeatures | null>(null)
-    const [selectedDistrictOverlappedData, setSelectedDistrictOverlappedData] = useState<selectedDistrictOverlappedData | null>(null)
 
+    const [selectedMemberFeatures, setSelectedMemberFeatures] = useState<selectedMemberFeatures | null>(null)
 
     const districtsClickHandler = (districts: Districts) => {
         setDistricts(districts)
@@ -219,8 +216,7 @@ const Map = () => {
 
 
             m.on("click", "districts", (e: MapMouseEvent & EventData) => {
-                setSelectedDistrictFeatures(e.features[0])
-                setSelectedDistrictOverlappedData((districts === "senate" ? senateOverlapped : assemblyOverlapped).filter(d => +d.district === +e.features[0]?.properties.District)[0])
+
                 mapClickHandler(m, e, legislations)
 
             })
@@ -228,13 +224,6 @@ const Map = () => {
             m.on('click', "members", (e: MapMouseEvent & EventData) => {
                 setSelectedMemberFeatures(e.features[0])
                 setPanelShown({ geopanelShown: false, memberpanelShown: true })
-                console.log([e.features[0].properties.lon, e.features[0].properties.lat])
-                // m.flyTo({
-                //     center: [e.features[0].properties.lon, e.features[0].properties.lat],
-                //     zoom: e.features[0].properties.lon > -74.15 && e.features[0].properties.lat < 41.05 ? 12 : 3
-                // })
-
-
 
             })
 
@@ -351,8 +340,8 @@ const Map = () => {
             </div >
             <Legend />
             <MapLayers districtsClickHandler={districtsClickHandler} />
-            <Geopanel selectedDistrictFeatures={selectedDistrictFeatures} setSelectedDistrictFeatures={setSelectedDistrictFeatures} selectedDistrictOverlappedData={selectedDistrictOverlappedData} setSelectedDistrictOverlappedData={setSelectedDistrictOverlappedData} />
-            <Membershippanel selectedMemberFeatures={selectedMemberFeatures} setSelectedDistrictFeatures={setSelectedDistrictFeatures} setSelectedDistrictOverlappedData={setSelectedDistrictOverlappedData} setSelectedMemberFeatures={setSelectedMemberFeatures} />
+            <Geopanel />
+            <Membershippanel selectedMemberFeatures={selectedMemberFeatures} setSelectedMemberFeatures={setSelectedMemberFeatures} />
         </>
     )
 

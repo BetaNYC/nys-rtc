@@ -16,15 +16,13 @@ import { EventData, MapMouseEvent } from 'mapbox-gl';
 
 type Props = {
     selectedMemberFeatures: selectedMemberFeatures | null,
-    setSelectedDistrictFeatures: Dispatch<SetStateAction<selectedDistrictFeatures>>,
-    setSelectedDistrictOverlappedData: Dispatch<SetStateAction<selectedDistrictOverlappedData>>
     setSelectedMemberFeatures: Dispatch<SetStateAction<selectedMemberFeatures | null>>
 }
 
 
-const Membershippanel = ({ selectedMemberFeatures, setSelectedDistrictFeatures, setSelectedDistrictOverlappedData, setSelectedMemberFeatures }: Props) => {
+const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: Props) => {
 
-    const { map, setDistricts, legislations, panelShown, setPanelShown, defaultMapHandler, mapClickHandler } = useContext(MapContext) as MapContextType
+    const { map, setDistricts, legislations, panelShown, setPanelShown, defaultMapHandler, mapClickHandler, setSelectedDistrictFeatures, setSelectedDistrictOverlappedData } = useContext(MapContext) as MapContextType
     const selectedMemberOverlappedData = (membersOverlapped).filter(m => m.Name === selectedMemberFeatures?.properties.Name)[0]
 
 

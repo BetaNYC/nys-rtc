@@ -5,6 +5,9 @@ import mapboxgl, { EventData, MapMouseEvent } from 'mapbox-gl';
 
 import * as turf from "@turf/turf";
 
+import assemblyOverlapped from "../public/assembly_overlapping_boundaries.json"
+import senateOverlapped from "../public/senate_overlapping_boundaries.json"
+
 export type MapContextType = {
     map: mapboxgl.Map | null,
     setMap: Dispatch<SetStateAction<mapboxgl.Map | null>>
@@ -12,6 +15,14 @@ export type MapContextType = {
     setDistricts: Dispatch<SetStateAction<Districts>>
     membershipShown: boolean
     setMembershipShown: Dispatch<SetStateAction<boolean>>
+    legislations: Legislations
+    setLegislations: Dispatch<SetStateAction<Legislations>>
+    mapClickHandler: (m: mapboxgl.Map, e: MapMouseEvent & EventData, legislations: Legislations) => void
+    defaultMapHandler: (legislations: Legislations) => void
+    selectedDistrictFeatures: selectedDistrictFeatures,
+    setSelectedDistrictFeatures: Dispatch<SetStateAction<selectedDistrictFeatures>>,
+    selectedDistrictOverlappedData: selectedDistrictOverlappedData,
+    setSelectedDistrictOverlappedData: Dispatch<SetStateAction<selectedDistrictOverlappedData>>
     panelShown: {
         geopanelShown: boolean,
         memberpanelShown: boolean
@@ -20,10 +31,6 @@ export type MapContextType = {
         geopanelShown: boolean,
         memberpanelShown: boolean
     }>>
-    legislations: Legislations
-    setLegislations: Dispatch<SetStateAction<Legislations>>
-    mapClickHandler: (m: mapboxgl.Map, e: MapMouseEvent & EventData, legislations: Legislations) => void
-    defaultMapHandler: (legislations: Legislations) => void
 }
 
 type Props = {
@@ -43,6 +50,10 @@ const MapProvider = ({ children }: Props) => {
         geopanelShown: false,
         memberpanelShown: false
     })
+
+    const [selectedDistrictFeatures, setSelectedDistrictFeatures] = useState<selectedDistrictFeatures | null>(null)
+    const [selectedDistrictOverlappedData, setSelectedDistrictOverlappedData] = useState<selectedDistrictOverlappedData | null>(null)
+
 
 
     const mapClickHandler = (m: mapboxgl.Map, e: MapMouseEvent & EventData, legislations: Legislations) => {
@@ -103,8 +114,6 @@ const MapProvider = ({ children }: Props) => {
             ]
         }
 
-        console.log(targetCentroid)
-
         /* @ts-ignore */
         m.getSource("district_label").setData({
             type: "FeatureCollection",
@@ -121,6 +130,8 @@ const MapProvider = ({ children }: Props) => {
 
         setPanelShown({ geopanelShown: true, memberpanelShown: false })
 
+        setSelectedDistrictFeatures(e.features[0])
+        setSelectedDistrictOverlappedData((e.features[0].properties.House.toLowerCase() === "senate" ? senateOverlapped : assemblyOverlapped).filter(d => +d.district === +e.features[0]?.properties.District)[0])
     }
 
     const defaultMapHandler = (legislations: Legislations) => {
@@ -149,15 +160,6 @@ const MapProvider = ({ children }: Props) => {
             features: []
         })
 
-        // map?.setPaintProperty("organizations", "circle-color", [
-        //     'case',
-        //     ["in", `Member`, ["get", "Membership Status"]],
-        //     "#802948", "#ffffff"
-        // ])
-
-        // map?.setPaintProperty("organizations", "circle-stroke-color", "#802948")
-
-
         setPanelShown({ ...panelShown, geopanelShown: false, memberpanelShown: false })
     }
 
@@ -166,7 +168,7 @@ const MapProvider = ({ children }: Props) => {
 
 
 
-    return <MapContext.Provider value={{ map, setMap, districts, setDistricts, membershipShown, setMembershipShown, panelShown, setPanelShown, legislations, setLegislations, mapClickHandler, defaultMapHandler }}>
+    return <MapContext.Provider value={{ map, setMap, districts, setDistricts, membershipShown, setMembershipShown, panelShown, setPanelShown, legislations, setLegislations, mapClickHandler, defaultMapHandler, selectedDistrictFeatures, setSelectedDistrictFeatures, selectedDistrictOverlappedData, setSelectedDistrictOverlappedData }}>
         {children}
     </MapContext.Provider>
 }
