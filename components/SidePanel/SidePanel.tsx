@@ -50,7 +50,7 @@ const SidePanel = () => {
         <div className="absolute flex flex-col justify-between w-[35%] md:w-[32%] lg:w-[30%]  xl:w-[28%]  h-[100vh] bg-background_blue z-50">
             <div>
                 <div className="mt-[20px] mb-[20px] px-[25px]">
-                    <h1 className="mb-[5px] font-bold text-[24px] text-rtc_purple leading-[1.25]">Housing Courts Must Change!</h1>
+                    <h1 className="mb-[5px] font-bold text-[24px] text-rtc_purple">Housing Courts Must Change!</h1>
                     <h2 className="font-bold text-subheadline text-rtc_navy">NY State Right to Counsel Map for HCMC Support</h2>
                 </div>
             </div>

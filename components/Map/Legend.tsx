@@ -80,11 +80,11 @@ const Legend = () => {
                             <div className='lg:row-start-1 flex flex-col gap-[5px]'>
                                 <div className='flex items-center gap-[10px]'>
                                     <div className='w-[16px] h-[16px] bg-[#802948] border-[2px] border-[#802948] rounded-full'></div>
-                                    <div className='text-label'>Member, RTC Coalition </div>
+                                    <div className='text-label'>Member, Right to Counsel Coalition </div>
                                 </div>
                                 <div className='flex items-center gap-[10px]'>
                                     <div className='w-[16px] h-[16px] bg-white border-[2px] border-[#802948] rounded-full'></div>
-                                    <div className='text-label'>Endorser, RTC Coalition </div>
+                                    <div className='text-label'>Endorser, Right to Counsel Coalition </div>
                                 </div>
                             </div>
                         )}

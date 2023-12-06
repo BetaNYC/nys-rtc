@@ -86,10 +86,10 @@ const Geopanel = () => {
     return (
         <>
             {panelShown["geopanelShown"] && (
-                <div className='flex flex-col absolute top-0 right-0 w-[20%] lg:w-[15%] h-full z-20 '>
+                <div className='flex flex-col absolute top-0 right-0 w-[20%] min-w-[200px] lg:w-[15%] h-full z-20 '>
                     {/* @ts-ignore */}
                     <div className={`flex items-start justify-between p-[18px]  w-full ${selectedDistrictFeatures?.properties.Party_x === "Democratic" ? "bg-demo_1" : "bg-rep_1"} `}>
-                        <div>
+                        <div className='text-white'>
                             <div className='text-label'>New York State {districts.charAt(0).toUpperCase() + districts.slice(1)}</div>
                             {/* @ts-ignore */}
                             <div className='font-bold text-subheadline'>District {selectedDistrictFeatures?.properties!.District}</div>
@@ -101,7 +101,7 @@ const Geopanel = () => {
                         <div className="flex flex-col gap-[5px] mt-[6px] text-rtc_navy">
                             <div className="flex items-center gap-[5px] ">
                                 <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Statewide RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                                <div className="font-bold text-label">Statewide RTC</div>
+                                <div className="font-bold text-label">Statewide Right to Counsel</div>
                             </div>
                             <div className="flex items-center gap-[5px]">
                                 <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
@@ -109,7 +109,7 @@ const Geopanel = () => {
                             </div>
                             <div className="flex items-center gap-[5px]">
                                 <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                                <div className="font-bold text-label">Defend RTC</div>
+                                <div className="font-bold text-label">Defend Right to Counsel</div>
                             </div>
                             <div className="flex items-center gap-[5px]">
 
@@ -120,25 +120,25 @@ const Geopanel = () => {
                         <div className='my-[12px] w-full h-[1px] bg-grey_1'></div>
                         <div className='text-[10px] text-regular text-grey_1'>{districts.charAt(0).toUpperCase() + districts.slice(1)} District General Info</div>
                         <div className="flex flex-col gap-[16px] mt-[6px] text-rtc_navy">
-                            <div className="flex items-center gap-[12px]">
+                            <div className="flex items-start gap-[12px]">
                                 <img src="/icons/person.svg" alt="" className="w-[16px] h-[16px]" />
                                 <div className={`w-[120px] font-regular text-label ${selectedDistrictFeatures?.properties.Party_x === "Democratic" ? "text-demo_1" : "text-rep_1"}`}><span className='font-bold'>{selectedDistrictFeatures?.properties!.NAME}</span><br /> Democrat</div>
                             </div>
                             {
                                 (selectedDistrictFeatures?.properties.Address) !== undefined &&
-                                <div className="flex items-center gap-[12px]">
+                                <div className="flex items-start gap-[12px]">
                                     <img src="/icons/apartment.svg" alt="" className="w-[16px] h-[16px]" />
                                     <div className="w-[120px] font-regular text-label">{selectedDistrictFeatures?.properties.Address}</div>
                                 </div>
                             }
-                            <div className="flex items-center gap-[12px]">
+                            <div className="flex items-start gap-[12px]">
                                 <img src="/icons/phone.svg" alt="" className="w-[16px] h-[16px]" />
                                 <div className="font-regular text-label">{selectedDistrictFeatures?.properties.Phone}</div>
                             </div>
                             {
                                 (selectedDistrictFeatures?.properties.email) !== undefined &&
                                 (
-                                    <div className="flex items-center gap-[12px]">
+                                    <div className="flex items-start gap-[12px]">
                                         <img src="/icons/email.svg" alt="" className="w-[16px] h-[16px]" />
                                         <div className="font-regular text-label">{selectedDistrictFeatures?.properties.email}</div>
                                     </div>
