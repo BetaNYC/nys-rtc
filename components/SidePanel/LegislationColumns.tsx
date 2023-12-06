@@ -27,7 +27,9 @@ const LegislationColumns = ({ legislation, name, number, content, expand, calula
             <div className='mx-[20px] mb-[20px] font-regular text-label'>{number}</div>
             <div className='flex-1 overflow-y-scroll'>
                 {
-                    calulated && <VotesVisualization legislation={legislation} />
+                    calulated && <VotesVisualization legislation={legislation as | "Statewide RTC"
+                        | "Defend RTC"
+                        | "Winter Eviction Moratorium"} />
                 }
 
                 <div className='mx-[20px] mb-[40px]'>
