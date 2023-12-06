@@ -13,7 +13,7 @@ export type Columns = "About" | "Statewide RTC" | "Winter Eviction Moratorium" |
 
 
 const SidePanel = () => {
-    const { legislations, setLegislations, mapClickHandler, defaultMapHandler } = useContext(MapContext) as MapContextType
+    const { map, legislations, setLegislations, defaultMapHandler } = useContext(MapContext) as MapContextType
     const [expand, setExpand] = useState({
         "About": true,
         "Statewide RTC": false,
@@ -34,6 +34,18 @@ const SidePanel = () => {
 
         if (l !== "About") {
             setLegislations(l)
+
+            map?.setPaintProperty("districts", 'fill-opacity', [
+                "case",
+                ["in", l, ["get", "HCMC support"]],
+                1, 0
+            ])
+
+            map?.setPaintProperty("pattern", 'fill-opacity', [
+                "case",
+                ["in", l, ["get", "HCMC support"]],
+                0, 1
+            ])
         }
     }
 
