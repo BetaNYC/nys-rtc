@@ -8,6 +8,8 @@ import { GeoJSONSource } from 'mapbox-gl';
 
 import assembly from "../../public/assembly.geo.json"
 import senate from "../../public/senate.geo.json"
+import member from "../../public/rtc_members.geo.json"
+
 
 import Legend from "./Legend";
 import MapLayers from "./MapLayers";
@@ -24,11 +26,13 @@ import * as d3 from "d3"
 
 const Map = () => {
     const mapContainer = useRef<HTMLInputElement>(null);
-    const { map, setMap, districts, setDistricts, setPanelShown, legislations, mapClickHandler, defaultMapHandler } = useContext(MapContext) as MapContextType
+    const { map, setMap, setDistricts, setPanelShown, legislations, mapClickHandler, defaultMapHandler } = useContext(MapContext) as MapContextType
     /* @ts-ignore */
     const senateFeatures = (senate as GeoJson).features
     /* @ts-ignore */
     const assemblyFeatures = (assembly as GeoJson).features
+    /* @ts-ignore */
+    const memberFeatures = (member as GeoJson).features
 
     const [lng, setLng] = useState(-78.5);
     const [lat, setLat] = useState(43.05);
@@ -93,16 +97,31 @@ const Map = () => {
                 },
             })
 
-
-            m.addSource("districts_senate", {
+            m.addSource("district_label", {
                 type: "geojson",
                 data: {
                     type: "FeatureCollection",
-                    features: senateFeatures,
+                    features: []
                 },
             })
 
-            m.addSource("district_label", {
+            m.addSource("districts_hovered", {
+                type: "geojson",
+                data: {
+                    type: "FeatureCollection",
+                    features: []
+                },
+            })
+
+            m.addSource("members", {
+                type: "geojson",
+                data: {
+                    type: "FeatureCollection",
+                    features: memberFeatures
+                },
+            })
+
+            m.addSource("members_label", {
                 type: "geojson",
                 data: {
                     type: "FeatureCollection",
@@ -138,7 +157,7 @@ const Map = () => {
                     'fill-opacity': [
                         "case",
                         ["in", legislations, ["get", "HCMC support"]],
-                        .75, 0
+                        1, 0
                     ]
                 },
             });
@@ -157,6 +176,33 @@ const Map = () => {
                     ],
                     'line-width': 1
                 }
+            });
+
+            m.addLayer({
+                'id': 'districts_clicked_outline',
+                'type': 'line',
+                'source': 'districts',
+                'layout': {},
+                'paint': {
+                    'line-color': [
+                        "case",
+                        ["all", ["==", ["get", "Party_x"], "Democratic"]],
+                        "#006fd6",
+                        "#D04E40"
+                    ],
+                    'line-width': 0
+                }
+            });
+
+            m.addLayer({
+                'id': 'districts_hovered',
+                'type': 'fill',
+                'source': 'districts_hovered',
+                'layout': {},
+                'paint': {
+                    'fill-color': "black",
+                    'fill-opacity': 1
+                },
             });
 
 
@@ -178,11 +224,11 @@ const Map = () => {
                     "text-color": [
                         "case",
                         ["all", ["==", ["get", "party"], "Democratic"]],
-                        "#007CEE",
-                        "#D04E40"
+                        "#121D3E",
+                        "#121D3E"
                     ],
                     'text-halo-color': 'white',
-                    "text-halo-width": 0.35
+                    "text-halo-width": 0.6
                 }
             })
 
@@ -199,20 +245,56 @@ const Map = () => {
                     'fill-opacity': [
                         "case",
                         ["all", ["!", ["in", legislations, ["get", "HCMC support"]]]],
-                        .5, 0
+                        1, 0
                     ]
                 }
             })
 
-            m.setLayoutProperty('members', "visibility", "none")
-            m.moveLayer("districts", "counties_borders")
-            m.moveLayer("districts_outline", "counties_borders")
-            m.moveLayer("districts", "counties_labels")
-            m.moveLayer("districts_outline", "counties_labels")
-            m.moveLayer("districts", "zipcodes")
-            m.moveLayer("districts_outline", "zipcodes")
+
+            m.addLayer({
+                'id': 'members',
+                'type': 'circle',
+                'source': 'members',
+                'layout': {
+                    "visibility": "none"
+                },
+                'paint': {
+                    "circle-radius": 4,
+                    'circle-color': [
+                        "case",
+                        ["all", ["in", "Member", ["get", "Membership Status"]]],
+                        "#812948",
+                        "white"
+                    ],
+                    "circle-stroke-width": 2.5,
+                    "circle-stroke-color": "#812948"
+                },
+            });
+
+            m.addLayer({
+                id: "members_label",
+                type: 'symbol',
+                source: 'members_label',
+                layout: {
+                    'text-field': ['get', "label"],
+                    'text-justify': 'auto',
+                    'text-size': 14,
+                    'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+                    // 'text-radial-offset': 0.5,
+                    'text-font': ["Arial Unicode MS Bold"],
+                    "text-offset": [0, -1.5]
+                },
+                paint: {
+                    'text-opacity': 1,
+                    "text-color": "#121D3E",
+                    'text-halo-color': 'white',
+                    "text-halo-width": 0.6
+                }
+            })
+
+
+
             m.moveLayer("districts", "members")
-            m.moveLayer("districts_outline", "members")
 
 
             m.on("click", "districts", (e: MapMouseEvent & EventData) => {
@@ -224,6 +306,44 @@ const Map = () => {
             m.on('click', "members", (e: MapMouseEvent & EventData) => {
                 setSelectedMemberFeatures(e.features[0])
                 setPanelShown({ geopanelShown: false, memberpanelShown: true })
+
+                const labelData = {
+                    'type': 'FeatureCollection',
+                    'features': [
+                        {
+                            "type": "Feature",
+                            "properties": {
+                                "label": e.features[0].properties.Name,
+                            },
+                            "geometry": {
+                                'type': 'Point',
+                                'coordinates': [e.features[0].properties.lon, e.features[0].properties.lat]
+                            }
+                        }
+                    ]
+                }
+
+
+                /* @ts-ignore */
+                m.getSource("members_label").setData({
+                    type: "FeatureCollection",
+                    features: labelData.features as GeoJson["features"]
+                })
+
+                m.setPaintProperty("members", "circle-opacity", [
+                    "case",
+                    ["all", ["==", ["get", "Name"], e.features[0].properties.Name]],
+                    1, 0.1
+                ])
+
+                m.setPaintProperty("members", "circle-stroke-opacity", [
+                    "case",
+                    ["all", ["==", ["get", "Name"], e.features[0].properties.Name]],
+                    1, 0.1
+                ])
+
+
+                m.moveLayer("districts_outline", "members_label")
 
             })
 
@@ -267,14 +387,13 @@ const Map = () => {
                 </div>
             </div></div>`)
             }
-            let districtNumber = 0
 
 
             let tooltip = d3.select("body").append("div").attr("class", "tooltip").style("z-index", 1200)
 
             m.on("mousemove", "districts", (e: MapMouseEvent & EventData) => {
                 const { properties } = e.features[0]
-                console.log(properties)
+
                 let content = districtTooptipGenerator(properties)
                 tooltip.html(content).style("visibility", "visible");
                 tooltip
@@ -282,15 +401,19 @@ const Map = () => {
                     .style("top", e.point.y - (tooltip.node().clientHeight + 5) + "px")
                     /* @ts-ignore */
                     .style("left", e.point.x - tooltip.node().clientWidth / 2.0 + "px")
-                // if (properties.District !== districtNumber) {
-                //     popup.remove()
 
-                //     popup.setLngLat([e.lngLat['lng'], e.lngLat["lat"]]).setHTML(content).addTo(m)
-                //     // districtNumber = properties.District
-                // }
+                m.setPaintProperty("districts_outline", 'line-width', [
+                    "case",
+                    ["all", ["==", ["get", "District"], properties.District]],
+                    5,
+                    1
+                ])
             })
 
-            m.on("mouseleave", "districts", () =>  tooltip.style("visibility", "hidden"))
+            m.on("mouseleave", "districts", () => {
+                tooltip.style("visibility", "hidden")
+                m.setPaintProperty("districts_outline", 'line-width', 1)
+            })
 
             m.on("mousemove", 'members', (e: MapMouseEvent & EventData) => {
                 const { properties } = e.features[0]
@@ -305,19 +428,19 @@ const Map = () => {
                 <div class="px-[17px] pt-[8px] pb-[12px] text-navy bg-white rounded-b-[20px]">
                 <div class="font-regular text-[8px] text-[#7F7F7F]">Housing Courts Must Change! Campaign Support</div>
                 <div class="flex flex-col gap-[5px] mt-[6px] mb-[8px]">
-                    <div class="flex items-center gap-[5px]">
+                    <div class="flex items-start gap-[5px]">
                         <img src=${properties["Legislation"].includes("Statewide RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                         <div class="font-bold text-rtc_navy text-[12px]">Statewide Right to Counsel</div>
                     </div>
-                    <div class="flex items-center gap-[5px]">
+                    <div class="flex items-start gap-[5px]">
                         <img src=${properties["Legislation"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"}  alt="" className="w-[16px] h-[16px]" />
                         <div class="font-bold text-rtc_navy text-[12px]">Winter Eviction Moratorium</div>
                     </div>
-                    <div class="flex items-center gap-[5px]">
+                    <div class="flex items-start gap-[5px]">
                         <img src=${properties["Legislation"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                         <div class="font-bold text-rtc_navy text-[12px]">Defend Right to Counsel</div>
                     </div>
-                    <div class="flex items-center gap-[5px]">
+                    <div class="flex items-start gap-[5px]">
                         <img src=${properties["Legislation"].includes("Fund Local Law 53") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                         <div class="font-bold text-rtc_navy text-[12px]">Power to Organize:<br /> Fund Local Law 53</div>
                     </div>
@@ -335,7 +458,7 @@ const Map = () => {
                     .style("left", e.point.x - tooltip.node().clientWidth / 2.0 + "px")
             })
 
-            m.on("mouseleave", "organizations", () =>  tooltip.style("visibility", "hidden"))
+            m.on("mouseleave", 'members', () => tooltip.style("visibility", "hidden"))
 
             // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
             //     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;

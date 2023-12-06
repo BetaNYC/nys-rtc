@@ -73,7 +73,7 @@ const MapLayers = ({ districtsClickHandler }: Props) => {
                         <div className='flex flex-col gap-[15px]'>
                             <div className='flex justify-between items-start'>
                                 {/* <h3 className='font-semibold text-label'>Member Organizations</h3> */}
-                                <h2 className='font-bold text-[13px] lg:text-title'>RTC Coalition <br /> Membership</h2>
+                                <h2 className='font-bold text-[13px] leading-[1.2] lg:text-title'>Right to Counsel Coalition Membership</h2>
                                 <Toggler show={membershipShown} clickHandler={membershipClickHandler} />
                             </div>
                             {/* <div className='flex justify-between items-center'>

@@ -48,6 +48,19 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
         setPanelShown({ ...panelShown, memberpanelShown: false, geopanelShown: true })
     }
 
+    const districtMouseEnverHandler = (e: MouseEvent<HTMLElement>, district: Districts) => {
+        const targetDistrict = (e.target as HTMLElement).innerText
+
+        const hoveredDistrctData = {
+            features: ((district === "assembly" ? assembly : senate) as GeoJson).features.filter((d, i) => d.properties.District.toString() === targetDistrict)
+        }
+        /* @ts-ignore */
+        map?.getSource("districts_hovered").setData({
+            type: "FeatureCollection",
+            features: hoveredDistrctData.features
+        })
+    }
+
 
 
     const countyMouseEnterHandler = (e: MouseEvent<HTMLElement>) => {
@@ -55,7 +68,7 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
         map?.setPaintProperty("counties_borders", "fill-opacity", [
             "case",
             ['all', ['==', ['get', "name"], selectedCounty + " County"]],
-            .5, 0
+            1, 0
         ])
 
         map?.setPaintProperty("counties_labels", "text-opacity", [
@@ -70,8 +83,9 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
         map?.setPaintProperty("zipcodes", "fill-opacity", [
             "case",
             ['all', ['==', ['get', "ZCTA5CE10"], selectedZipcodes]],
-            .5, 0
+            1, 0
         ])
+        map?.moveLayer("districts", "zipcodes")
     }
 
     const removeHoverEventHandler = () => {
@@ -79,6 +93,13 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
         map?.setPaintProperty("counties_labels", "text-opacity", 0)
         map?.setPaintProperty("counties_labels", "text-opacity", 0)
         map?.setPaintProperty("zipcodes", "fill-opacity", 0)
+
+        /* @ts-ignore */
+        map?.getSource("districts_hovered").setData({
+            type: "FeatureCollection",
+            features: []
+        })
+        map?.moveLayer("districts", "counties_borders")
     }
 
 
@@ -86,9 +107,11 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
         map?.on('click', "members", (e: MapMouseEvent & EventData) => {
             setSelectedMemberFeatures(e.features[0])
             setPanelShown({ ...panelShown, geopanelShown: false, memberpanelShown: true })
+
+            const targetCentroid = [e.features[0].properties.lon, e.features[0].properties.lat]
             map?.flyTo({
-                center: [e.features[0].properties.lon, e.features[0].properties.lat],
-                zoom: 9.5
+                center: targetCentroid as [number, number],
+                zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 12 : 8
             })
         })
     })
@@ -99,7 +122,7 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
                 <div className='flex flex-col absolute top-0 right-0 w-[14%] min-w-[200px] h-full z-20 overflow-y-scroll'>
                     <div className='px-[18px] py-[12px] w-full bg-rtc_purple'>
                         <div className={`flex items-start justify-between my-[12px] w-full `}>
-                            <div className='w-[75%] font-semibold text-subheadline'>{selectedMemberFeatures?.properties.Name.toUpperCase()}</div>
+                            <div className='w-[75%] font-bold text-subheadline'>{selectedMemberFeatures?.properties.Name.toUpperCase()}</div>
                             <XMarkIcon className='w-[20px] h-[20px] text-white cursor-pointer' onClick={() => defaultMapHandler(legislations)} />
                         </div>
                         <div className='flex items-center gap-[6px]'>
@@ -113,7 +136,7 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
                     <div className='flex-1 p-[18px] w-full bg-white'>
                         <div className='text-[10px] text-regular text-grey_1'>HCMC Campaign Support</div>
                         <div className="flex flex-col gap-[5px] mt-[6px] text-rtc_navy">
-                            <div className="flex items-start gap-[5px] ">
+                            <div className="flex items-start gap-[8px] ">
                                 {/* @ts-ignore */}
                                 <img src={selectedMemberFeatures?.properties!["Legislation"].includes("Statewide RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                                 <div className="font-bold text-label">Statewide Right to Counsel</div>
@@ -166,18 +189,18 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
                         <div>
                             <div className='mb-[5px] text-[10px] text-grey_1'>Senate Districts</div>
                             <div className='grid grid-cols-4 gap-[8px]'>
-                                <GeoInfoBtns name={selectedMemberOverlappedData['Senate_District'].toString()} clickHandler={(e) => districtClickHandler(e, "senate")} />
+                                <GeoInfoBtns name={selectedMemberOverlappedData['Senate_District'].toString()} clickHandler={(e) => districtClickHandler(e, "senate")} mouseEnterHandler={(e) => districtMouseEnverHandler(e, "senate")} mouseOutHandler={removeHoverEventHandler} />
                             </div>
                         </div>
                         <div className='my-[16px]'>
                             <div className='mb-[5px] text-[10px] text-grey_1'>Assembly Districts</div>
                             <div className='grid grid-cols-4 gap-[8px]'>
-                                <GeoInfoBtns name={selectedMemberOverlappedData['Assembly_District'].toString()} clickHandler={(e) => districtClickHandler(e, "assembly")} />
+                                <GeoInfoBtns name={selectedMemberOverlappedData['Assembly_District'].toString()} clickHandler={(e) => districtClickHandler(e, "assembly")} mouseEnterHandler={(e) => districtMouseEnverHandler(e, "assembly")} mouseOutHandler={removeHoverEventHandler} />
                             </div>
                         </div>
                         <div className='my-[16px]'>
                             <div className='mb-[5px] text-[10px] text-grey_1'>Counties</div>
-                            <div className='grid grid-cols-3 gap-[12px]'>
+                            <div className='grid grid-cols-2 gap-[12px]'>
                                 <GeoInfoBtns name={selectedMemberOverlappedData['County'].toString().replace(" County", "")} mouseEnterHandler={countyMouseEnterHandler} mouseOutHandler={removeHoverEventHandler} />
                             </div>
                         </div>

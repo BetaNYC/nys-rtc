@@ -60,43 +60,18 @@ const MapProvider = ({ children }: Props) => {
 
         const district = e.features[0].properties.District
 
-        if (e.features[0].properties["HCMC support"].includes(legislations)) {
-            m.setPaintProperty("districts", "fill-opacity", [
-                "case",
-                ["all", ["==", ["get", "District"], district], ["in", legislations, ["get", "HCMC support"]]],
-                .75,
-                ["in", legislations, ["get", "HCMC support"]],
-                .05,
-                0
-            ])
-            m.setPaintProperty("pattern", "fill-opacity", [
-                "case",
-                ["all", ["!", ["in", legislations, ["get", "HCMC support"]]]],
-                .25, 0
-            ])
-        }
-
-        if (!e.features[0].properties["HCMC support"].includes(legislations)) {
-            m.setPaintProperty("districts", "fill-opacity", [
-                "case",
-                ["in", legislations, ["get", "HCMC support"]],
-                .05, 0
-            ])
-            m.setPaintProperty("pattern", "fill-opacity", [
-                "case",
-                ["all", ["==", ["get", "District"], district]],
-                .75,
-                ["all", ["!", ["in", legislations, ["get", "HCMC support"]]]],
-                .25, 0
-            ])
-        }
+        m.setPaintProperty("districts_clicked_outline", 'line-width', [
+            "case",
+            ["all", ["==", ["get", "District"], district]],
+            5,
+            0
+        ])
 
         let coordinatesArray = e.features[0].geometry.coordinates[0]
         while (coordinatesArray.length === 1) coordinatesArray = coordinatesArray[0]
         const targetPolygon = turf.polygon([coordinatesArray])
         /* @ts-ignore */
         const targetCentroid = turf.center(targetPolygon).geometry.coordinates
-
         const labelData = {
             'type': 'FeatureCollection',
             'features': [
@@ -120,33 +95,27 @@ const MapProvider = ({ children }: Props) => {
             features: labelData.features as GeoJson["features"]
         })
 
-        map?.setPaintProperty("district_label", "text-opacity", 1)
+        m.setPaintProperty("district_label", "text-opacity", 1)
+
+
+        m.moveLayer("districts", "districts_clicked_outline")
+        m.moveLayer("districts_clicked_outline", "district_label")
 
 
         m.flyTo({
             center: targetCentroid as [number, number],
-            zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 12 : 8
+            zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 11 : 8
         })
 
         setPanelShown({ geopanelShown: true, memberpanelShown: false })
-
         setSelectedDistrictFeatures(e.features[0])
         setSelectedDistrictOverlappedData((e.features[0].properties.House.toLowerCase() === "senate" ? senateOverlapped : assemblyOverlapped).filter(d => +d.district === +e.features[0]?.properties.District)[0])
     }
 
     const defaultMapHandler = (legislations: Legislations) => {
-        map?.setPaintProperty("districts", "fill-opacity", [
-            "case",
-            ["in", `${legislations}`, ["get", "HCMC support"]],
-            .75, 0
-        ])
-        map?.setPaintProperty("pattern", "fill-opacity", [
-            "case",
-            ["all", ["!", ["in", legislations, ["get", "HCMC support"]]]],
-            .5, 0
-        ]
-        )
 
+        map?.setPaintProperty("districts_outline", 'line-width', 1)
+        map?.setPaintProperty("districts_clicked_outline", 'line-width', 0)
 
         map?.flyTo({
             center: [-78.5, 43.05] as [number, number],
@@ -159,6 +128,17 @@ const MapProvider = ({ children }: Props) => {
             type: "FeatureCollection",
             features: []
         })
+
+        /* @ts-ignore */
+        map?.getSource("members_label").setData({
+            type: "FeatureCollection",
+            features: []
+        })
+
+        map?.setPaintProperty("members", "circle-opacity", 1)
+        map?.setPaintProperty("members", "circle-stroke-opacity", 1)
+
+        map?.moveLayer("districts_outline", "members")
 
         setPanelShown({ ...panelShown, geopanelShown: false, memberpanelShown: false })
     }
