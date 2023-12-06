@@ -18,3 +18,13 @@
   cursor: pointer;
   z-index: 2500 !important;
 }
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  visibility: none;
+  background: #121D3E;
+  z-index: 2500 !important;
+}

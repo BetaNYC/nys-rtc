@@ -8,7 +8,8 @@ type GeoJson = {
 type Legislations =
   | "Statewide RTC"
   | "Defend RTC"
-  | "Winter Eviction Moratorium";
+  | "Winter Eviction Moratorium"
+  | "Clean Hands";
 
 type Districts = "assembly" | "senate";
 
@@ -57,11 +58,11 @@ type selectedDistrictOverlappedData = {
 
 type selectedMemberFeatures = {
   properties: {
-      Website: string,
-      Name: string,
-      Legislation: string[],
-      Phone: string,
-      Address: string,
-      'Membership Status': string[],
-  }
+    Website: string;
+    Name: string;
+    Legislation: string[];
+    Phone: string;
+    Address: string;
+    "Membership Status": string[];
+  };
 } | null;

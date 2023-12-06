@@ -24,7 +24,7 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
 
 
     return (
-        <div className={`flex flex-col pt-[12px] lg:pt-[10.5px] pb-[0px] text-rtc_navy ${expand["About"] ? "h-[calc(100vh-112px-230px)] xl:h-[calc(100vh-112px-180px)] bg-white overflow-y-hidden" : "h-[40px] bg-background_blue overflow-y-hidden"} border-y-[1px] border-grey_1 `}>
+        <div className={`flex flex-col pt-[12px] lg:pt-[10.5px] pb-[0px] text-rtc_navy ${expand["About"] ? "h-[calc(100vh-112px-230px)] xl:h-[calc(100vh-112px-200px)] bg-white overflow-y-hidden" : "h-[40px] bg-background_blue overflow-y-hidden"} border-y-[1px] border-grey_1 `}>
             <div className={`flex justify-between items-center px-[20px]`}>
                 <h2 className="font-semibold text-[13px] lg:text-title ">ABOUT</h2>
                 {
@@ -77,7 +77,7 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                                 through a community service initiative called Research and Data Assistance Request (RADAR).
                                 <a className='underline' target='_blank' href={"https://beta.nyc/products/research-and-data-assistance-requests/"}> Follow this link to learn more about RADARs and how to submit a request!</a></p>
                         </div>
-                        <div className="m-[20px] mb-[60px] ">
+                        <div className="m-[20px] mb-[40px] ">
                             <p className='font-semibold text-body'>Civic Innovation Lab at BetaNYC:</p>
                             <p>Ashley Louie (Director), Erik Brown, Hao Lun Hung, Hailee Luong</p>
 
