@@ -52,6 +52,7 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
         const targetDistrict = (e.target as HTMLElement).innerText
 
         const hoveredDistrctData = {
+            /* @ts-ignore */
             features: ((district === "assembly" ? assembly : senate) as GeoJson).features.filter((d, i) => d.properties.District.toString() === targetDistrict)
         }
         /* @ts-ignore */
