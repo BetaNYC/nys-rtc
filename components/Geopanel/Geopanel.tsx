@@ -40,6 +40,7 @@ const Geopanel = () => {
         const targetDistrict = (e.target as HTMLElement).innerText
 
         const hoveredDistrctData = {
+            /* @ts-ignore */
             features: ((district === "assembly" ? assembly : senate) as GeoJson).features.filter((d, i) => d.properties.District.toString() === targetDistrict)
         }
         /* @ts-ignore */
@@ -174,9 +175,9 @@ const Geopanel = () => {
                                     selectedDistrictOverlappedData.districts
                                         .map((c, i) => {
                                             if (districts === 'senate')
-                                                return <GeoInfoBtns key={i} name={c.toString()} clickHandler={(e) => districtBtnClickHandler(e, "assembly")} mouseEnterHandler={(e) => districtMouseEnverHandler(e, "assembly")} mouseOutHandler={removeHoverEventHandler}/>
+                                                return <GeoInfoBtns key={i} name={c.toString()} clickHandler={(e) => districtBtnClickHandler(e, "assembly")} mouseEnterHandler={(e) => districtMouseEnverHandler(e, "assembly")} mouseOutHandler={removeHoverEventHandler} />
                                             if (districts === 'assembly')
-                                                return <GeoInfoBtns key={i} name={c.toString()} clickHandler={(e) => districtBtnClickHandler(e, "senate")} mouseEnterHandler={(e) => districtMouseEnverHandler(e, "senate")} mouseOutHandler={removeHoverEventHandler}/>
+                                                return <GeoInfoBtns key={i} name={c.toString()} clickHandler={(e) => districtBtnClickHandler(e, "senate")} mouseEnterHandler={(e) => districtMouseEnverHandler(e, "senate")} mouseOutHandler={removeHoverEventHandler} />
                                         }
 
                                         )
