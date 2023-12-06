@@ -18,7 +18,9 @@ import Image from 'next/image'
 import "./voteVisualization.css"
 
 type Props = {
-    legislation: Legislations;
+    legislation: | "Statewide RTC"
+    | "Defend RTC"
+    | "Winter Eviction Moratorium";
 };
 
 
@@ -86,6 +88,7 @@ const VotesVisualization = ({ legislation }: Props) => {
         })
     }
 
+
     const senateRef = useRef<SVGSVGElement | null>(null)
     const assemblyRef = useRef<SVGSVGElement | null>(null)
 
@@ -102,8 +105,6 @@ const VotesVisualization = ({ legislation }: Props) => {
     const assemblyData = votes.filter(v => v.House === "Assembly")
     const assemblyDemo = assemblyData.filter(s => s.Party === "Democrat")
     const assemblyRep = assemblyData.filter(s => s.Party === 'Republican')
-
-
 
 
     useEffect(() => {
