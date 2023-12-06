@@ -31,6 +31,8 @@ export type MapContextType = {
         geopanelShown: boolean,
         memberpanelShown: boolean
     }>>
+    mapShown: boolean
+    setMapShown: Dispatch<SetStateAction<boolean>>
 }
 
 type Props = {
@@ -50,6 +52,7 @@ const MapProvider = ({ children }: Props) => {
         geopanelShown: false,
         memberpanelShown: false
     })
+    const [mapShown, setMapShown] = useState<boolean>(true)
 
     const [selectedDistrictFeatures, setSelectedDistrictFeatures] = useState<selectedDistrictFeatures | null>(null)
     const [selectedDistrictOverlappedData, setSelectedDistrictOverlappedData] = useState<selectedDistrictOverlappedData | null>(null)
@@ -63,7 +66,7 @@ const MapProvider = ({ children }: Props) => {
         m.setPaintProperty("districts_clicked_outline", 'line-width', [
             "case",
             ["all", ["==", ["get", "District"], district]],
-            5,
+            3.5,
             0
         ])
 
@@ -99,7 +102,10 @@ const MapProvider = ({ children }: Props) => {
 
 
         m.moveLayer("districts", "districts_clicked_outline")
+        m.moveLayer("districts_clicked_outline", "members")
         m.moveLayer("districts_clicked_outline", "district_label")
+
+
 
 
         m.flyTo({
@@ -135,10 +141,17 @@ const MapProvider = ({ children }: Props) => {
             features: []
         })
 
-        map?.setPaintProperty("members", "circle-opacity", 1)
-        map?.setPaintProperty("members", "circle-stroke-opacity", 1)
+        map?.setPaintProperty("members", "circle-color", [
+            "case",
+            ["all", ["in", "Member", ["get", "Membership Status"]]],
+            "#812948",
+            "white"
+        ],)
+
+        map?.setPaintProperty("members", "circle-stroke-color", "#812948")
 
         map?.moveLayer("districts_outline", "members")
+        map?.moveLayer("districts_outline", "district_label")
 
         setPanelShown({ ...panelShown, geopanelShown: false, memberpanelShown: false })
     }
@@ -148,7 +161,7 @@ const MapProvider = ({ children }: Props) => {
 
 
 
-    return <MapContext.Provider value={{ map, setMap, districts, setDistricts, membershipShown, setMembershipShown, panelShown, setPanelShown, legislations, setLegislations, mapClickHandler, defaultMapHandler, selectedDistrictFeatures, setSelectedDistrictFeatures, selectedDistrictOverlappedData, setSelectedDistrictOverlappedData }}>
+    return <MapContext.Provider value={{ map, setMap, districts, setDistricts, membershipShown, setMembershipShown, panelShown, setPanelShown, legislations, setLegislations, mapClickHandler, defaultMapHandler, selectedDistrictFeatures, setSelectedDistrictFeatures, selectedDistrictOverlappedData, setSelectedDistrictOverlappedData, mapShown, setMapShown }}>
         {children}
     </MapContext.Provider>
 }

@@ -26,7 +26,7 @@ import * as d3 from "d3"
 
 const Map = () => {
     const mapContainer = useRef<HTMLInputElement>(null);
-    const { map, setMap, setDistricts, setPanelShown, legislations, mapClickHandler, defaultMapHandler } = useContext(MapContext) as MapContextType
+    const { map, setMap, setDistricts, setPanelShown, legislations, mapClickHandler, defaultMapHandler} = useContext(MapContext) as MapContextType
     /* @ts-ignore */
     const senateFeatures = (senate as GeoJson).features
     /* @ts-ignore */
@@ -40,6 +40,7 @@ const Map = () => {
 
 
     const [selectedMemberFeatures, setSelectedMemberFeatures] = useState<selectedMemberFeatures | null>(null)
+
 
     const districtsClickHandler = (districts: Districts) => {
         setDistricts(districts)
@@ -330,32 +331,27 @@ const Map = () => {
                     features: labelData.features as GeoJson["features"]
                 })
 
-                m.setPaintProperty("members", "circle-opacity", [
+                m.setPaintProperty("members", "circle-color", [
                     "case",
-                    ["all", ["==", ["get", "Name"], e.features[0].properties.Name]],
-                    1, 0.1
+                    ["all", ["==", ["get", "Name"], e.features[0].properties.Name], ["in", "Member", ["get", "Membership Status"]]],
+                    "#812948",
+                    ["all", ["!=", ["get", "Name"], e.features[0].properties.Name], ["in", "Member", ["get", "Membership Status"]]],
+                    "#AB8190",
+                    "white"
                 ])
 
-                m.setPaintProperty("members", "circle-stroke-opacity", [
+                m.setPaintProperty("members", "circle-stroke-color", [
                     "case",
                     ["all", ["==", ["get", "Name"], e.features[0].properties.Name]],
-                    1, 0.1
+                    "#812948", "#AB8190"
                 ])
 
 
                 m.moveLayer("districts_outline", "members_label")
+                m.moveLayer("districts_outline", "members")
 
             })
 
-
-            const popup = new mapboxgl.Popup({
-                offset: [0, 0],
-                anchor: "bottom",
-                closeButton: false,
-                closeOnClick: true,
-            })
-
-            popup.setMaxWidth("1200px")
 
             const districtTooptipGenerator = (properties: any) => {
                 return (`<div class="relative z-30">
@@ -405,9 +401,11 @@ const Map = () => {
                 m.setPaintProperty("districts_outline", 'line-width', [
                     "case",
                     ["all", ["==", ["get", "District"], properties.District]],
-                    5,
+                    3.5,
                     1
                 ])
+
+                m.moveLayer("districts", "districts_outline")
             })
 
             m.on("mouseleave", "districts", () => {
@@ -470,6 +468,15 @@ const Map = () => {
         };
     }, [])
 
+    // useEffect(() => {
+    //     const cover = d3.select("body")
+    //         .append("div")
+    //         .attr('class', 'cover')
+    //         .attr('fill', "#121D3E")
+
+    //     if (mapShown === false) cover.attr("visibility", "visible")
+    // }, [mapShown])
+
 
 
     return (
@@ -480,6 +487,7 @@ const Map = () => {
             <MapLayers districtsClickHandler={districtsClickHandler} />
             <Geopanel />
             <Membershippanel selectedMemberFeatures={selectedMemberFeatures} setSelectedMemberFeatures={setSelectedMemberFeatures} />
+
         </>
     )
 

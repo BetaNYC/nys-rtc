@@ -10,13 +10,14 @@ type Props = {
     number: string
     content: string
     expand: boolean
+    calulated: boolean
     legislationsClickHandler: () => void
 }
 
-const LegislationColumns = ({ legislation, name, number, content, expand, legislationsClickHandler }: Props) => {
+const LegislationColumns = ({ legislation, name, number, content, expand, calulated, legislationsClickHandler }: Props) => {
 
     return (
-        <div className={`flex flex-col pt-[12px] lg:pt-[10.5px] pb-[0px] text-rtc_navy ${expand ? " h-[calc(100vh-112px-230px)] xl:h-[calc(100vh-112px-180px)] bg-white  overflow-y-hidden" : "h-[40px] bg-background_blue overflow-y-hidden"} border-b-[1px] border-grey_1  cursor-pointer`} onClick={legislationsClickHandler}>
+        <div className={`flex flex-col pt-[12px] lg:pt-[10.5px] pb-[0px] text-rtc_navy ${expand ? " h-[calc(100vh-112px-230px)] xl:h-[calc(100vh-112px-200px)] bg-white  overflow-y-hidden" : "h-[40px] bg-background_blue overflow-y-hidden"} border-b-[1px] border-grey_1  cursor-pointer`} onClick={legislationsClickHandler}>
             <div className={`flex justify-between items-center mx-[20px] ${expand ? "mb-0" : "mb-5"}`}>
                 <h2 className="font-semibold  text-[13px] lg:text-title uppercase">{name}</h2>
                 {
@@ -25,9 +26,13 @@ const LegislationColumns = ({ legislation, name, number, content, expand, legisl
             </div>
             <div className='mx-[20px] mb-[20px] font-regular text-label'>{number}</div>
             <div className='flex-1 overflow-y-scroll'>
-                <VotesVisualization legislation={legislation} />
-                <div className='mx-[20px] mb-[60px]'>
-                    <h2 className='mb-[14px] font-semibold text-[13px] lg:text-title'>{name} ({number})</h2>
+                {
+                    calulated && <VotesVisualization legislation={legislation} />
+                }
+
+                <div className='mx-[20px] mb-[40px]'>
+                    <h2 className='font-semibold text-[13px] lg:text-title'>{name}</h2>
+                    <h2 className='mb-[14px] font-semibold text-[13px] lg:text-title'>({number})</h2>
                     <p className='font-regular text-[12px] lg:text-body'>{content}</p>
                 </div>
             </div>
