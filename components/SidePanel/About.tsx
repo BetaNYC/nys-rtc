@@ -40,16 +40,20 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                     <div className='flex-1 flex flex-col justify-between  overflow-y-scroll'>
                         <div className="text-[12px] lg:text-body mx-[20px]">
                             <p>
-                                Housing Courts Must Change! (HCMC) is a New York statewide campaign launched by the Right to Counsel NYC Coalition in 2020 to transform the courts from an “eviction machine” to a place that holds landlords accountable, upholds tenants’ rights, and enables tenants to remain in their homes.
+                                <a className='underline' target='_blank' href='https://www.righttocounselnyc.org/hcmc'>Housing Courts Must Change! (HCMC)</a> is a statewide campaign launched by the Right to Counsel NYC Coalition in 2020 to transform the courts across New York State (NYS) from an “eviction machine” to a place that holds landlords accountable, upholds tenants’ rights, and enables tenants to remain in their homes.
                             </p>
                             <div className="my-[20px]">
-                                New York State (NYS) support for HCMC campaign legislation is shown in the map through Senate and Assembly districts. The HCMC campaign focuses on three legislation campagins:
-                                <li>Statewide Right to Counsel (S2721 / A1493)</li>
-                                <li>Defend Right to Counsel (S3254 / A4993)</li>
-                                <li>Winter Eviction Moratorium (S1403 / A4093)</li>
+                                NYS legislative support for the HCMC campaign platform is shown on the map through Senate and Assembly districts. The HCMC campaign focuses on our legislative demands:
+                                <li><a className='underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2023/S2721'>Statewide Right to Counsel (S2721 / A1493)</a></li>
+                                <li><a className='underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2023/S1403#:~:text=2023%2DS1403%20(ACTIVE)%20%2D%20Summary,properties%20during%20the%20winter%20months.'>Defend Right to Counsel (S3254 / A4993)</a></li>
+                                <li><a className='underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2023/S3254'>Winter Eviction Moratorium (S1403 / A4093)</a></li>
+                                <li><a className='underline' target='_blank' href='https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=A00490&term=&Summary=Y&Actions=Y'>Clean Hands (A490)</a></li>
                             </div>
+                            <p className='mb-[20px]'>
+                                Explore the map to view co-located geographic support between the Right to Counsel NYC Coalition’s base support, zip code boundaries, counties, assembly districts, and senate districts.
+                            </p>
                             <p>
-                                Explore the map to view co-located geographic support between Right to Counsel NYC Coalition’s base support, zip code boundaries, counties, assembly districts, and senate districts.
+                                To take action in support of our campaign, go to:<a className='underline' target='_blank' href='https://www.righttocounselnyc.org/takeaction' >https://www.righttocounselnyc.org/takeaction</a>
                             </p>
                         </div>
                         <div className="mx-[20px] mt-[20px] mb-[60px] font-semibold text-title text-rtc_purple">
