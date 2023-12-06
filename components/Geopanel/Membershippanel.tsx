@@ -96,7 +96,7 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
     return (
         <>
             {panelShown["memberpanelShown"] && (
-                <div className='flex flex-col absolute top-0 right-0 w-[14%] h-full z-20 overflow-y-scroll'>
+                <div className='flex flex-col absolute top-0 right-0 w-[14%] min-w-[200px] h-full z-20 overflow-y-scroll'>
                     <div className='px-[18px] py-[12px] w-full bg-rtc_purple'>
                         <div className={`flex items-start justify-between my-[12px] w-full `}>
                             <div className='w-[75%] font-semibold text-subheadline'>{selectedMemberFeatures?.properties.Name.toUpperCase()}</div>
@@ -113,22 +113,22 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
                     <div className='flex-1 p-[18px] w-full bg-white'>
                         <div className='text-[10px] text-regular text-grey_1'>HCMC Campaign Support</div>
                         <div className="flex flex-col gap-[5px] mt-[6px] text-rtc_navy">
-                            <div className="flex items-center gap-[5px] ">
+                            <div className="flex items-start gap-[5px] ">
                                 {/* @ts-ignore */}
                                 <img src={selectedMemberFeatures?.properties!["Legislation"].includes("Statewide RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                                <div className="font-bold text-label">Statewide RTC</div>
+                                <div className="font-bold text-label">Statewide Right to Counsel</div>
                             </div>
-                            <div className="flex items-center gap-[5px]">
+                            <div className="flex items-start gap-[5px]">
                                 {/* @ts-ignore */}
                                 <img src={selectedMemberFeatures?.properties!["Legislation"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                                 <div className="font-bold text-label">Winter Eviction Moratorium</div>
                             </div>
-                            <div className="flex items-center gap-[5px]">
+                            <div className="flex items-start gap-[5px]">
                                 {/* @ts-ignore */}
                                 <img src={selectedMemberFeatures?.properties!["Legislation"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                                <div className="font-bold text-label">Defend RTC</div>
+                                <div className="font-bold text-label">Defend Right to Counsel</div>
                             </div>
-                            <div className="flex items-center gap-[5px]">
+                            <div className="flex items-start gap-[5px]">
                                 {/* @ts-ignore */}
                                 <img src={selectedMemberFeatures?.properties!["Legislation"].includes("Fund Local Law 53") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                                 <div className="font-bold text-label">Power to Organize:<br /> Fund Local Law 53</div>
@@ -140,19 +140,19 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
                         <div className="flex flex-col gap-[16px] mt-[6px] text-rtc_navy">
                             {
                                 (selectedMemberFeatures?.properties.Address) !== undefined &&
-                                <div className="flex items-center gap-[12px]">
+                                <div className="flex items-start gap-[12px]">
                                     <img src="/icons/apartment.svg" alt="" className="w-[16px] h-[16px]" />
                                     <div className="w-[120px] font-regular text-label">{selectedMemberFeatures?.properties.Address}</div>
                                 </div>
                             }
-                            <div className="flex items-center gap-[12px]">
+                            <div className="flex items-start gap-[12px]">
                                 <img src="/icons/phone.svg" alt="" className="w-[16px] h-[16px]" />
                                 <div className="font-regular text-label">{selectedMemberFeatures?.properties.Phone}</div>
                             </div>
                             {
                                 (selectedMemberFeatures?.properties.Website) !== undefined &&
                                 (
-                                    <div className="flex items-center gap-[12px]">
+                                    <div className="flex items-start gap-[12px]">
                                         <img src="/icons/email.svg" alt="" className="w-[16px] h-[16px]" />
                                         <div className="font-regular text-label">{selectedMemberFeatures?.properties.Website}</div>
                                     </div>

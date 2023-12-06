@@ -9,8 +9,6 @@ import { GeoJSONSource } from 'mapbox-gl';
 import assembly from "../../public/assembly.geo.json"
 import senate from "../../public/senate.geo.json"
 
-
-
 import Legend from "./Legend";
 import MapLayers from "./MapLayers";
 import Geopanel from "../Geopanel/Geopanel";
@@ -21,10 +19,12 @@ import "./Map.css"
 import pattern_rep from "../../public/icons/pattern_rep.svg"
 import pattern_demo from "../../public/icons/pattern_demo.svg"
 
+import * as d3 from "d3"
+
 
 const Map = () => {
     const mapContainer = useRef<HTMLInputElement>(null);
-    const { map, setMap, districts, setDistricts, panelShown, setPanelShown, legislations, mapClickHandler, defaultMapHandler } = useContext(MapContext) as MapContextType
+    const { map, setMap, districts, setDistricts, setPanelShown, legislations, mapClickHandler, defaultMapHandler } = useContext(MapContext) as MapContextType
     /* @ts-ignore */
     const senateFeatures = (senate as GeoJson).features
     /* @ts-ignore */
@@ -238,16 +238,16 @@ const Map = () => {
             popup.setMaxWidth("1200px")
 
             const districtTooptipGenerator = (properties: any) => {
-                return (`<div class="content">
+                return (`<div class="relative z-30">
                 <div class="px-[17px] py-[10px] width-full ${properties.Party_x === "Democratic" ? "bg-demo_1" : "bg-rep_1"}   rounded-t-[20px]">
-                <div class="col-start-1 col-end-2 font-bold text-white text-[18px]">${districts.charAt(0).toUpperCase() + districts.slice(1)} District ${properties.District}</div>
+                <div class="col-start-1 col-end-2 font-bold text-white text-[18px]">${properties.House} District ${properties.District}</div>
                 </div>
             <div class="px-[17px] pt-[8px] pb-[12px] text-navy bg-white rounded-b-[20px]">
                 <div class="font-regular text-[8px] text-[#7F7F7F]">Housing Courts Must Change! Campaign Support</div>
                 <div class="flex flex-col gap-[5px] mt-[6px] mb-[8px]">
                     <div class="flex items-center gap-[5px]">
                         <img src=${properties["HCMC support"].includes("Statewide RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                        <div class="font-bold text-rtc_navy text-[12px]">Statewide RTC</div>
+                        <div class="font-bold text-rtc_navy text-[12px]">Statewide Right to Counsel</div>
                     </div>
                     <div class="flex items-center gap-[5px]">
                         <img src=${properties["HCMC support"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"}  alt="" className="w-[16px] h-[16px]" />
@@ -255,7 +255,7 @@ const Map = () => {
                     </div>
                     <div class="flex items-center gap-[5px]">
                         <img src=${properties["HCMC support"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                        <div class="font-bold text-rtc_navy text-[12px]">Defend RTC</div>
+                        <div class="font-bold text-rtc_navy text-[12px]">Defend Right to Counsel</div>
                     </div>
                     <div class="flex items-center gap-[5px]">
                         <img src=${properties["HCMC support"].includes("Fund Local Law 53") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
@@ -269,21 +269,31 @@ const Map = () => {
             }
             let districtNumber = 0
 
+
+            let tooltip = d3.select("body").append("div").attr("class", "tooltip").style("z-index", 1200)
+
             m.on("mousemove", "districts", (e: MapMouseEvent & EventData) => {
                 const { properties } = e.features[0]
-                if (properties.District !== districtNumber) {
-                    popup.remove()
-                    let content = districtTooptipGenerator(properties)
-                    popup.setLngLat([e.lngLat['lng'], e.lngLat["lat"]]).setHTML(content).addTo(m)
-                    // districtNumber = properties.District
-                }
+                console.log(properties)
+                let content = districtTooptipGenerator(properties)
+                tooltip.html(content).style("visibility", "visible");
+                tooltip
+                    /* @ts-ignore */
+                    .style("top", e.point.y - (tooltip.node().clientHeight + 5) + "px")
+                    /* @ts-ignore */
+                    .style("left", e.point.x - tooltip.node().clientWidth / 2.0 + "px")
+                // if (properties.District !== districtNumber) {
+                //     popup.remove()
+
+                //     popup.setLngLat([e.lngLat['lng'], e.lngLat["lat"]]).setHTML(content).addTo(m)
+                //     // districtNumber = properties.District
+                // }
             })
 
-            m.on("mouseleave", "districts", () => popup.remove())
+            m.on("mouseleave", "districts", () =>  tooltip.style("visibility", "hidden"))
 
             m.on("mousemove", 'members', (e: MapMouseEvent & EventData) => {
                 const { properties } = e.features[0]
-
                 let content = `<div class="content">
                 <div class="flex justify-between items-center px-[18px] py-[15px] w-[285px] text-white bg-[#96315F] rounded-t-[20px]">
                     <div class="w-[150px] font-bold text-[14px]">${properties.Name}</div>
@@ -297,7 +307,7 @@ const Map = () => {
                 <div class="flex flex-col gap-[5px] mt-[6px] mb-[8px]">
                     <div class="flex items-center gap-[5px]">
                         <img src=${properties["Legislation"].includes("Statewide RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                        <div class="font-bold text-rtc_navy text-[12px]">Statewide RTC</div>
+                        <div class="font-bold text-rtc_navy text-[12px]">Statewide Right to Counsel</div>
                     </div>
                     <div class="flex items-center gap-[5px]">
                         <img src=${properties["Legislation"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"}  alt="" className="w-[16px] h-[16px]" />
@@ -305,7 +315,7 @@ const Map = () => {
                     </div>
                     <div class="flex items-center gap-[5px]">
                         <img src=${properties["Legislation"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                        <div class="font-bold text-rtc_navy text-[12px]">Defend RTC</div>
+                        <div class="font-bold text-rtc_navy text-[12px]">Defend Right to Counsel</div>
                     </div>
                     <div class="flex items-center gap-[5px]">
                         <img src=${properties["Legislation"].includes("Fund Local Law 53") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
@@ -317,10 +327,15 @@ const Map = () => {
                 </div>
             </div>
             </div>`
-                popup.setLngLat([e.lngLat['lng'], e.lngLat["lat"]]).setHTML(content).addTo(m)
+                tooltip.html(content).style("visibility", "visible");
+                tooltip
+                    /* @ts-ignore */
+                    .style("top", e.point.y - (tooltip.node().clientHeight + 5) + "px")
+                    /* @ts-ignore */
+                    .style("left", e.point.x - tooltip.node().clientWidth / 2.0 + "px")
             })
 
-            m.on("mouseleave", "organizations", () => popup.remove())
+            m.on("mouseleave", "organizations", () =>  tooltip.style("visibility", "hidden"))
 
             // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
             //     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;

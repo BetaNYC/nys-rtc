@@ -6,3 +6,15 @@
 }
 
 
+/* .mapboxgl-popup {
+  position: relative;
+  z-index: 1000 !important;
+} */
+
+.tooltip {
+  position: absolute;
+  color: white;
+  visibility: hidden;
+  cursor: pointer;
+  z-index: 2500 !important;
+}

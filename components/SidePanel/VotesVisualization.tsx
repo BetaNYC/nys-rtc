@@ -280,7 +280,7 @@ const VotesVisualization = ({ legislation }: Props) => {
 
 
     return (
-        <div className='mb-[20px] w-full  text-rtc_navy bg-white rounded-[8px] '>
+        <div className='px-[20px] mb-[20px] w-full  text-rtc_navy bg-white rounded-[8px] '>
             <div className='mb-[20px]'>
                 <div className='flex items-center gap-[8px] mb-[4px]'>
                     <Image
