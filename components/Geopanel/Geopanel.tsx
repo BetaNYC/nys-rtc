@@ -130,7 +130,6 @@ const Geopanel = () => {
                                 <div className="font-bold text-label">Defend Right to Counsel</div>
                             </div>
                             <div className="flex items-start gap-[5px]">
-
                                 <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Fund Local Law 53") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                                 <div className="font-bold text-label">Power to Organize:<br /> Fund Local Law 53</div>
                             </div>
@@ -138,27 +137,30 @@ const Geopanel = () => {
                         <div className='my-[12px] w-full h-[1px] bg-grey_1'></div>
                         <div className='text-[10px] text-regular text-grey_1'>{districts.charAt(0).toUpperCase() + districts.slice(1)} District General Info</div>
                         <div className="flex flex-col gap-[16px] mt-[6px] text-rtc_navy">
-                            <div className="flex items-start gap-[12px]">
+                            <div className="flex items-start gap-[8px]">
                                 <img src="/icons/person.svg" alt="" className="w-[16px] h-[16px]" />
                                 <div className={`w-[120px] font-regular text-label ${selectedDistrictFeatures?.properties.Party_x === "Democratic" ? "text-demo_1" : "text-rep_1"}`}><span className='font-bold'>{selectedDistrictFeatures?.properties!.NAME}</span><br /> Democrat</div>
                             </div>
                             {
                                 (selectedDistrictFeatures?.properties.Address) !== undefined &&
-                                <div className="flex items-start gap-[12px]">
+                                <div className="flex items-start gap-[8px]">
                                     <img src="/icons/apartment.svg" alt="" className="w-[16px] h-[16px]" />
                                     <div className="w-[120px] font-regular text-label">{selectedDistrictFeatures?.properties.Address}</div>
                                 </div>
                             }
-                            <div className="flex items-start gap-[12px]">
-                                <img src="/icons/phone.svg" alt="" className="w-[16px] h-[16px]" />
-                                <div className="font-regular text-label">{selectedDistrictFeatures?.properties.Phone}</div>
-                            </div>
+                            {
+                                (selectedDistrictFeatures?.properties.Phone) !== undefined &&
+                                <div className="flex items-start gap-[8px]">
+                                    <img src="/icons/phone.svg" alt="" className="w-[16px] h-[16px]" />
+                                    <div className="font-regular text-label">{selectedDistrictFeatures?.properties.Phone}</div>
+                                </div>
+                            }
                             {
                                 (selectedDistrictFeatures?.properties.email) !== undefined &&
                                 (
-                                    <div className="flex items-start gap-[12px]">
+                                    <div className="flex items-start gap-[8px] w-full">
                                         <img src="/icons/email.svg" alt="" className="w-[16px] h-[16px]" />
-                                        <div className="font-regular text-label">{selectedDistrictFeatures?.properties.email}</div>
+                                        <div className="font-regular text-[11.5px] overflow-wrap">{selectedDistrictFeatures?.properties.email}</div>
                                     </div>
                                 )
                             }

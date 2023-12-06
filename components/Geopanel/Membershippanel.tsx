@@ -164,21 +164,21 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
                         <div className="flex flex-col gap-[16px] mt-[6px] text-rtc_navy">
                             {
                                 (selectedMemberFeatures?.properties.Address) !== undefined &&
-                                <div className="flex items-start gap-[12px]">
+                                <div className="flex items-start gap-[8px]">
                                     <img src="/icons/apartment.svg" alt="" className="w-[16px] h-[16px]" />
                                     <div className="w-[120px] font-regular text-label">{selectedMemberFeatures?.properties.Address}</div>
                                 </div>
                             }
-                            <div className="flex items-start gap-[12px]">
+                            <div className="flex items-start gap-[8px]">
                                 <img src="/icons/phone.svg" alt="" className="w-[16px] h-[16px]" />
                                 <div className="font-regular text-label">{selectedMemberFeatures?.properties.Phone}</div>
                             </div>
                             {
                                 (selectedMemberFeatures?.properties.Website) !== undefined &&
                                 (
-                                    <div className="flex items-start gap-[12px]">
+                                    <div className="flex items-start gap-[8px] w-full">
                                         <img src="/icons/email.svg" alt="" className="w-[16px] h-[16px]" />
-                                        <div className="font-regular text-label">{selectedMemberFeatures?.properties.Website}</div>
+                                        <div className="font-regular text-[11.5px] overflow-wrap">{selectedMemberFeatures?.properties.Website}</div>
                                     </div>
                                 )
                             }
