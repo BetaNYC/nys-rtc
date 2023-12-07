@@ -7,7 +7,7 @@ const sourceSans = Source_Sans_3({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'RTC Map Tool',
-  icons: "/BetaNYC-favicon.svg",
+  icons: "/app/BetaNYC-favicon.svg",
 }
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/BetaNYC-favicon.svg" type="image/svg" sizes="any" />
+        <link rel="icon" href="/app/BetaNYC-favicon.svg" type="image/svg" sizes="any" />
         <link
           href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
           rel="stylesheet"
