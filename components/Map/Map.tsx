@@ -26,7 +26,7 @@ import * as d3 from "d3"
 
 const Map = () => {
     const mapContainer = useRef<HTMLInputElement>(null);
-    const { map, setMap, setDistricts, setPanelShown, legislations, mapClickHandler, defaultMapHandler} = useContext(MapContext) as MapContextType
+    const { map, setMap, setDistricts, setPanelShown, legislations, mapClickHandler, defaultMapHandler } = useContext(MapContext) as MapContextType
     /* @ts-ignore */
     const senateFeatures = (senate as GeoJson).features
     /* @ts-ignore */
@@ -487,7 +487,6 @@ const Map = () => {
             <MapLayers districtsClickHandler={districtsClickHandler} />
             <Geopanel />
             <Membershippanel selectedMemberFeatures={selectedMemberFeatures} setSelectedMemberFeatures={setSelectedMemberFeatures} />
-
         </>
     )
 

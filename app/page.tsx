@@ -51,18 +51,19 @@ export default function Home() {
 
   return (
     <>
-      {(windowSize.width < 820) ?
-        <div className='relative w-[100vw] h-[100vh] flex justify-center items-center leading-[1.2] font-bold text-headline text-rtc_navy bg-background_blue'>
-          This website is best viewed on desktop
-        </div> :
-        <div className='relative w-[100vw] max-h-[100vh] leading-[1.2]'>
-          <MapProvider >
-            <SidePanel />
-            <Map />
-          </MapProvider>
-        </div>
+      <div className='relative w-[100vw] max-h-[100vh] leading-[1.2]'>
+        {
+          (windowSize.width < 820) &&
+          <div className='absolute top-0 left-0 flex justify-center items-center w-full h-full leading-[1.2] font-bold text-headline text-black bg-background_blue z-[100]'>
+            This website is best viewed on desktop
+          </div>
+        }
+        <MapProvider >
+          <SidePanel />
+          <Map />
+        </MapProvider>
+      </div>
 
-      }
     </>
 
   )
