@@ -66,24 +66,20 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                 selectedContent === "credits" && (
                     <div className="text-[12px] lg:text-body overflow-y-scroll">
                         <p className='mx-[20px]'>
-                            This web tool was designed and developed by BetaNYC’s Civic Innovation Lab in collaboration with the Right to Counsel NYC Coalition.
+                            This project was designed and developed by BetaNYC’s Civic Innovation Lab in collaboration with the Right to Counsel NYC Coalition, through a BetaNYC service called Research and Data Assistance Request (RADAR).
                         </p>
                         <div className="m-[20px]">
-                            <p className='font-semibold text-title'>Right to Counsel NYC Coalition</p>
-                            <p>The Right to Counsel NYC Coalition is a tenant-led coalition that formed in 2014 to disrupt Housing Court as a center of displacement and stop the eviction crisis that has threatened our families, our neighborhoods, and our homes for too long.
-                                Our Coalition is made up of tenants, organizers, advocates, legal services organizations and more! Our work is rooted in principles of dignity, diversity, equity, humanity, and justice. After a hard fought, three-year grassroots campaign,
-                                we won and became the first city in the nation to establish a Right to Counsel for tenants facing eviction.</p>
+                            <p className='font-semibold text-title'><a className='underline' target='_blank' href="https://www.righttocounselnyc.org/hcmc">Right to Counsel NYC Coalition</a></p>
+                            <p>The Right to Counsel NYC Coalition is a tenant-led coalition that formed in 2014 to disrupt Housing Court as a center of displacement and stop the eviction crisis that has threatened our families, our neighborhoods, and our homes for too long. Our Coalition is made up of tenants, organizers, advocates, legal services organizations and more! Our work is rooted in principles of dignity, diversity, equity, humanity, and justice. After a hard fought, three-year grassroots campaign, we won and became the first city in the nation to establish a Right to Counsel for tenants facing eviction.</p>
                         </div>
                         <div className="m-[20px]">
-                            <p className='font-semibold text-title'>BetaNYC</p>
-                            <p>BetaNYC is a civic organization dedicated to improving lives in New York through civic design,
-                                technology, and data. BetaNYC’s Civic Innovation Lab supports the data and research needs of New Yorkers
-                                through a community service initiative called Research and Data Assistance Request (RADAR).
+                            <p className='font-semibold text-title'><a className='underline' target='_blank' href="https://beta.nyc/">BetaNYC</a></p>
+                            <p>BetaNYC is a civic organization dedicated to improving lives in New York through civic design, technology, and data. With an aim to improve access to public interest technology, the Civic Innovation Lab at BetaNYC provides assistance with research, data analysis, and data visualization. The Civic Innovation Lab at BetaNYC created this project in response to a Research and Data Assistance Request (RADAR) submitted by the Right to Counsel NYC Coalition.
                                 <a className='underline' target='_blank' href={"https://beta.nyc/products/research-and-data-assistance-requests/"}> Follow this link to learn more about RADARs and how to submit a request!</a></p>
                         </div>
                         <div className="m-[20px] mb-[40px] ">
                             <p className='font-semibold text-body'>Civic Innovation Lab at BetaNYC:</p>
-                            <p>Ashley Louie (Director), Erik Brown, Hao Lun Hung, Hailee Luong</p>
+                            <p>Ashley Louie (Director), Hao Lun Hung (Project Lead), Erik Brown, Hailee Luong</p>
 
                         </div>
                     </div>
