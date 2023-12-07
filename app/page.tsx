@@ -63,7 +63,6 @@ export default function Home() {
           <Map />
         </MapProvider>
       </div>
-
     </>
 
   )
