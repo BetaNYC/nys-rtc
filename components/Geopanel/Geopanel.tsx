@@ -58,6 +58,7 @@ const Geopanel = () => {
             1, 0
         ])
         map?.moveLayer("districts", "zipcodes")
+        map?.moveLayer("pattern", "zipcodes")
     }
 
     const countyMouseEnterHandler = (e: MouseEvent<HTMLElement>) => {
@@ -73,6 +74,9 @@ const Geopanel = () => {
             1, 0
         ])
         map?.moveLayer("districts", "counties_borders")
+        map?.moveLayer('pattern', "counties_borders")
+        map?.moveLayer('pattern', "counties_labels")
+
     }
 
     const removeHoverEventHandler = () => {

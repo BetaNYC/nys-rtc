@@ -102,8 +102,12 @@ const MapProvider = ({ children }: Props) => {
 
 
         m.moveLayer("districts", "districts_clicked_outline")
+        m.moveLayer('districts', "counties_borders")
+        m.moveLayer("districts", "zipcodes")
         m.moveLayer("districts_clicked_outline", "members")
         m.moveLayer("districts_clicked_outline", "district_label")
+        m.moveLayer("pattern", "district_label")
+
 
 
 

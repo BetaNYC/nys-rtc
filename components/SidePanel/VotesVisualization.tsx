@@ -189,6 +189,7 @@ const VotesVisualization = ({ legislation }: Props) => {
             .on("mouseover", () => labelMouseoverHandler('assemblyRepVotes'))
             .on('mouseout', () => labelMouseoutHandler())
 
+
         senateSvg
             .append("line")
             .attr("x1", (width) / 2)
@@ -202,6 +203,7 @@ const VotesVisualization = ({ legislation }: Props) => {
 
         senateSvg
             .append("rect")
+
             .attr("x", (width) / 2 - 10)
             .attr("y", 2)
             .attr("width", 20)
@@ -273,6 +275,11 @@ const VotesVisualization = ({ legislation }: Props) => {
             .on("mouseover", () => labelMouseoverHandler("superMajority"))
             .on('mouseout', () => labelMouseoutHandler())
 
+
+        return () => {
+            d3.selectAll("rect").remove()
+            d3.selectAll("line").remove()
+        }
     })
 
 
@@ -297,7 +304,9 @@ const VotesVisualization = ({ legislation }: Props) => {
                     <div className={`absolute top-0 left-0 font-semibold text-[10px] lg:text-label`}>{Math.round(senateTotalVotes / 63 * 100)}%</div>
                     <div>Total 63 seats</div>
                 </div>
-                <svg className='w-full h-[42px]' ref={senateRef}></svg>
+                <svg className='relative w-full h-[42px]' ref={senateRef}>
+                    {/* <div className='absolute left-[50%] top-0 w-[20px] h-[40px] bg-black'>aaa</div> */}
+                </svg>
                 <div className='relative'>
                     <div className={`absolute top-0 left-[calc(50%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['simpleMajority'] ? 'opacity-1' : "opacity-0"}`}>32 votes<br />Simple Majority</div>
                     <div className={`absolute top-0 left-[calc(75%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['superMajority'] ? 'opacity-1' : "opacity-0"}`}>42 votes<br />Super Majority</div>
@@ -340,7 +349,6 @@ const VotesVisualization = ({ legislation }: Props) => {
                                 (<div className={`font-semibold text-[10px] lg:text-label text-rtc_navy`}>{assemblyTotalVotes} votes</div>)
                     }
                 </div>
-
             </div>
         </div>
     )
