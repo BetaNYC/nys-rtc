@@ -24,12 +24,46 @@ export default function Home() {
 
 
 
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0,
+  });
+
+
+
+  useEffect(() => {
+
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
+
   return (
-    <div className='relative w-[100vw] max-h-[100vh] leading-[1.2]'>
-      <MapProvider >
-        <SidePanel />
-        <Map />
-      </MapProvider>
-    </div>
+    <>
+      {(windowSize.width < 820) ?
+        <div className='relative w-[100vw] h-[100vh] flex justify-center items-center leading-[1.2] font-bold text-headline text-rtc_navy bg-background_blue'>
+          This website is best viewed on desktop
+        </div> :
+        <div className='relative w-[100vw] max-h-[100vh] leading-[1.2]'>
+          <MapProvider >
+            <SidePanel />
+            <Map />
+          </MapProvider>
+        </div>
+
+      }
+    </>
+
   )
 }

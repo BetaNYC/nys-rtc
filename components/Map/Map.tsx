@@ -18,8 +18,8 @@ import Membershippanel from "../Geopanel/Membershippanel";
 
 import "./Map.css"
 
-import pattern_rep from "../../public/icons/pattern_rep.svg"
-import pattern_demo from "../../public/icons/pattern_demo.svg"
+import pattern_red from "../../public/patterns/red.svg"
+import pattern_blue from "../../public/patterns/blue.svg"
 
 import * as d3 from "d3"
 
@@ -135,13 +135,13 @@ const Map = () => {
             patternRepImg.onload = () => m.addImage("pattern_rep", patternRepImg, {
                 sdf: true,
             })
-            patternRepImg.src = pattern_rep.src
+            patternRepImg.src = pattern_red.src
 
             let patternDemoImg = new Image(100, 100)
             patternDemoImg.onload = () => m.addImage("pattern_demo", patternDemoImg, {
                 sdf: true,
             })
-            patternDemoImg.src = pattern_demo.src
+            patternDemoImg.src = pattern_blue.src
 
             m.addLayer({
                 'id': 'districts',
