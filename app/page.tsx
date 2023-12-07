@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
     <>
-      <div className='relative w-[100vw] max-h-[100vh] leading-[1.2]'>
+      <div className='relative w-[100vw] h-[100vh] leading-[1.2]'>
         {
           (windowSize.width < 820) &&
           <div className='absolute top-0 left-0 flex justify-center items-center w-full h-full leading-[1.2] font-bold text-headline text-black bg-background_blue z-[100]'>
