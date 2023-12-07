@@ -131,13 +131,13 @@ const Map = () => {
             })
 
 
-            let patternRepImg = new Image(100, 100)
+            let patternRepImg = new Image(80, 80)
             patternRepImg.onload = () => m.addImage("pattern_rep", patternRepImg, {
                 sdf: true,
             })
             patternRepImg.src = pattern_red.src
 
-            let patternDemoImg = new Image(100, 100)
+            let patternDemoImg = new Image(80, 80)
             patternDemoImg.onload = () => m.addImage("pattern_demo", patternDemoImg, {
                 sdf: true,
             })
