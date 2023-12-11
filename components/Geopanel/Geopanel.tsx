@@ -57,8 +57,27 @@ const Geopanel = () => {
             ['all', ['==', ['get', "ZCTA5CE10"], selectedZipcodes]],
             1, 0
         ])
+
+        // map?.moveLayer("background", "zipcodes")
+        // map?.moveLayer("background", "districts")
+        // map?.moveLayer("background", "pattern")
+        // map?.moveLayer("background", 'districts_outline')
+        // map?.moveLayer("background", 'districts_outline')
+        // map?.moveLayer("districts", 'districts_outline')
+        // map?.moveLayer("pattern", 'districts_outline')
+        // map?.moveLayer("pattern", 'districts_clicked_outline')
+        // map?.moveLayer("districts", "zipcodes")
+        // map?.moveLayer("pattern", "zipcodes")
+
+
+        map?.moveLayer("background", "zipcodes")
         map?.moveLayer("districts", "zipcodes")
-        map?.moveLayer("pattern", "zipcodes")
+        map?.moveLayer('pattern', "zipcodes")
+        map?.moveLayer('districts_outline', "zipcodes")
+        map?.moveLayer('districts_clicked_outline', "zipcodes")
+
+
+
     }
 
     const countyMouseEnterHandler = (e: MouseEvent<HTMLElement>) => {
@@ -73,9 +92,14 @@ const Geopanel = () => {
             ['all', ['==', ['get', "name"], selectedCounty + " County"]],
             1, 0
         ])
+        map?.moveLayer("background", "counties_borders")
         map?.moveLayer("districts", "counties_borders")
         map?.moveLayer('pattern', "counties_borders")
         map?.moveLayer('pattern', "counties_labels")
+        map?.moveLayer('districts_outline', "counties_labels")
+        map?.moveLayer('districts_clicked_outline', "counties_labels")
+
+
 
     }
 

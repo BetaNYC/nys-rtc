@@ -313,10 +313,14 @@ const Map = () => {
 
 
 
-
+            m.moveLayer("background", "districts")
+            m.moveLayer("background", "zipcodes")
             m.moveLayer('districts_outline',  'districts_hovered')
             m.moveLayer("districts", "members")
             m.moveLayer('pattern', 'members')
+  
+            m.moveLayer("districts", "zipcodes")
+            m.moveLayer("pattern", "zipcodes")
 
 
             m.on("click", "districts", (e: MapMouseEvent & EventData) => {
@@ -370,6 +374,8 @@ const Map = () => {
 
                 m.moveLayer("districts_outline", "members_label")
                 m.moveLayer("districts_outline", "members")
+
+
 
 
             })

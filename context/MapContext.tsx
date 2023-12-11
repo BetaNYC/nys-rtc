@@ -101,9 +101,12 @@ const MapProvider = ({ children }: Props) => {
         m.setPaintProperty("district_label", "text-opacity", 1)
 
 
+
+
         m.moveLayer("districts", "districts_clicked_outline")
         m.moveLayer("districts", "members")
         m.moveLayer('districts', "counties_borders")
+        m.moveLayer("background", "zipcodes")
         m.moveLayer("districts", "zipcodes")
         m.moveLayer("districts_outline", "members")
         m.moveLayer('districts_outline', 'districts_clicked_outline')
@@ -121,7 +124,7 @@ const MapProvider = ({ children }: Props) => {
 
         m.flyTo({
             center: targetCentroid as [number, number],
-            zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 11 : 7.5
+            zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 11 : 8
         })
 
         setPanelShown({ geopanelShown: true, memberpanelShown: false })
