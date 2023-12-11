@@ -60,7 +60,7 @@ const Legend = () => {
                             <div className=' flex flex-col gap-[5px]'>
                                 <div className='flex items-center gap-[5px]'>
                                     <Image
-                                        src="/patterns/blue.svg"
+                                        src="/patterns/blue-legend.svg"
                                         width={16}
                                         height={16}
                                         alt="No Support, Democrat"
@@ -69,7 +69,7 @@ const Legend = () => {
                                 </div>
                                 <div className='flex items-center gap-[5px]'>
                                     <Image
-                                        src="/patterns/red.svg"
+                                        src="/patterns/red-legend.svg"
                                         width={16}
                                         height={16}
                                         alt="No Support, Republican"
