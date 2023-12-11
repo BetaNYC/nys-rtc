@@ -44,6 +44,12 @@ const SidePanel = () => {
                 1, 0
             ])
 
+            map?.setPaintProperty("background", 'fill-opacity', [
+                "case",
+                ["in", l, ["get", "HCMC support"]],
+                0, 1
+            ])
+
             map?.setPaintProperty("pattern", 'fill-opacity', [
                 "case",
                 ["in", l, ["get", "HCMC support"]],
@@ -95,7 +101,7 @@ const SidePanel = () => {
                 </div>
             </div>
             {mapShown === false &&
-                <div className="absolute top-0 left z-50 left-[35%] md:left-[32%] lg:left-[30%] xl:left-[28%] flex justify-center items-center align-middle w-[65%] md:w-[68%] lg:w-[70%]  xl:w-[72%] h-[100vh] font-bold text-subheadline text-rtc_navy bg-background_blue bg-opacity-95">
+                <div className="absolute top-0 left z-50 left-[35%] md:left-[32%] lg:left-[30%] xl:left-[28%] flex justify-center items-center align-middle w-[65%] md:w-[68%] lg:w-[70%]  xl:w-[72%] h-[100vh] font-bold text-subheadline text-white bg-black bg-opacity-[70%]">
                     The Clean Hands legislation is in development. <br /> Map information will be available in the near future
                 </div>
             }

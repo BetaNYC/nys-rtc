@@ -102,11 +102,18 @@ const MapProvider = ({ children }: Props) => {
 
 
         m.moveLayer("districts", "districts_clicked_outline")
+        m.moveLayer("districts", "members")
         m.moveLayer('districts', "counties_borders")
         m.moveLayer("districts", "zipcodes")
+        m.moveLayer("districts_outline", "members")
+        m.moveLayer('districts_outline', 'districts_clicked_outline')
         m.moveLayer("districts_clicked_outline", "members")
         m.moveLayer("districts_clicked_outline", "district_label")
         m.moveLayer("pattern", "district_label")
+        m.moveLayer('pattern', 'districts_clicked_outline')
+        m.moveLayer('pattern', 'members')
+
+
 
 
 
@@ -114,7 +121,7 @@ const MapProvider = ({ children }: Props) => {
 
         m.flyTo({
             center: targetCentroid as [number, number],
-            zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 11 : 8
+            zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 11 : 7.5
         })
 
         setPanelShown({ geopanelShown: true, memberpanelShown: false })

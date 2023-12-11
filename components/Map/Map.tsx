@@ -131,17 +131,31 @@ const Map = () => {
             })
 
 
-            let patternRepImg = new Image(80, 80)
+            let patternRepImg = new Image(75, 75)
             patternRepImg.onload = () => m.addImage("pattern_rep", patternRepImg, {
                 sdf: true,
             })
             patternRepImg.src = pattern_red.src
 
-            let patternDemoImg = new Image(80, 80)
+            let patternDemoImg = new Image(75, 75)
             patternDemoImg.onload = () => m.addImage("pattern_demo", patternDemoImg, {
                 sdf: true,
             })
             patternDemoImg.src = pattern_blue.src
+
+            m.addLayer({
+                id: "background",
+                type: "fill",
+                source: 'districts',
+                paint: {
+                    "fill-color": "white",
+                    'fill-opacity': [
+                        "case",
+                        ["all", ["!", ["in", legislations, ["get", "HCMC support"]]]],
+                        1, 0
+                    ]
+                }
+            })
 
             m.addLayer({
                 'id': 'districts',
@@ -179,59 +193,9 @@ const Map = () => {
                 }
             });
 
-            m.addLayer({
-                'id': 'districts_clicked_outline',
-                'type': 'line',
-                'source': 'districts',
-                'layout': {},
-                'paint': {
-                    'line-color': [
-                        "case",
-                        ["all", ["==", ["get", "Party_x"], "Democratic"]],
-                        "#006fd6",
-                        "#D04E40"
-                    ],
-                    'line-width': 0
-                }
-            });
-
-            m.addLayer({
-                'id': 'districts_hovered',
-                'type': 'fill',
-                'source': 'districts_hovered',
-                'layout': {},
-                'paint': {
-                    'fill-color': "black",
-                    'fill-opacity': 1
-                },
-            });
 
 
-            m.addLayer({
-                id: "district_label",
-                type: 'symbol',
-                source: 'district_label',
-                layout: {
-                    'text-field': ['get', 'label'],
-                    'text-justify': 'auto',
-                    'text-size': 14,
-                    'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
-                    // 'text-radial-offset': 0.5,
-                    'text-font': ["Arial Unicode MS Bold"],
-                    "text-offset": [0, -1.5]
-                },
-                paint: {
-                    'text-opacity': 1,
-                    "text-color": [
-                        "case",
-                        ["all", ["==", ["get", "party"], "Democratic"]],
-                        "#121D3E",
-                        "#121D3E"
-                    ],
-                    'text-halo-color': 'white',
-                    "text-halo-width": 0.6
-                }
-            })
+
 
             m.addLayer({
                 id: "pattern",
@@ -273,6 +237,32 @@ const Map = () => {
             });
 
             m.addLayer({
+                id: "district_label",
+                type: 'symbol',
+                source: 'district_label',
+                layout: {
+                    'text-field': ['get', 'label'],
+                    'text-justify': 'auto',
+                    'text-size': 14,
+                    'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+                    // 'text-radial-offset': 0.5,
+                    'text-font': ["Arial Unicode MS Bold"],
+                    "text-offset": [0, -1.5]
+                },
+                paint: {
+                    'text-opacity': 1,
+                    "text-color": [
+                        "case",
+                        ["all", ["==", ["get", "party"], "Democratic"]],
+                        "#121D3E",
+                        "#121D3E"
+                    ],
+                    'text-halo-color': 'white',
+                    "text-halo-width": 0.6
+                }
+            })
+
+            m.addLayer({
                 id: "members_label",
                 type: 'symbol',
                 source: 'members_label',
@@ -294,8 +284,39 @@ const Map = () => {
             })
 
 
+            m.addLayer({
+                'id': 'districts_clicked_outline',
+                'type': 'line',
+                'source': 'districts',
+                'layout': {},
+                'paint': {
+                    'line-color': [
+                        "case",
+                        ["all", ["==", ["get", "Party_x"], "Democratic"]],
+                        "#006fd6",
+                        "#D04E40"
+                    ],
+                    'line-width': 0
+                }
+            });
 
+            m.addLayer({
+                'id': 'districts_hovered',
+                'type': 'fill',
+                'source': 'districts_hovered',
+                'layout': {},
+                'paint': {
+                    'fill-color': "black",
+                    'fill-opacity': 1
+                },
+            });
+
+
+
+
+            m.moveLayer('districts_outline',  'districts_hovered')
             m.moveLayer("districts", "members")
+            m.moveLayer('pattern', 'members')
 
 
             m.on("click", "districts", (e: MapMouseEvent & EventData) => {
@@ -349,6 +370,7 @@ const Map = () => {
 
                 m.moveLayer("districts_outline", "members_label")
                 m.moveLayer("districts_outline", "members")
+
 
             })
 
@@ -405,7 +427,6 @@ const Map = () => {
                     1
                 ])
 
-                m.moveLayer("districts", "districts_outline")
             })
 
             m.on("mouseleave", "districts", () => {
@@ -468,14 +489,6 @@ const Map = () => {
         };
     }, [])
 
-    // useEffect(() => {
-    //     const cover = d3.select("body")
-    //         .append("div")
-    //         .attr('class', 'cover')
-    //         .attr('fill', "#121D3E")
-
-    //     if (mapShown === false) cover.attr("visibility", "visible")
-    // }, [mapShown])
 
 
 

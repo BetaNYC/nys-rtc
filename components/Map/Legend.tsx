@@ -37,7 +37,7 @@ const Legend = () => {
                 />
             </div>
             {panelShown && (
-                <div className='absolute left-[37%] md:left-[34%] lg:left-[32%] xl:left-[30%] top-[20px] p-[15px]  text-rtc_navy bg-white rounded-[8px] drop-shadow-xl z-20'>
+                <div className='absolute left-[37%] md:left-[34%] lg:left-[32%] xl:left-[30%] top-[20px] p-[15px] text-rtc_navy bg-white rounded-[8px] drop-shadow-xl z-20'>
                     <div className='flex justify-between'>
                         <h2 className='w-[220px] mb-[8px] font-bold text-[13px] lg:text-title leading-[22.5px]'>
                             {legislations === "Statewide RTC" ? "Statewide Right to Counsel " : legislations === "Defend RTC" ? "Defend Right to Counsel " : "Winter Eviction Moratorium "}
@@ -45,39 +45,42 @@ const Legend = () => {
                         </h2>
                         <XMarkIcon className='w-[22px] h-[22px] text-grey_2 cursor-pointer' onClick={() => panelClickHandler(false)} />
                     </div>
-                    <div className={`grid grid-cols-[1fr_1fr]  ${membershipShown ? "lg:grid-cols-[1fr_1fr_1fr] grid-rows-2 lg:grid-rows-1" : "grid-rows-1"}  gap-[10px] mt-[10px]`}>
-                        <div className='lg:row-start-1 flex flex-col gap-[5px]'>
-                            <div className='flex items-center gap-[10px]'>
-                                <div className='w-[16px] h-[16px] bg-demo'></div>
-                                <div className='text-label'>Support, Democrat</div>
+                    <div className={`mt-[5px]`}>
+                        <div className='flex items-center  gap-[15px] '>
+                            <div className=' flex flex-col gap-[5px]'>
+                                <div className=' flex items-center gap-[5px]'>
+                                    <div className='w-[16px] h-[16px] bg-demo'></div>
+                                    <div className='text-label'>Support, Democrat</div>
+                                </div>
+                                <div className='flex items-center gap-[5px]'>
+                                    <div className='w-[16px] h-[16px] bg-rep'></div>
+                                    <div className='text-label'>Support, Republican</div>
+                                </div>
                             </div>
-                            <div className='flex items-center gap-[10px]'>
-                                <div className='w-[16px] h-[16px] bg-rep'></div>
-                                <div className='text-label'>Support, Republican</div>
+                            <div className=' flex flex-col gap-[5px]'>
+                                <div className='flex items-center gap-[5px]'>
+                                    <Image
+                                        src="/patterns/blue.svg"
+                                        width={16}
+                                        height={16}
+                                        alt="No Support, Democrat"
+                                    />
+                                    <div className='text-label'>No Support, Democrat</div>
+                                </div>
+                                <div className='flex items-center gap-[5px]'>
+                                    <Image
+                                        src="/patterns/red.svg"
+                                        width={16}
+                                        height={16}
+                                        alt="No Support, Republican"
+                                    />
+                                    <div className='text-label '>No Support, Republican</div>
+                                </div>
                             </div>
                         </div>
-                        <div className='lg:row-start-1 flex flex-col gap-[5px]'>
-                            <div className='flex items-center gap-[10px]'>
-                                <Image
-                                    src="/patterns/blue.svg"
-                                    width={16}
-                                    height={16}
-                                    alt="No Support, Democrat"
-                                />
-                                <div className='text-label'>No Support, Democrat</div>
-                            </div>
-                            <div className='flex items-center gap-[10px]'>
-                                <Image
-                                    src="/patterns/red.svg"
-                                    width={16}
-                                    height={16}
-                                    alt="No Support, Republican"
-                                />
-                                <div className='text-label '>No Support, Republican</div>
-                            </div>
-                        </div>
+
                         {membershipShown && (
-                            <div className='lg:row-start-1 flex flex-col gap-[5px]'>
+                            <div className=' flex flex-col gap-[5px] mt-[13px]'>
                                 <div className='flex items-center gap-[10px]'>
                                     <div className='w-[16px] h-[16px] bg-[#802948] border-[2px] border-[#802948] rounded-full'></div>
                                     <div className='text-label'>Member, Right to Counsel Coalition </div>

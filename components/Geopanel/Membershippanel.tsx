@@ -122,8 +122,8 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
             {panelShown["memberpanelShown"] && (
                 <div className='flex flex-col absolute top-0 right-0 w-[14%] min-w-[200px] h-full z-20 overflow-y-scroll'>
                     <div className='px-[18px] py-[12px] w-full bg-rtc_purple'>
-                        <div className={`flex items-start justify-between my-[12px] w-full `}>
-                            <div className='w-[75%] font-bold text-subheadline'>{selectedMemberFeatures?.properties.Name.toUpperCase()}</div>
+                        <div className={`flex items-start justify-between my-[12px] w-full text-white`}>
+                            <div className='w-[75%] font-bold text-subheadline text-white'>{selectedMemberFeatures?.properties.Name.toUpperCase()}</div>
                             <XMarkIcon className='w-[20px] h-[20px] text-white cursor-pointer' onClick={() => defaultMapHandler(legislations)} />
                         </div>
                         <div className='flex items-center gap-[6px]'>
