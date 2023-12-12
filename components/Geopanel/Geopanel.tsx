@@ -67,6 +67,9 @@ const Geopanel = () => {
         map?.moveLayer('districts_clicked_outline', "zipcodes")
 
 
+        map?.flyTo({zoom: 8})
+
+
 
     }
 
