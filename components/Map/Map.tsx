@@ -212,6 +212,12 @@ const Map = () => {
             });
 
 
+
+
+
+
+
+
             m.addLayer({
                 'id': 'members',
                 'type': 'circle',
@@ -317,7 +323,9 @@ const Map = () => {
             m.moveLayer("districts", "counties_borders")
             m.moveLayer('pattern', "counties_borders")
             m.moveLayer("districts", "zipcodes")
+            m.moveLayer("pattern", 'districts_outline')
             m.moveLayer("pattern", "zipcodes")
+
 
 
             m.on("click", "districts", (e: MapMouseEvent & EventData) => {

@@ -75,7 +75,6 @@ const MapProvider = ({ children }: Props) => {
         const targetPolygon = turf.polygon([coordinatesArray])
         /* @ts-ignore */
         let targetCentroid = turf.center(targetPolygon).geometry.coordinates
-        console.log(targetCentroid)
         if(district === 48) targetCentroid[1] = targetCentroid[1] - 0.25
         if(district === 49) {
             targetCentroid[0] = targetCentroid[0] - 0.275
@@ -112,18 +111,21 @@ const MapProvider = ({ children }: Props) => {
         })
 
         m.moveLayer("districts", "districts_clicked_outline")
+        m.moveLayer("districts", "districts_outline")
         m.moveLayer("districts", "members")
         m.moveLayer('districts', "counties_borders")
         m.moveLayer('pattern', "counties_borders")
+        m.moveLayer("pattern", "district_label")
+        m.moveLayer('pattern', 'districts_outline')
+        m.moveLayer('pattern', 'districts_clicked_outline')
+        m.moveLayer('pattern', 'members')
         m.moveLayer("background", "zipcodes")
         m.moveLayer("districts", "zipcodes")
         m.moveLayer("districts_outline", "members")
         m.moveLayer('districts_outline', 'districts_clicked_outline')
         m.moveLayer("districts_clicked_outline", "members")
         m.moveLayer("districts_clicked_outline", "district_label")
-        m.moveLayer("pattern", "district_label")
-        m.moveLayer('pattern', 'districts_clicked_outline')
-        m.moveLayer('pattern', 'members')
+
 
         setPanelShown({ geopanelShown: true, memberpanelShown: false })
         setSelectedDistrictFeatures(e.features[0])

@@ -34,6 +34,12 @@ const Geopanel = () => {
         setDistricts(district)
         setSelectedDistrictFeatures(clickedDistrictData.features[0])
         setSelectedDistrictOverlappedData((district === "senate" ? senateOverlapped : assemblyOverlapped).filter(d => d.district === clickedDistrictData.features[0]?.properties.District)[0])
+
+
+        // map?.moveLayer("background", "districts")
+        // map?.moveLayer("background", "pattern")
+        // map?.moveLayer("pattern", 'districts_outline')
+        // map?.moveLayer("districts", 'districts_outline')
     }
 
     const districtMouseEnverHandler = (e: MouseEvent<HTMLElement>, district: Districts) => {
@@ -48,6 +54,7 @@ const Geopanel = () => {
             type: "FeatureCollection",
             features: hoveredDistrctData.features
         })
+
     }
 
     const zipcodeMouseEnterHandler = (e: MouseEvent<HTMLElement>) => {
