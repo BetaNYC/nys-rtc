@@ -64,10 +64,10 @@ const Map = () => {
 
     useEffect(() => {
         mapboxgl.accessToken =
-            "pk.eyJ1IjoiY2xvdWRsdW4iLCJhIjoiY2s3ZWl4b3V1MDlkejNkb2JpZmtmbHp4ZiJ9.MbJU7PCa2LWBk9mENFkgxw";
+            "pk.eyJ1IjoiYmV0YW55YyIsImEiOiJhdEk0RmZ3In0.z3ayA_ZWlFP7Co7h-T-6WQ";
         const m = new mapboxgl.Map({
             container: mapContainer.current || "",
-            style: "mapbox://styles/cloudlun/clm6k2n6y02gi01ns267c139m",
+            style: "mapbox://styles/betanyc/clq1zgqf500ms01ol2wkifjlu",
             center: [lng, lat],
             zoom: zoom,
             minZoom: 6,
@@ -178,26 +178,6 @@ const Map = () => {
             });
 
             m.addLayer({
-                'id': 'districts_outline',
-                'type': 'line',
-                'source': 'districts',
-                'layout': {},
-                'paint': {
-                    'line-color': [
-                        "case",
-                        ["all", ["==", ["get", "Party_x"], "Democratic"]],
-                        "#006fd6",
-                        "#D04E40"
-                    ],
-                    'line-width': 1
-                }
-            });
-
-
-
-
-
-            m.addLayer({
                 id: "pattern",
                 type: "fill",
                 source: 'districts',
@@ -214,6 +194,22 @@ const Map = () => {
                     ]
                 }
             })
+
+            m.addLayer({
+                'id': 'districts_outline',
+                'type': 'line',
+                'source': 'districts',
+                'layout': {},
+                'paint': {
+                    'line-color': [
+                        "case",
+                        ["all", ["==", ["get", "Party_x"], "Democratic"]],
+                        "#006fd6",
+                        "#D04E40"
+                    ],
+                    'line-width': 1
+                }
+            });
 
 
             m.addLayer({
@@ -315,10 +311,11 @@ const Map = () => {
 
             m.moveLayer("background", "districts")
             m.moveLayer("background", "zipcodes")
-            m.moveLayer('districts_outline',  'districts_hovered')
+            m.moveLayer('districts_outline', 'districts_hovered')
             m.moveLayer("districts", "members")
             m.moveLayer('pattern', 'members')
-  
+            m.moveLayer("districts", "counties_borders")
+            m.moveLayer('pattern', "counties_borders")
             m.moveLayer("districts", "zipcodes")
             m.moveLayer("pattern", "zipcodes")
 

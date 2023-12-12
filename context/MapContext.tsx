@@ -74,7 +74,13 @@ const MapProvider = ({ children }: Props) => {
         while (coordinatesArray.length === 1) coordinatesArray = coordinatesArray[0]
         const targetPolygon = turf.polygon([coordinatesArray])
         /* @ts-ignore */
-        const targetCentroid = turf.center(targetPolygon).geometry.coordinates
+        let targetCentroid = turf.center(targetPolygon).geometry.coordinates
+        console.log(targetCentroid)
+        if(district === 48) targetCentroid[1] = targetCentroid[1] - 0.25
+        if(district === 49) {
+            targetCentroid[0] = targetCentroid[0] - 0.275
+            targetCentroid[1] = targetCentroid[1] + 0.1
+        } 
         const labelData = {
             'type': 'FeatureCollection',
             'features': [
@@ -100,12 +106,15 @@ const MapProvider = ({ children }: Props) => {
 
         m.setPaintProperty("district_label", "text-opacity", 1)
 
-
-
+        m.flyTo({
+            center: targetCentroid as [number, number],
+            zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 11 : 8
+        })
 
         m.moveLayer("districts", "districts_clicked_outline")
         m.moveLayer("districts", "members")
         m.moveLayer('districts', "counties_borders")
+        m.moveLayer('pattern', "counties_borders")
         m.moveLayer("background", "zipcodes")
         m.moveLayer("districts", "zipcodes")
         m.moveLayer("districts_outline", "members")
@@ -115,17 +124,6 @@ const MapProvider = ({ children }: Props) => {
         m.moveLayer("pattern", "district_label")
         m.moveLayer('pattern', 'districts_clicked_outline')
         m.moveLayer('pattern', 'members')
-
-
-
-
-
-
-
-        m.flyTo({
-            center: targetCentroid as [number, number],
-            zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 11 : 8
-        })
 
         setPanelShown({ geopanelShown: true, memberpanelShown: false })
         setSelectedDistrictFeatures(e.features[0])

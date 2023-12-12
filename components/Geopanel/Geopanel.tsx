@@ -58,16 +58,6 @@ const Geopanel = () => {
             1, 0
         ])
 
-        // map?.moveLayer("background", "zipcodes")
-        // map?.moveLayer("background", "districts")
-        // map?.moveLayer("background", "pattern")
-        // map?.moveLayer("background", 'districts_outline')
-        // map?.moveLayer("background", 'districts_outline')
-        // map?.moveLayer("districts", 'districts_outline')
-        // map?.moveLayer("pattern", 'districts_outline')
-        // map?.moveLayer("pattern", 'districts_clicked_outline')
-        // map?.moveLayer("districts", "zipcodes")
-        // map?.moveLayer("pattern", "zipcodes")
 
 
         map?.moveLayer("background", "zipcodes")
