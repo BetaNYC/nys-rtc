@@ -4,6 +4,8 @@ import { XMarkIcon } from '@heroicons/react/24/solid'
 import { MapContext, MapContextType } from '@/context/MapContext'
 import GeoInfoBtns from './GeoInfoBtns'
 
+import * as turf from "@turf/turf";
+
 import assembly from "../../public/assembly.geo.json"
 import senate from "../../public/senate.geo.json"
 
@@ -60,6 +62,36 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
             type: "FeatureCollection",
             features: hoveredDistrctData.features
         })
+
+        let coordinatesArray = hoveredDistrctData.features[0].geometry.coordinates[0]
+        while (coordinatesArray.length === 1) coordinatesArray = coordinatesArray[0]
+        const targetPolygon = turf.polygon([coordinatesArray])
+        /* @ts-ignore */
+        const targetCentroid = turf.center(targetPolygon).geometry.coordinates
+        const labelData = {
+            'type': 'FeatureCollection',
+            'features': [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "label": hoveredDistrctData.features[0].properties.House + " " + hoveredDistrctData.features[0].properties.District.toString(),
+                        "party": hoveredDistrctData.features[0].properties.Party_x
+                    },
+                    "geometry": {
+                        'type': 'Point',
+                        'coordinates': targetCentroid
+                    }
+                }
+            ]
+        }
+
+        /* @ts-ignore */
+        map?.getSource("districts_hovered_label").setData({
+            type: "FeatureCollection",
+            features: labelData.features as GeoJson["features"]
+        })
+
+        map?.setPaintProperty("districts_hovered_label", "text-opacity", 1)
     }
 
 
@@ -69,7 +101,7 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
         map?.setPaintProperty("counties_borders", "fill-opacity", [
             "case",
             ['all', ['==', ['get', "name"], selectedCounty + " County"]],
-            1, 0
+            .7, 0
         ])
 
         map?.setPaintProperty("counties_labels", "text-opacity", [
@@ -77,6 +109,15 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
             ['all', ['==', ['get', "name"], selectedCounty + " County"]],
             1, 0
         ])
+
+        map?.moveLayer("background", "counties_borders")
+        map?.moveLayer("districts", "counties_borders")
+        map?.moveLayer('pattern', "counties_borders")
+        map?.moveLayer('pattern', "counties_labels")
+        map?.moveLayer('districts_outline', "counties_borders")
+        map?.moveLayer('districts_clicked_outline', "counties_borders")
+        map?.moveLayer('districts_outline', "counties_labels")
+        map?.moveLayer('districts_clicked_outline', "counties_labels")
     }
 
     const zipcodeMouseEnterHandler = (e: MouseEvent<HTMLElement>) => {
@@ -101,6 +142,7 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
             features: []
         })
         map?.moveLayer("districts", "counties_borders")
+        map?.setPaintProperty("districts_hovered_label", "text-opacity", 0)
     }
 
 
@@ -130,7 +172,7 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
                             <img src={selectedMemberFeatures?.properties["Membership Status"].includes("Member") ? "/icons/checked_member.svg" : "/icons/empty_member.svg"} alt="" className='w-[20px] h-[20px]' />
                             <div>
                                 <div className='text-[10px] text-white'>Right to Counsel NYC Coalition</div>
-                                <div className='font-semibold text-label text-white'>Campaign Member</div>
+                                <div className={`font-semibold text-label text-white `}>{selectedMemberFeatures?.properties["Membership Status"].includes("Member") ? "Campaign Member" : "Endorser"}</div>
                             </div>
                         </div>
                     </div>
@@ -164,10 +206,14 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
                                     <div className="w-[120px] font-regular text-label">{selectedMemberFeatures?.properties.Address}</div>
                                 </div>
                             }
-                            <div className="flex items-start gap-[8px]">
-                                <img src="/icons/phone.svg" alt="" className="w-[16px] h-[16px]" />
-                                <div className="font-regular text-label">{selectedMemberFeatures?.properties.Phone}</div>
-                            </div>
+                            {
+                                (selectedMemberFeatures?.properties.Phone) !== undefined &&
+                                <div className="flex items-start gap-[8px]">
+                                    <img src="/icons/phone.svg" alt="" className="w-[16px] h-[16px]" />
+                                    <div className="font-regular text-label">{selectedMemberFeatures?.properties.Phone}</div>
+                                </div>
+                            }
+
                             {
                                 (selectedMemberFeatures?.properties.Website) !== undefined &&
                                 (

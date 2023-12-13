@@ -430,18 +430,18 @@ const VotesVisualization = ({ legislation }: Props) => {
                 </svg>
                 <div className='relative'>
                     <div className={`absolute top-0 left-[calc(50%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['simpleMajority'] ? 'opacity-1' : "opacity-0"}`}>32 votes<br />Simple Majority</div>
-                    <div className={`absolute top-0 left-[calc(75%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['superMajority'] ? 'opacity-1' : "opacity-0"}`}>42 votes<br />Super Majority</div>
+                    <div className={`absolute top-0 left-[calc(75%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['superMajority'] ? 'opacity-1' : "opacity-0"}`}>42 votes<br />Supermajority</div>
                     {
                         labelShown['senateDemoVotes'] &&
-                        (<div className={`font-semibold text-[10px] lg:text-label text-demo`}>{+senateDemo[0][legislation]} Democratic votes</div>)
+                        (<div className={`font-semibold text-[10px] lg:text-label text-demo`}>{+senateDemo[0][legislation]} Democratic sponsors</div>)
                     }
                     {
                         labelShown['senateRepVotes'] &&
-                        (<div className={`font-semibold text-[10px] lg:text-label text-rep`}>{+senateRep[0][legislation]} Republican votes</div>)
+                        (<div className={`font-semibold text-[10px] lg:text-label text-rep`}>{+senateRep[0][legislation]} Republican sponsors</div>)
                     }
                     {
                         labelShown['senateTotalVotes'] &&
-                        (<div className={`font-semibold text-[10px] lg:text-label text-rtc_navy`}>{senateTotalVotes} votes</div>)
+                        (<div className={`font-semibold text-[10px] lg:text-label text-rtc_navy`}>{senateTotalVotes} sponsors</div>)
                     }
 
 
@@ -466,19 +466,19 @@ const VotesVisualization = ({ legislation }: Props) => {
                 <svg className='w-full h-[42px]' ref={assemblyRef}></svg>
                 <div className='relative'>
                     <div className={`absolute top-0 left-[calc(50%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['simpleMajority'] ? 'opacity-1' : "opacity-0"}`}>75 votes<br />Simple Majority</div>
-                    <div className={`absolute top-0 left-[calc(75%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['superMajority'] ? 'opacity-1' : "opacity-0"}`}>100 votes<br />Super Majority</div>
+                    <div className={`absolute top-0 left-[calc(75%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['superMajority'] ? 'opacity-1' : "opacity-0"}`}>100 votes<br />Supermajority</div>
                     {
                         labelShown['assemblyDemoVotes'] &&
-                        (<div className={`font-semibold text-[10px] lg:text-label text-demo`}>{+assemblyDemo[0][legislation]} Democratic votes</div>)
+                        (<div className={`font-semibold text-[10px] lg:text-label text-demo`}>{+assemblyDemo[0][legislation]} Democratic sponsors</div>)
                     }
                     {
                         labelShown['assemblyRepVotes'] &&
-                        (<div className={`font-semibold text-[10px] lg:text-label text-rep`}>{+assemblyRep[0][legislation]} Republican votes</div>)
+                        (<div className={`font-semibold text-[10px] lg:text-label text-rep`}>{+assemblyRep[0][legislation]} Republican sponsors</div>)
                     }
 
                     {
                         labelShown['assemblyTotalVotes'] &&
-                        (<div className={`font-semibold text-[10px] lg:text-label text-rtc_navy`}>{assemblyTotalVotes} votes</div>)
+                        (<div className={`font-semibold text-[10px] lg:text-label text-rtc_navy`}>{assemblyTotalVotes} sponsors</div>)
                     }
                 </div>
             </div>

@@ -79,7 +79,7 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                         </div>
                         <div className="m-[20px] mb-[40px] ">
                             <p className='font-semibold text-body'>BetaNYC Civic Innovation Lab Team</p>
-                            <p>Ashley Louie (Director), Hao Lun Hung (Project Lead), Erik Brown, Hailee Luong</p>
+                            <p>Ashley Louie (Director), Hao Lun Hung (Project Lead), Erik Brown, Hailee Hoa Luong</p>
 
                         </div>
                     </div>

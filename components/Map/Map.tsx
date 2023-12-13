@@ -328,6 +328,8 @@ const Map = () => {
                 paint: {
                     'text-opacity': 0,
                     "text-color": "white",
+                    'text-halo-color': 'black',
+                    "text-halo-width": 0.6
                 }
             })
 

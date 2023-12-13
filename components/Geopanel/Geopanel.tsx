@@ -105,7 +105,7 @@ const Geopanel = () => {
         map?.moveLayer('districts_clicked_outline', "zipcodes")
 
 
-        map?.flyTo({ zoom: 8 })
+4
 
 
 
@@ -243,7 +243,7 @@ const Geopanel = () => {
                         </div>
                         <div className='my-[16px]'>
                             <div className='mb-[5px] text-[10px] text-grey_1'>Counties</div>
-                            <div className='grid grid-cols-1 gap-[12px]'>
+                            <div className='grid grid-cols-1 lg:grid-cols-2 gap-[12px]'>
                                 {
                                     selectedDistrictOverlappedData &&
                                     selectedDistrictOverlappedData.counties.map((c, i) =>
@@ -253,7 +253,7 @@ const Geopanel = () => {
                         </div>
                         <div>
                             <div className='mb-[5px] text-[10px] text-grey_1'>Zip Codes</div>
-                            <div className='grid grid-cols-2 gap-[12px]'>
+                            <div className='grid grid-cols-2 lg:grid-cols-3 gap-[12px]'>
                                 {
                                     selectedDistrictOverlappedData &&
                                     selectedDistrictOverlappedData.zip_codes.map((z, i) =>
