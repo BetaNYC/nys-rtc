@@ -115,6 +115,14 @@ const Map = () => {
                 },
             })
 
+            m.addSource("districts_hovered_label", {
+                type: "geojson",
+                data: {
+                    type: "FeatureCollection",
+                    features: []
+                },
+            })
+
             m.addSource("members", {
                 type: "geojson",
                 data: {
@@ -131,7 +139,6 @@ const Map = () => {
                 },
             })
 
-
             let patternRepImg = new Image(75, 75)
             patternRepImg.onload = () => m.addImage("pattern_rep", patternRepImg, {
                 sdf: true,
@@ -143,7 +150,6 @@ const Map = () => {
                 sdf: true,
             })
             patternDemoImg.src = pattern_blue.src
-
 
             m.addLayer({
                 id: "pattern",
@@ -197,8 +203,6 @@ const Map = () => {
                 },
             });
 
-
-
             m.addLayer({
                 'id': 'districts_outline',
                 'type': 'line',
@@ -214,8 +218,6 @@ const Map = () => {
                     'line-width': 1
                 }
             });
-
-
 
             m.addLayer({
                 'id': 'members',
@@ -284,7 +286,6 @@ const Map = () => {
                 }
             })
 
-
             m.addLayer({
                 'id': 'districts_clicked_outline',
                 'type': 'line',
@@ -312,6 +313,23 @@ const Map = () => {
                 },
             });
 
+            m.addLayer({
+                id: "districts_hovered_label",
+                type: 'symbol',
+                source: 'districts_hovered_label',
+                layout: {
+                    'text-field': ['get', 'label'],
+                    'text-justify': 'auto',
+                    'text-size': 12,
+                    'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+                    'text-font': ["Arial Unicode MS Bold"],
+                    "text-offset": [0, -1.5]
+                },
+                paint: {
+                    'text-opacity': 0,
+                    "text-color": "white",
+                }
+            })
 
             m.moveLayer("background", "districts")
             m.moveLayer("background", "zipcodes")
@@ -324,8 +342,6 @@ const Map = () => {
             m.moveLayer("districts", "zipcodes")
             m.moveLayer("pattern", 'districts_outline')
             m.moveLayer("pattern", "zipcodes")
-
-
 
             m.on("click", "districts", (e: MapMouseEvent & EventData) => {
 
@@ -362,7 +378,6 @@ const Map = () => {
                     ]
                 }
 
-
                 /* @ts-ignore */
                 m.getSource("members_label").setData({
                     type: "FeatureCollection",
@@ -387,9 +402,6 @@ const Map = () => {
 
                 m.moveLayer("districts_outline", "members_label")
                 m.moveLayer("districts_outline", "members")
-
-
-
 
             })
 
@@ -420,7 +432,6 @@ const Map = () => {
                 </div>
             </div>`)
             }
-
 
             let tooltip = d3.select("body").append("div").attr("class", "tooltip").style("z-index", 1200)
 
@@ -511,7 +522,7 @@ const Map = () => {
             <MapLayers districtsClickHandler={districtsClickHandler} />
             <Geopanel />
             <Membershippanel selectedMemberFeatures={selectedMemberFeatures} setSelectedMemberFeatures={setSelectedMemberFeatures} />
-            
+
         </>
     )
 
