@@ -35,7 +35,8 @@ const LegislationColumns = ({ legislation, name, number, content, expand, calula
                 <div className='mx-[20px] mb-[40px]'>
                     <h2 className='font-semibold text-[13px] lg:text-title'>{name}</h2>
                     <h2 className='mb-[14px] font-semibold text-[13px] lg:text-title'>({number})</h2>
-                    <p className='font-regular text-[12px] lg:text-body'>{content}</p>
+                    <p className='mb-[14px] font-regular text-[12px] lg:text-body'>{content}</p>
+                    <p className='font-regular text-[12px] lg:text-body'>A simple majority, more than half of the votes, is required to pass legislation in New York State. If legislation is passed with a supermajority, a two-thirds vote, the governor cannot override the legislation with a veto.</p>
                 </div>
             </div>
         </div>

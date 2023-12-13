@@ -64,6 +64,7 @@ const Legend = () => {
                                         width={16}
                                         height={16}
                                         alt="No Support, Democrat"
+                                        className='border-[1px] border-demo'
                                     />
                                     <div className='text-label'>No Support, Democrat</div>
                                 </div>
@@ -73,6 +74,7 @@ const Legend = () => {
                                         width={16}
                                         height={16}
                                         alt="No Support, Republican"
+                                        className='border-[1px] border-rep'
                                     />
                                     <div className='text-label '>No Support, Republican</div>
                                 </div>

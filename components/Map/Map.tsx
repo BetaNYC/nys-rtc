@@ -313,7 +313,6 @@ const Map = () => {
             });
 
 
-
             m.moveLayer("background", "districts")
             m.moveLayer("background", "zipcodes")
             m.moveLayer('districts_outline', 'districts_hovered')
@@ -338,7 +337,7 @@ const Map = () => {
                     "#812948",
                     "white"
                 ],)
-        
+
                 m.setPaintProperty("members", "circle-stroke-color", "#812948")
 
             })
@@ -413,13 +412,13 @@ const Map = () => {
                     </div>
                     <div class="flex items-center gap-[5px]">
                         <img src=${properties["HCMC support"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"}  alt="" className="w-[16px] h-[16px]" />
-                    <div class="font-bold text-rtc_navy text-[12px]">Winter Eviction Moratorium</div>
-                </div>
+                        <div class="font-bold text-rtc_navy text-[12px]">Winter Eviction Moratorium</div>
+                    </div>
                 </div>
                 <div class="font-regular text-[12px] text-grey_2 underline">
                     Click the map for further details   
                 </div>
-            </div></div>`)
+            </div>`)
             }
 
 
@@ -461,7 +460,7 @@ const Map = () => {
                     </div>
                 </div>
                 <div class="px-[17px] pt-[8px] pb-[12px] text-navy bg-white rounded-b-[20px]">
-                <div class="font-regular text-[8px] text-[#7F7F7F]">Housing Courts Must Change! Campaign Support</div>
+                    <div class="font-regular text-[8px] text-[#7F7F7F]">Housing Courts Must Change! Campaign Support</div>
                 <div class="flex flex-col gap-[5px] mt-[6px] mb-[8px]">
                     <div class="flex items-start gap-[5px]">
                         <img src=${properties["Legislation"].includes("Statewide Right to Counsel") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
@@ -512,6 +511,7 @@ const Map = () => {
             <MapLayers districtsClickHandler={districtsClickHandler} />
             <Geopanel />
             <Membershippanel selectedMemberFeatures={selectedMemberFeatures} setSelectedMemberFeatures={setSelectedMemberFeatures} />
+            
         </>
     )
 

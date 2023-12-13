@@ -24,7 +24,7 @@ type Props = {
 };
 
 
-type labels = "senateDemoVotes" | 'senateRepVotes' | 'assemblyDemoVotes' | 'assemblyRepVotes' | 'simpleMajority' | 'superMajority'
+type labels = "senateDemoVotes" | 'senateRepVotes' | 'assemblyDemoVotes' | 'assemblyRepVotes' | 'simpleMajority' | 'superMajority' | 'senateTotalVotes' | 'assemblyTotalVotes'
 
 const VotesVisualization = ({ legislation }: Props) => {
     const { map, legislations, districts, setDistricts, defaultMapHandler } = useContext(MapContext) as MapContextType
@@ -36,7 +36,9 @@ const VotesVisualization = ({ legislation }: Props) => {
             assemblyDemoVotes: false,
             assemblyRepVotes: false,
             simpleMajority: false,
-            superMajority: false
+            superMajority: false,
+            senateTotalVotes: true,
+            assemblyTotalVotes: true
         }
     )
 
@@ -71,6 +73,7 @@ const VotesVisualization = ({ legislation }: Props) => {
 
 
     const labelMouseoverHandler = (l: labels) => {
+        console.log('bb')
         let newLabelShown = { ...labelShown }
         let keys = Object.keys({ ...labelShown }) as labels[]
         keys.forEach(n => n === l ? newLabelShown[n] = true : newLabelShown[n] = false)
@@ -78,13 +81,16 @@ const VotesVisualization = ({ legislation }: Props) => {
     }
 
     const labelMouseoutHandler = () => {
+        console.log('aaa')
         setLabelShown({
             senateDemoVotes: false,
             senateRepVotes: false,
             assemblyDemoVotes: false,
             assemblyRepVotes: false,
             simpleMajority: false,
-            superMajority: false
+            superMajority: false,
+            senateTotalVotes: true,
+            assemblyTotalVotes: true
         })
     }
 
@@ -128,6 +134,16 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr("width", width)
             .attr('height', barChartHeight)
             .attr('fill', "#EEEEEE")
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: false,
+                senateRepVotes: false,
+                assemblyDemoVotes: false,
+                assemblyRepVotes: false,
+                simpleMajority: false,
+                superMajority: false,
+                senateTotalVotes: true,
+                assemblyTotalVotes: true
+            }))
 
         assemblySvg
             .append("rect")
@@ -136,6 +152,16 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr("width", width)
             .attr('height', barChartHeight)
             .attr('fill', "#EEEEEE")
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: false,
+                senateRepVotes: false,
+                assemblyDemoVotes: false,
+                assemblyRepVotes: false,
+                simpleMajority: false,
+                superMajority: false,
+                senateTotalVotes: true,
+                assemblyTotalVotes: true
+            }))
 
         senateSvg
             .selectAll("senateDemoRect")
@@ -147,8 +173,16 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr("width", d => senateX(+d[legislation]))
             .attr('height', barChartHeight)
             .attr('fill', "#007CEE")
-            .on("mouseover", () => labelMouseoverHandler("senateDemoVotes"))
-            .on('mouseout', () => labelMouseoutHandler())
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: true,
+                senateRepVotes: false,
+                assemblyDemoVotes: false,
+                assemblyRepVotes: false,
+                simpleMajority: false,
+                superMajority: false,
+                senateTotalVotes: false,
+                assemblyTotalVotes: true
+            }))
 
         senateSvg
             .selectAll("senateRepRect")
@@ -160,8 +194,16 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr("width", d => senateX(+d[legislation]))
             .attr('height', barChartHeight)
             .attr('fill', "#D04E40")
-            .on("mouseover", () => labelMouseoverHandler("senateRepVotes"))
-            .on('mouseout', () => labelMouseoutHandler())
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: false,
+                senateRepVotes: true,
+                assemblyDemoVotes: false,
+                assemblyRepVotes: false,
+                simpleMajority: false,
+                superMajority: false,
+                senateTotalVotes: false,
+                assemblyTotalVotes: true
+            }))
 
         assemblySvg
             .selectAll("assemblyDemoRect")
@@ -173,8 +215,16 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr("width", d => assemblyX(+d[legislation]))
             .attr('height', barChartHeight)
             .attr('fill', "#007CEE")
-            .on("mouseover", () => labelMouseoverHandler("assemblyDemoVotes"))
-            .on('mouseout', () => labelMouseoutHandler())
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: false,
+                senateRepVotes: false,
+                assemblyDemoVotes: true,
+                assemblyRepVotes: false,
+                simpleMajority: false,
+                superMajority: false,
+                senateTotalVotes: true,
+                assemblyTotalVotes: false
+            }))
 
         assemblySvg
             .selectAll("assemblyRepRect")
@@ -186,8 +236,16 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr("width", d => assemblyX(+d[legislation]))
             .attr('height', barChartHeight)
             .attr('fill', "#D04E40")
-            .on("mouseover", () => labelMouseoverHandler('assemblyRepVotes'))
-            .on('mouseout', () => labelMouseoutHandler())
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: false,
+                senateRepVotes: false,
+                assemblyDemoVotes: false,
+                assemblyRepVotes: true,
+                simpleMajority: false,
+                superMajority: false,
+                senateTotalVotes: true,
+                assemblyTotalVotes: false
+            }))
 
 
         senateSvg
@@ -198,19 +256,34 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr("y2", height)
             .style("stroke", "#7B7B7B")
             .style("stroke-dasharray", ("2, 3"))
-            .on("mouseover", () => labelMouseoverHandler("simpleMajority"))
-            .on('mouseout', () => labelMouseoutHandler())
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: false,
+                senateRepVotes: false,
+                assemblyDemoVotes: false,
+                assemblyRepVotes: false,
+                simpleMajority: true,
+                superMajority: false,
+                senateTotalVotes: true,
+                assemblyTotalVotes: true
+            }))
 
         senateSvg
             .append("rect")
-
             .attr("x", (width) / 2 - 10)
             .attr("y", 2)
             .attr("width", 20)
             .attr('height', barChartHeight)
             .attr("fill-opacity", 0)
-            .on("mouseover", () => labelMouseoverHandler("simpleMajority"))
-            .on('mouseout', () => labelMouseoutHandler())
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: false,
+                senateRepVotes: false,
+                assemblyDemoVotes: false,
+                assemblyRepVotes: false,
+                simpleMajority: true,
+                superMajority: false,
+                senateTotalVotes: true,
+                assemblyTotalVotes: true
+            }))
 
         assemblySvg
             .append("line")
@@ -220,8 +293,16 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr("y2", height)
             .style("stroke", "#7B7B7B")
             .style("stroke-dasharray", ("2, 3"))
-            .on("mouseover", () => labelMouseoverHandler("simpleMajority"))
-            .on('mouseout', () => labelMouseoutHandler())
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: false,
+                senateRepVotes: false,
+                assemblyDemoVotes: false,
+                assemblyRepVotes: false,
+                simpleMajority: true,
+                superMajority: false,
+                senateTotalVotes: true,
+                assemblyTotalVotes: true
+            }))
 
         assemblySvg
             .append("rect")
@@ -230,8 +311,16 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr("width", 20)
             .attr('height', barChartHeight)
             .attr("fill-opacity", 0)
-            .on("mouseover", () => labelMouseoverHandler("simpleMajority"))
-            .on('mouseout', () => labelMouseoutHandler())
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: false,
+                senateRepVotes: false,
+                assemblyDemoVotes: false,
+                assemblyRepVotes: false,
+                simpleMajority: true,
+                superMajority: false,
+                senateTotalVotes: true,
+                assemblyTotalVotes: true
+            }))
 
         senateSvg
             .append("line")
@@ -241,8 +330,16 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr("y2", height)
             .style("stroke", "#7B7B7B")
             .style("stroke-dasharray", ("2, 3"))
-            .on("mouseover", () => labelMouseoverHandler("superMajority"))
-            .on('mouseout', () => labelMouseoutHandler())
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: false,
+                senateRepVotes: false,
+                assemblyDemoVotes: false,
+                assemblyRepVotes: false,
+                simpleMajority: false,
+                superMajority: true,
+                senateTotalVotes: true,
+                assemblyTotalVotes: true
+            }))
 
         senateSvg
             .append("rect")
@@ -251,8 +348,16 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr("width", 20)
             .attr('height', barChartHeight)
             .attr("fill-opacity", 0)
-            .on("mouseover", () => labelMouseoverHandler("superMajority"))
-            .on('mouseout', () => labelMouseoutHandler())
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: false,
+                senateRepVotes: false,
+                assemblyDemoVotes: false,
+                assemblyRepVotes: false,
+                simpleMajority: false,
+                superMajority: true,
+                senateTotalVotes: true,
+                assemblyTotalVotes: true
+            }))
 
         assemblySvg
             .append("line")
@@ -262,8 +367,16 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr("y2", height)
             .style("stroke", "#7B7B7B")
             .style("stroke-dasharray", ("2, 3"))
-            .on("mouseover", () => labelMouseoverHandler("superMajority"))
-            .on('mouseout', () => labelMouseoutHandler())
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: false,
+                senateRepVotes: false,
+                assemblyDemoVotes: false,
+                assemblyRepVotes: false,
+                simpleMajority: false,
+                superMajority: true,
+                senateTotalVotes: true,
+                assemblyTotalVotes: true
+            }))
 
         assemblySvg
             .append("rect")
@@ -272,8 +385,16 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr("width", 20)
             .attr('height', barChartHeight)
             .attr("fill-opacity", 0)
-            .on("mouseover", () => labelMouseoverHandler("superMajority"))
-            .on('mouseout', () => labelMouseoutHandler())
+            .on("mouseover", () => setLabelShown({
+                senateDemoVotes: false,
+                senateRepVotes: false,
+                assemblyDemoVotes: false,
+                assemblyRepVotes: false,
+                simpleMajority: false,
+                superMajority: true,
+                senateTotalVotes: true,
+                assemblyTotalVotes: true
+            }))
 
 
         return () => {
@@ -311,13 +432,19 @@ const VotesVisualization = ({ legislation }: Props) => {
                     <div className={`absolute top-0 left-[calc(50%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['simpleMajority'] ? 'opacity-1' : "opacity-0"}`}>32 votes<br />Simple Majority</div>
                     <div className={`absolute top-0 left-[calc(75%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['superMajority'] ? 'opacity-1' : "opacity-0"}`}>42 votes<br />Super Majority</div>
                     {
-                        labelShown['senateDemoVotes'] ?
-                            (<div className={`font-semibold text-[10px] lg:text-label text-demo`}>{+senateDemo[0][legislation]} Democratic votes</div>)
-                            : labelShown['senateRepVotes'] ?
-                                (<div className={`font-semibold text-[10px] lg:text-label text-rep`}>{+senateRep[0][legislation]} Republican votes</div>)
-                                :
-                                (<div className={`font-semibold text-[10px] lg:text-label text-rtc_navy`}>{senateTotalVotes} votes</div>)
+                        labelShown['senateDemoVotes'] &&
+                        (<div className={`font-semibold text-[10px] lg:text-label text-demo`}>{+senateDemo[0][legislation]} Democratic votes</div>)
                     }
+                    {
+                        labelShown['senateRepVotes'] &&
+                        (<div className={`font-semibold text-[10px] lg:text-label text-rep`}>{+senateRep[0][legislation]} Republican votes</div>)
+                    }
+                    {
+                        labelShown['senateTotalVotes'] &&
+                        (<div className={`font-semibold text-[10px] lg:text-label text-rtc_navy`}>{senateTotalVotes} votes</div>)
+                    }
+
+
                 </div>
 
             </div>
@@ -341,12 +468,17 @@ const VotesVisualization = ({ legislation }: Props) => {
                     <div className={`absolute top-0 left-[calc(50%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['simpleMajority'] ? 'opacity-1' : "opacity-0"}`}>75 votes<br />Simple Majority</div>
                     <div className={`absolute top-0 left-[calc(75%+2px)] font-regular text-[10px] lg:text-label text-grey_1 ${labelShown['superMajority'] ? 'opacity-1' : "opacity-0"}`}>100 votes<br />Super Majority</div>
                     {
-                        labelShown['assemblyDemoVotes'] ?
-                            (<div className={`font-semibold text-[10px] lg:text-label text-demo`}>{+assemblyDemo[0][legislation]} Democratic votes</div>)
-                            : labelShown['assemblyRepVotes'] ?
-                                (<div className={`font-semibold text-[10px] lg:text-label text-rep`}>{+assemblyRep[0][legislation]} Republican votes</div>)
-                                :
-                                (<div className={`font-semibold text-[10px] lg:text-label text-rtc_navy`}>{assemblyTotalVotes} votes</div>)
+                        labelShown['assemblyDemoVotes'] &&
+                        (<div className={`font-semibold text-[10px] lg:text-label text-demo`}>{+assemblyDemo[0][legislation]} Democratic votes</div>)
+                    }
+                    {
+                        labelShown['assemblyRepVotes'] &&
+                        (<div className={`font-semibold text-[10px] lg:text-label text-rep`}>{+assemblyRep[0][legislation]} Republican votes</div>)
+                    }
+
+                    {
+                        labelShown['assemblyTotalVotes'] &&
+                        (<div className={`font-semibold text-[10px] lg:text-label text-rtc_navy`}>{assemblyTotalVotes} votes</div>)
                     }
                 </div>
             </div>
