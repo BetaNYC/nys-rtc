@@ -176,12 +176,12 @@ const VotesVisualization = ({ legislation }: Props) => {
             .on("mouseover", () => setLabelShown({
                 senateDemoVotes: true,
                 senateRepVotes: false,
-                assemblyDemoVotes: false,
+                assemblyDemoVotes: true,
                 assemblyRepVotes: false,
                 simpleMajority: false,
                 superMajority: false,
                 senateTotalVotes: false,
-                assemblyTotalVotes: true
+                assemblyTotalVotes: false
             }))
 
         senateSvg
@@ -198,11 +198,11 @@ const VotesVisualization = ({ legislation }: Props) => {
                 senateDemoVotes: false,
                 senateRepVotes: true,
                 assemblyDemoVotes: false,
-                assemblyRepVotes: false,
+                assemblyRepVotes: true,
                 simpleMajority: false,
                 superMajority: false,
                 senateTotalVotes: false,
-                assemblyTotalVotes: true
+                assemblyTotalVotes: false
             }))
 
         assemblySvg
@@ -216,13 +216,13 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr('height', barChartHeight)
             .attr('fill', "#007CEE")
             .on("mouseover", () => setLabelShown({
-                senateDemoVotes: false,
+                senateDemoVotes: true,
                 senateRepVotes: false,
                 assemblyDemoVotes: true,
                 assemblyRepVotes: false,
                 simpleMajority: false,
                 superMajority: false,
-                senateTotalVotes: true,
+                senateTotalVotes: false,
                 assemblyTotalVotes: false
             }))
 
@@ -238,15 +238,14 @@ const VotesVisualization = ({ legislation }: Props) => {
             .attr('fill', "#D04E40")
             .on("mouseover", () => setLabelShown({
                 senateDemoVotes: false,
-                senateRepVotes: false,
+                senateRepVotes: true,
                 assemblyDemoVotes: false,
                 assemblyRepVotes: true,
                 simpleMajority: false,
                 superMajority: false,
-                senateTotalVotes: true,
+                senateTotalVotes: false,
                 assemblyTotalVotes: false
             }))
-
 
         senateSvg
             .append("line")
@@ -402,10 +401,6 @@ const VotesVisualization = ({ legislation }: Props) => {
             d3.selectAll("line").remove()
         }
     })
-
-
-
-
 
 
     return (
