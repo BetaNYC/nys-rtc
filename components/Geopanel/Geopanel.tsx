@@ -62,7 +62,7 @@ const Geopanel = () => {
         map?.setPaintProperty("zipcodes", "fill-opacity", [
             "case",
             ['all', ['==', ['get', "ZCTA5CE10"], selectedZipcodes]],
-            1, 0
+            .7, 0
         ])
 
 
@@ -74,7 +74,7 @@ const Geopanel = () => {
         map?.moveLayer('districts_clicked_outline', "zipcodes")
 
 
-        map?.flyTo({zoom: 8})
+        map?.flyTo({ zoom: 8 })
 
 
 
@@ -142,24 +142,20 @@ const Geopanel = () => {
                         </div>
                         <XMarkIcon className=' w-[20px] h-[20px] text-white cursor-pointer' onClick={() => defaultMapHandler(legislations)} />
                     </div>
-                    <div className='flex-1 p-[18px] w-full bg-white overflow-y-scroll'>
+                    <div className='flex-1 p-[18px] pl-[19px] w-full bg-white overflow-y-scroll'>
                         <div className='text-[10px] text-regular text-grey_1'>HCMC Campaign Support</div>
                         <div className="flex flex-col gap-[5px] mt-[6px] text-rtc_navy">
-                            <div className="flex items-start gap-[8px] ">
-                                <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Statewide Right to Counsel") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                            <div className="flex items-start gap-[5px] ">
+                                <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Statewide RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                                 <div className="font-bold text-label">Statewide Right to Counsel</div>
+                            </div>
+                            <div className="flex items-start gap-[5px]">
+                                <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                                <div className="font-bold text-label">Defend Right to Counsel</div>
                             </div>
                             <div className="flex items-start gap-[5px]">
                                 <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                                 <div className="font-bold text-label">Winter Eviction Moratorium</div>
-                            </div>
-                            <div className="flex items-start gap-[5px]">
-                                <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Defend Right to Counsel") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                                <div className="font-bold text-label">Defend Right to Counsel</div>
-                            </div>
-                            <div className="flex items-start gap-[5px]">
-                                <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Clean Hands") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                                <div className="font-bold text-label">Clean Hands</div>
                             </div>
                         </div>
                         <div className='my-[12px] w-full h-[1px] bg-grey_1'></div>

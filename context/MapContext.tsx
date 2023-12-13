@@ -105,6 +105,8 @@ const MapProvider = ({ children }: Props) => {
 
         m.setPaintProperty("district_label", "text-opacity", 1)
 
+
+
         m.flyTo({
             center: targetCentroid as [number, number],
             zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 11 : 8
@@ -164,8 +166,9 @@ const MapProvider = ({ children }: Props) => {
 
         map?.setPaintProperty("members", "circle-stroke-color", "#812948")
 
-        map?.moveLayer("districts_outline", "members")
+
         map?.moveLayer("districts_outline", "district_label")
+        map?.moveLayer("districts_outline", "members")
 
         setPanelShown({ ...panelShown, geopanelShown: false, memberpanelShown: false })
     }

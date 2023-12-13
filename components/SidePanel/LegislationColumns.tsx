@@ -17,8 +17,8 @@ type Props = {
 const LegislationColumns = ({ legislation, name, number, content, expand, calulated, legislationsClickHandler }: Props) => {
 
     return (
-        <div className={`flex flex-col pt-[12px] lg:pt-[10.5px] pb-[0px] text-rtc_navy ${expand ? " h-[calc(100vh-112px-230px)] xl:h-[calc(100vh-112px-200px)] bg-white  overflow-y-hidden" : "h-[40px] bg-background_blue overflow-y-hidden"} border-b-[1px] border-grey_1  cursor-pointer`} onClick={legislationsClickHandler}>
-            <div className={`flex justify-between items-center mx-[20px] ${expand ? "mb-0" : "mb-5"}`}>
+        <div className={`flex flex-col pt-[12px] lg:pt-[10.5px] pb-[0px] text-rtc_navy ${expand ? " h-[calc(100vh-112px-230px)] xl:h-[calc(100vh-112px-200px)] bg-white  overflow-y-hidden" : "h-[40px] bg-background_blue overflow-y-hidden"} border-b-[1px] border-grey_1  `} onClick={legislationsClickHandler}>
+            <div className={`flex justify-between items-center mx-[20px] ${expand ? "mb-0" : "mb-5"} cursor-pointer`}>
                 <h2 className="font-semibold  text-[13px] lg:text-title uppercase">{name}</h2>
                 {
                     expand ? <ChevronUpIcon className="w-[20px] h-[20px] cursor-pointer" /> : <ChevronDownIcon className="w-[20px] h-[20px] cursor-pointer" />
