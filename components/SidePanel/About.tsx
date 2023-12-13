@@ -32,7 +32,7 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                 }
             </div>
             <div className="flex justify-between items-start my-[16px] px-[20px]">
-                <h2 className={`pb-[3px] mr-12 font-semibold text-[13px] lg:text-title border-b-2 leading-[1.2]  ${selectedContent === "intro" ? "text-rtc_navy  border-rtc_navy" : "text-grey_1 border-white "}  cursor-pointer`} onClick={() => contentClickHandler("intro")}>the HCMC! Campaign Legislation Map</h2>
+                <h2 className={`pb-[3px] mr-12 font-semibold text-[13px] lg:text-title border-b-2 leading-[1.2]  ${selectedContent === "intro" ? "text-rtc_navy  border-rtc_navy" : "text-grey_1 border-white "}  cursor-pointer`} onClick={() => contentClickHandler("intro")}>HCMC! Campaign Legislation Map</h2>
                 <h2 className={`font-semibold text-[13px] lg:text-title border-b-2 ${selectedContent === "credits" ? "text-rtc_navy  border-rtc_navy" : "text-grey_1 border-white "} cursor-pointer`} onClick={() => contentClickHandler("credits")}>Credits</h2>
             </div>
             {
@@ -57,7 +57,7 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                             </p>
                         </div>
                         <div className="mx-[20px] mt-[20px] mb-[60px] font-semibold text-title text-rtc_purple">
-                            Click on each tab below to start using the map.
+                            Click on the map to begin exploring!
                         </div>
                     </div>
                 )
@@ -74,11 +74,11 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                         </div>
                         <div className="m-[20px]">
                             <p className='font-semibold text-title'><a className='underline' target='_blank' href="https://beta.nyc/">BetaNYC</a></p>
-                            <p>BetaNYC is a civic organization dedicated to improving lives in New York through civic design, technology, and data. With an aim to improve access to public interest technology, the Civic Innovation Lab at BetaNYC provides assistance with research, data analysis, and data visualization. The Civic Innovation Lab at BetaNYC created this project in response to a Research and Data Assistance Request (RADAR) submitted by the Right to Counsel NYC Coalition.
-                                <a className='underline' target='_blank' href={"https://beta.nyc/products/research-and-data-assistance-requests/"}> Follow this link to learn more about RADARs and how to submit a request!</a></p>
+                            <p>BetaNYC is a civic organization dedicated to improving lives in New York through civic design, technology, and data. With an aim to improve access to public interest technology, the Civic Innovation Lab at BetaNYC provides assistance with research, data analysis, and data visualization. The Civic Innovation Lab at BetaNYC created this project in response to a Research and Data Assistance Request (RADAR) submitted by the Right to Counsel NYC Coalition.Follow this link 
+                                <a className='underline' target='_blank' href={"https://beta.nyc/products/research-and-data-assistance-requests/"}>to learn more about RADARs and how to submit a request!</a></p>
                         </div>
                         <div className="m-[20px] mb-[40px] ">
-                            <p className='font-semibold text-body'>Civic Innovation Lab at BetaNYC:</p>
+                            <p className='font-semibold text-body'>BetaNYC Civic Innovation Lab Team</p>
                             <p>Ashley Louie (Director), Hao Lun Hung (Project Lead), Erik Brown, Hailee Luong</p>
 
                         </div>

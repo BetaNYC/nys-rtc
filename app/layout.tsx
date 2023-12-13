@@ -6,7 +6,7 @@ import { Source_Sans_3 } from 'next/font/google'
 const sourceSans = Source_Sans_3({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'RTC Map Tool',
+  title: 'Housing Courts Must Change! Map',
   icons: "/app/BetaNYC-favicon.svg",
 }
 

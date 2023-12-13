@@ -143,6 +143,25 @@ const Map = () => {
             })
             patternDemoImg.src = pattern_blue.src
 
+
+            m.addLayer({
+                id: "pattern",
+                type: "fill",
+                source: 'districts',
+                paint: {
+                    "fill-pattern": [
+                        "case",
+                        ["all", ["==", ["get", "Party_x"], "Democratic"]],
+                        "pattern_demo", "pattern_rep"
+                    ],
+                    'fill-opacity': [
+                        "case",
+                        ["all", ["!", ["in", legislations, ["get", "HCMC support"]]]],
+                        1, 0
+                    ]
+                }
+            })
+
             m.addLayer({
                 id: "background",
                 type: "fill",
@@ -177,23 +196,7 @@ const Map = () => {
                 },
             });
 
-            m.addLayer({
-                id: "pattern",
-                type: "fill",
-                source: 'districts',
-                paint: {
-                    "fill-pattern": [
-                        "case",
-                        ["all", ["==", ["get", "Party_x"], "Democratic"]],
-                        "pattern_demo", "pattern_rep"
-                    ],
-                    'fill-opacity': [
-                        "case",
-                        ["all", ["!", ["in", legislations, ["get", "HCMC support"]]]],
-                        1, 0
-                    ]
-                }
-            })
+
 
             m.addLayer({
                 'id': 'districts_outline',
@@ -210,11 +213,6 @@ const Map = () => {
                     'line-width': 1
                 }
             });
-
-
-
-
-
 
 
 
@@ -309,7 +307,7 @@ const Map = () => {
                 'layout': {},
                 'paint': {
                     'fill-color': "black",
-                    'fill-opacity': 1
+                    'fill-opacity': .7
                 },
             });
 
@@ -459,7 +457,7 @@ const Map = () => {
                 <div class="font-regular text-[8px] text-[#7F7F7F]">Housing Courts Must Change! Campaign Support</div>
                 <div class="flex flex-col gap-[5px] mt-[6px] mb-[8px]">
                     <div class="flex items-start gap-[5px]">
-                        <img src=${properties["Legislation"].includes("Statewide RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                        <img src=${properties["Legislation"].includes("Statewide Right to Counsel") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                         <div class="font-bold text-rtc_navy text-[12px]">Statewide Right to Counsel</div>
                     </div>
                     <div class="flex items-start gap-[5px]">
@@ -467,11 +465,11 @@ const Map = () => {
                         <div class="font-bold text-rtc_navy text-[12px]">Winter Eviction Moratorium</div>
                     </div>
                     <div class="flex items-start gap-[5px]">
-                        <img src=${properties["Legislation"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                        <img src=${properties["Legislation"].includes("Defend Right to Counsel") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                         <div class="font-bold text-rtc_navy text-[12px]">Defend Right to Counsel</div>
                     </div>
                     <div class="flex items-start gap-[5px]">
-                        <img src=${properties["Legislation"].includes("Fund Local Law 53") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                        <img src=${properties["Legislation"].includes("Clean Hands") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                         <div class="font-bold text-rtc_navy text-[12px]">Power to Organize:<br /> Fund Local Law 53</div>
                     </div>
                 </div>

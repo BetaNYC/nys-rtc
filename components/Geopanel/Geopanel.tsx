@@ -146,7 +146,7 @@ const Geopanel = () => {
                         <div className='text-[10px] text-regular text-grey_1'>HCMC Campaign Support</div>
                         <div className="flex flex-col gap-[5px] mt-[6px] text-rtc_navy">
                             <div className="flex items-start gap-[8px] ">
-                                <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Statewide RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                                <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Statewide Right to Counsel") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                                 <div className="font-bold text-label">Statewide Right to Counsel</div>
                             </div>
                             <div className="flex items-start gap-[5px]">
@@ -154,12 +154,12 @@ const Geopanel = () => {
                                 <div className="font-bold text-label">Winter Eviction Moratorium</div>
                             </div>
                             <div className="flex items-start gap-[5px]">
-                                <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                                <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Defend Right to Counsel") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                                 <div className="font-bold text-label">Defend Right to Counsel</div>
                             </div>
                             <div className="flex items-start gap-[5px]">
-                                <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Fund Local Law 53") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                                <div className="font-bold text-label">Power to Organize:<br /> Fund Local Law 53</div>
+                                <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Clean Hands") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                                <div className="font-bold text-label">Clean Hands</div>
                             </div>
                         </div>
                         <div className='my-[12px] w-full h-[1px] bg-grey_1'></div>
