@@ -84,7 +84,7 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
         map?.setPaintProperty("zipcodes", "fill-opacity", [
             "case",
             ['all', ['==', ['get', "ZCTA5CE10"], selectedZipcodes]],
-            1, 0
+            .7, 0
         ])
         map?.moveLayer("districts", "zipcodes")
     }
@@ -112,7 +112,7 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
             const targetCentroid = [e.features[0].properties.lon, e.features[0].properties.lat]
             map?.flyTo({
                 center: targetCentroid as [number, number],
-                zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 12 : 8
+                zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 13 : 8
             })
         })
     })
@@ -129,33 +129,28 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
                         <div className='flex items-center gap-[6px]'>
                             <img src={selectedMemberFeatures?.properties["Membership Status"].includes("Member") ? "/icons/checked_member.svg" : "/icons/empty_member.svg"} alt="" className='w-[20px] h-[20px]' />
                             <div>
-                                <div className='text-[10px] text-[rgba(255,255,255, 0.8)]'>Right to Counsel NYC Coalition</div>
-                                <div className='font-semibold text-label'>Campaign Member</div>
+                                <div className='text-[10px] text-white'>Right to Counsel NYC Coalition</div>
+                                <div className='font-semibold text-label text-white'>Campaign Member</div>
                             </div>
                         </div>
                     </div>
-                    <div className='flex-1 p-[18px] w-full bg-white'>
+                    <div className='flex-1 p-[18px] pl-[19px] w-full bg-white'>
                         <div className='text-[10px] text-regular text-grey_1'>HCMC Campaign Support</div>
                         <div className="flex flex-col gap-[5px] mt-[6px] text-rtc_navy">
-                            <div className="flex items-start gap-[8px] ">
+                            <div className="flex items-start gap-[5px] ">
                                 {/* @ts-ignore */}
-                                <img src={selectedMemberFeatures?.properties!["Legislation"].includes("Statewide RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                                <img src={selectedMemberFeatures?.properties!["Legislation"].includes("Statewide Right to Counsel") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                                 <div className="font-bold text-label">Statewide Right to Counsel</div>
+                            </div>
+                            <div className="flex items-start gap-[5px]">
+                                {/* @ts-ignore */}
+                                <img src={selectedMemberFeatures?.properties!["Legislation"].includes("Defend Right to Counsel") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                                <div className="font-bold text-label">Defend Right to Counsel</div>
                             </div>
                             <div className="flex items-start gap-[5px]">
                                 {/* @ts-ignore */}
                                 <img src={selectedMemberFeatures?.properties!["Legislation"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                                 <div className="font-bold text-label">Winter Eviction Moratorium</div>
-                            </div>
-                            <div className="flex items-start gap-[5px]">
-                                {/* @ts-ignore */}
-                                <img src={selectedMemberFeatures?.properties!["Legislation"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                                <div className="font-bold text-label">Defend Right to Counsel</div>
-                            </div>
-                            <div className="flex items-start gap-[5px]">
-                                {/* @ts-ignore */}
-                                <img src={selectedMemberFeatures?.properties!["Legislation"].includes("Fund Local Law 53") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                                <div className="font-bold text-label">Power to Organize:<br /> Fund Local Law 53</div>
                             </div>
                         </div>
                         <div className='my-[12px] w-full h-[1px] bg-grey_1'></div>

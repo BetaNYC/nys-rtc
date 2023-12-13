@@ -60,6 +60,7 @@ const Map = () => {
                 break
         }
         defaultMapHandler(legislations)
+
     }
 
     useEffect(() => {
@@ -316,6 +317,7 @@ const Map = () => {
             m.moveLayer("background", "districts")
             m.moveLayer("background", "zipcodes")
             m.moveLayer('districts_outline', 'districts_hovered')
+            m.moveLayer('districts_outline', "members")
             m.moveLayer("districts", "members")
             m.moveLayer('pattern', 'members')
             m.moveLayer("districts", "counties_borders")
@@ -329,6 +331,15 @@ const Map = () => {
             m.on("click", "districts", (e: MapMouseEvent & EventData) => {
 
                 mapClickHandler(m, e, legislations)
+
+                m.setPaintProperty("members", "circle-color", [
+                    "case",
+                    ["all", ["in", "Member", ["get", "Membership Status"]]],
+                    "#812948",
+                    "white"
+                ],)
+        
+                m.setPaintProperty("members", "circle-stroke-color", "#812948")
 
             })
 
@@ -397,17 +408,13 @@ const Map = () => {
                         <div class="font-bold text-rtc_navy text-[12px]">Statewide Right to Counsel</div>
                     </div>
                     <div class="flex items-center gap-[5px]">
-                        <img src=${properties["HCMC support"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"}  alt="" className="w-[16px] h-[16px]" />
-                        <div class="font-bold text-rtc_navy text-[12px]">Winter Eviction Moratorium</div>
-                    </div>
-                    <div class="flex items-center gap-[5px]">
                         <img src=${properties["HCMC support"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                         <div class="font-bold text-rtc_navy text-[12px]">Defend Right to Counsel</div>
                     </div>
                     <div class="flex items-center gap-[5px]">
-                        <img src=${properties["HCMC support"].includes("Fund Local Law 53") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                        <div class="font-bold text-rtc_navy text-[12px]">Power to Organize:<br /> Fund Local Law 53</div>
-                    </div>
+                        <img src=${properties["HCMC support"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"}  alt="" className="w-[16px] h-[16px]" />
+                    <div class="font-bold text-rtc_navy text-[12px]">Winter Eviction Moratorium</div>
+                </div>
                 </div>
                 <div class="font-regular text-[12px] text-grey_2 underline">
                     Click the map for further details   
@@ -461,17 +468,13 @@ const Map = () => {
                         <div class="font-bold text-rtc_navy text-[12px]">Statewide Right to Counsel</div>
                     </div>
                     <div class="flex items-start gap-[5px]">
-                        <img src=${properties["Legislation"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"}  alt="" className="w-[16px] h-[16px]" />
-                        <div class="font-bold text-rtc_navy text-[12px]">Winter Eviction Moratorium</div>
-                    </div>
-                    <div class="flex items-start gap-[5px]">
                         <img src=${properties["Legislation"].includes("Defend Right to Counsel") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
                         <div class="font-bold text-rtc_navy text-[12px]">Defend Right to Counsel</div>
                     </div>
                     <div class="flex items-start gap-[5px]">
-                        <img src=${properties["Legislation"].includes("Clean Hands") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                        <div class="font-bold text-rtc_navy text-[12px]">Power to Organize:<br /> Fund Local Law 53</div>
-                    </div>
+                    <img src=${properties["Legislation"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"}  alt="" className="w-[16px] h-[16px]" />
+                    <div class="font-bold text-rtc_navy text-[12px]">Winter Eviction Moratorium</div>
+                </div>
                 </div>
                 <div class="font-regular text-[12px] text-grey_2 underline">
                     Click the map for further details   
