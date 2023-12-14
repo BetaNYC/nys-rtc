@@ -9,6 +9,7 @@ import * as turf from "@turf/turf";
 
 import assembly from "../../public/assembly.geo.json"
 import senate from "../../public/senate.geo.json"
+import counties from "../../public/nys_counties.geo.json"
 
 import assemblyOverlapped from "../../public/assembly_overlapping_boundaries.json"
 import senateOverlapped from "../../public/senate_overlapping_boundaries.json"
@@ -20,6 +21,10 @@ import { EventData, MapMouseEvent } from 'mapbox-gl';
 const Geopanel = () => {
 
     const { map, districts, setDistricts, legislations, mapClickHandler, panelShown, defaultMapHandler, selectedDistrictFeatures, setSelectedDistrictFeatures, selectedDistrictOverlappedData, setSelectedDistrictOverlappedData } = useContext(MapContext) as MapContextType
+
+    /* @ts-ignore */
+    const countiesFeatures = (counties as GeoJson).features
+
     const districtBtnClickHandler = (e: MouseEvent<HTMLElement>, district: Districts) => {
         const selectedDistrict = (e.target as HTMLElement).innerText
         /* @ts-ignore */
@@ -104,25 +109,51 @@ const Geopanel = () => {
         map?.moveLayer('districts_outline', "zipcodes")
         map?.moveLayer('districts_clicked_outline', "zipcodes")
 
-
-4
-
-
-
     }
 
     const countyMouseEnterHandler = (e: MouseEvent<HTMLElement>) => {
         const selectedCounty = (e.target as HTMLElement).innerText
+
+        const hoveredCountyData = {
+            /* @ts-ignore */
+            features: (counties as GeoJson).features.filter((d, i) => d.properties.name === selectedCounty + " County")
+        }
+
+
+        let coordinatesArray = hoveredCountyData.features[0].geometry.coordinates[0]
+        while (coordinatesArray.length === 1) coordinatesArray = coordinatesArray[0]
+        const targetPolygon = turf.polygon([coordinatesArray])
+        /* @ts-ignore */
+        const targetCentroid = turf.center(targetPolygon).geometry.coordinates
+        const labelData = {
+            'type': 'FeatureCollection',
+            'features': [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "label": hoveredCountyData.features[0].properties.name,
+                    },
+                    "geometry": {
+                        'type': 'Point',
+                        'coordinates': targetCentroid
+                    }
+                }
+            ]
+        }
+
+        /* @ts-ignore */
+        map?.getSource("counties_label").setData({
+            type: "FeatureCollection",
+            features: labelData.features as GeoJson["features"]
+        })
+
         map?.setPaintProperty("counties_borders", "fill-opacity", [
             "case",
             ['all', ['==', ['get', "name"], selectedCounty + " County"]],
             .7, 0
         ])
-        map?.setPaintProperty("counties_labels", "text-opacity", [
-            "case",
-            ['all', ['==', ['get', "name"], selectedCounty + " County"]],
-            1, 0
-        ])
+        map?.setPaintProperty("counties_labels", "text-opacity", 1)
+
         map?.moveLayer("background", "counties_borders")
         map?.moveLayer("districts", "counties_borders")
         map?.moveLayer('pattern', "counties_borders")

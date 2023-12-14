@@ -6,9 +6,12 @@ import { MapContext, MapContextType } from "../../context/MapContext";
 import mapboxgl, { EventData, MapMouseEvent } from 'mapbox-gl';
 import { GeoJSONSource } from 'mapbox-gl';
 
+
+
 import assembly from "../../public/assembly.geo.json"
 import senate from "../../public/senate.geo.json"
 import member from "../../public/rtc_members.geo.json"
+
 
 
 import Legend from "./Legend";
@@ -33,6 +36,7 @@ const Map = () => {
     const assemblyFeatures = (assembly as GeoJson).features
     /* @ts-ignore */
     const memberFeatures = (member as GeoJson).features
+
 
     const [lng, setLng] = useState(-78.5);
     const [lat, setLat] = useState(43.05);
@@ -121,6 +125,14 @@ const Map = () => {
                     type: "FeatureCollection",
                     features: []
                 },
+            })
+
+            m.addSource("counties_label", {
+                type:"geojson",
+                data: {
+                    type:"FeatureCollection",
+                    features:[]
+                }
             })
 
             m.addSource("members", {
@@ -219,6 +231,8 @@ const Map = () => {
                 }
             });
 
+
+
             m.addLayer({
                 'id': 'members',
                 'type': 'circle',
@@ -312,6 +326,26 @@ const Map = () => {
                     'fill-opacity': .7
                 },
             });
+
+            m.addLayer({
+                id: "counties_labels",
+                type: 'symbol',
+                source: 'counties_label',
+                layout: {
+                    'text-field': ['get', 'label'],
+                    'text-justify': 'auto',
+                    'text-size': 12,
+                    'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+                    'text-font': ["Arial Unicode MS Bold"],
+                    "text-offset": [0, -1.5]
+                },
+                paint: {
+                    'text-opacity': 0,
+                    "text-color": "white",
+                    'text-halo-color': 'black',
+                    "text-halo-width": .6
+                }
+            })
 
             m.addLayer({
                 id: "districts_hovered_label",
