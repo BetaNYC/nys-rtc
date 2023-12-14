@@ -156,6 +156,12 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
                 center: targetCentroid as [number, number],
                 zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 13 : 8
             })
+
+
+            map?.moveLayer("districts_outline", "members_label")
+            map?.moveLayer("districts_outline", "members")
+            map?.moveLayer("districts_clicked_outline", "members_label")
+            map?.moveLayer("districts_clicked_outline", "members")
         })
     })
 

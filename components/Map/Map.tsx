@@ -438,6 +438,8 @@ const Map = () => {
 
                 m.moveLayer("districts_outline", "members_label")
                 m.moveLayer("districts_outline", "members")
+                m.moveLayer("districts_clicked_outline", "members_label")
+                m.moveLayer("districts_clicked_outline", "members")
 
             })
 
