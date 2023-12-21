@@ -3,40 +3,67 @@ import pyairtable
 import pandas as pd
 import geopandas as gpd
 
-LEGISLATIVE_SUPPORT = os.environ['LEGISLATIVE_SUPPORT']
+def generate_legislative_support_geojson(API_KEY, APP_KEY, TBL_KEY):
+    """
+    Generates GeoJSON files for New York State Assembly and Senate districts
+    with legislative support data.
 
-api = pyairtable.Api(LEGISLATIVE_SUPPORT)
+    The function retrieves data from an Airtable database using the pyairtable library,
+    merges it with GeoJSON files for district boundaries, and exports the merged data
+    as separate GeoJSON files for Assembly and Senate districts.
 
-table = api.table('appD3YhFHjmqJKtZ6','tblgyOlrTfYRaodyb')
+    Args:
+        API_KEY (str): The API key for accessing the Airtable database.
+        APP_KEY (str): The application key for accessing the Airtable database.
+        TBL_KEY (str): The table key for accessing the Airtable database.
 
-table_dict = table.all()
+    Returns:
+    None
+    """
 
-rows = []
+    # Initialize pyairtable API
+    api = pyairtable.Api(API_KEY)
 
-for row in table_dict:
-    rows.append(row['fields'])
-df = pd.DataFrame(rows)
-# Load GeoJSONs
-gdf_assembly = gpd.read_file("public/NYS_Assembly_Districts.geojson").to_crs("EPSG:4326")
-gdf_senate = gpd.read_file("public/NYS_Senate_Districts.geojson").rename(columns={'DISTRICT':'District'}).to_crs("EPSG:4326")
+    # Get table from Airtable
+    table = api.table(APP_KEY,TBL_KEY)
 
-# Split your dataframe by house
-df_assembly = df[df['House'] == 'Assembly']
-df_senate = df[df['House'] == 'Senate']
+    # Retrieve all records from the table
+    table_dict = table.all()
 
-# Merge DataFrames with GeoDataFrames
-gdf_assembly = gdf_assembly.merge(df_assembly, on='District')
-gdf_senate = gdf_senate.merge(df_senate, on='District')
-gdf_assembly['Which HCMC legislation do they support?'] = gdf_assembly['Which HCMC legislation do they support?'].fillna('[]')
-gdf_senate['Which HCMC legislation do they support?'] = gdf_senate['Which HCMC legislation do they support?'].fillna('[]')
+    # Extract fields from the records and create a DataFrame
+    rows = []
+    for row in table_dict:
+        rows.append(row['fields'])
+    df = pd.DataFrame(rows)
 
+    # Load GeoJSONs for Assembly and Senate districts
+    gdf_assembly = gpd.read_file("public/NYS_Assembly_Districts.geojson").to_crs("EPSG:4326")
+    gdf_senate = gpd.read_file("public/NYS_Senate_Districts.geojson").rename(columns={'DISTRICT':'District'}).to_crs("EPSG:4326")
 
-gdf_assembly['Which HCMC legislation do they support?'] = gdf_assembly['Which HCMC legislation do they support?'].apply(lambda x: str(x))
-gdf_senate['Which HCMC legislation do they support?'] = gdf_senate['Which HCMC legislation do they support?'].apply(lambda x: str(x))
+    # Split the DataFrame by house (Assembly and Senate)
+    df_assembly = df[df['House'] == 'Assembly']
+    df_senate = df[df['House'] == 'Senate']
 
-gdf_senate = gdf_senate.rename(columns = {'Which HCMC legislation do they support?':'HCMC support'})
-gdf_assembly = gdf_assembly.rename(columns = {'Which HCMC legislation do they support?':'HCMC support'})
+    # Merge DataFrames with GeoDataFrames based on district
+    gdf_assembly = gdf_assembly.merge(df_assembly, on='District')
+    gdf_senate = gdf_senate.merge(df_senate, on='District')
 
-# Export the new GeoJSONs
-gdf_assembly.to_file('public/assembly.geo.json', driver='GeoJSON')
-gdf_senate.to_file('public/senate.geo.json', driver='GeoJSON')
+    # Fill missing values in the 'Which HCMC legislation do they support?' column with empty lists
+    gdf_assembly['Which HCMC legislation do they support?'] = gdf_assembly['Which HCMC legislation do they support?'].fillna('[]')
+    gdf_senate['Which HCMC legislation do they support?'] = gdf_senate['Which HCMC legislation do they support?'].fillna('[]')
+
+    # Convert the 'Which HCMC legislation do they support?' column to string type
+    gdf_assembly['Which HCMC legislation do they support?'] = gdf_assembly['Which HCMC legislation do they support?'].apply(lambda x: str(x))
+    gdf_senate['Which HCMC legislation do they support?'] = gdf_senate['Which HCMC legislation do they support?'].apply(lambda x: str(x))
+
+    # Rename columns for clarity
+    gdf_senate = gdf_senate.rename(columns = {'Which HCMC legislation do they support?':'HCMC support'})
+    gdf_assembly = gdf_assembly.rename(columns = {'Which HCMC legislation do they support?':'HCMC support'})
+
+    # Export the new GeoJSONs for Assembly and Senate districts
+    gdf_assembly.to_file('public/assembly.geo.json', driver='GeoJSON')    
+    gdf_senate.to_file('public/senate.geo.json', driver='GeoJSON')
+
+if __name__ == '__main__':
+    API_KEY = os.environ['LEGISLATIVE_SUPPORT']
+    generate_legislative_support_geojson(API_KEY, 'appD3YhFHjmqJKtZ6', 'tblgyOlrTfYRaodyb')
