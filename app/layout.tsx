@@ -1,5 +1,7 @@
 import './globals.css'
 
+import Script from 'next/script'
+
 import type { Metadata } from 'next'
 import { Source_Sans_3 } from 'next/font/google'
 
@@ -18,6 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-TGS7CMBMHE" />
+        <Script>
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TGS7CMBMHE');
+          `}
+        </Script>
         <link rel="icon" href="/app/BetaNYC-favicon.svg" type="image/svg" sizes="any" />
         <link
           href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
