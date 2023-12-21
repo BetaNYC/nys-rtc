@@ -20,13 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-TGS7CMBMHE" />
+        {/* Google tag (gtag.js) */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XHQSBHZDS8" />
         <Script id="google-analytics">
           {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-TGS7CMBMHE');
+          gtag('config', 'G-XHQSBHZDS8');
           `}
         </Script>
         <link rel="icon" href="/app/BetaNYC-favicon.svg" type="image/svg" sizes="any" />
