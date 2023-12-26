@@ -70,4 +70,4 @@ def generate_legislative_support_geojson(API_KEY, APP_KEY, TBL_KEY):
 
 if __name__ == '__main__':
     API_KEY = os.environ['LEGISLATIVE_SUPPORT']
-    generate_legislative_support_geojson(API_KEY, 'appD3YhFHjmqJKtZ6', 'tblgyOlrTfYRaodyb')
+    generate_legislative_support_geojson(API_KEY, 'appa1eUzR6s744OIz', 'tblNw4Yl324yvIyhE')
