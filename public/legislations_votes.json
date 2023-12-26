@@ -1,0 +1,30 @@
+[
+    {
+        "House": "Senate",
+        "Party": "Democrat",
+        "Statewide RTC": "28",
+        "Winter Eviction Moratorium": "4",
+        "Defend RTC": "2"
+    },
+    {
+        "House": "Senate",
+        "Party": "Republican",
+        "Statewide RTC": "0",
+        "Winter Eviction Moratorium": "0",
+        "Defend RTC": "0"
+    },
+    {
+        "House": "Assembly",
+        "Party": "Democrat",
+        "Statewide RTC": " 59",
+        "Winter Eviction Moratorium": " 10",
+        "Defend RTC": "3"
+    },
+    {
+        "House": "Assembly",
+        "Party": "Republican",
+        "Statewide RTC": " 2",
+        "Winter Eviction Moratorium": " 0",
+        "Defend RTC": "0"
+    }
+]
