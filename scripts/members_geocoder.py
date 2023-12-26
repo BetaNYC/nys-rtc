@@ -175,6 +175,7 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
 
         for member in members_list:
             if 'Address' not in member or not member['Address'] or member['Address']=='':
+                print(f"{member['Name']} has no address value on Airtable")
                 nongeocoded_members = pd.concat([nongeocoded_members,pd.DataFrame([member])], ignore_index=True)
                 continue
 
