@@ -135,7 +135,7 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
 
     members = table.all()
 
-    members_list = hash([x['fields'] for x in members])
+    members_list = hash(tuple([x['fields'] for x in members]))
 
     path = Path("public")
 
