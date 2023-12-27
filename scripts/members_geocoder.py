@@ -257,6 +257,9 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
         # Exclude 'lat' and 'lon' from the properties
         gdf = gdf.drop(columns=['lat', 'lon'])
 
+        gdf['Legislation'] = gdf['Legislation'].apply(lambda x: str(x))
+        gdf['Membership Status'] = gdf['Membership Status'].apply(lambda x: str(x))
+
         # Export to GeoJSON
         gdf.to_file(path / 'rtc_members.geo.json', driver='GeoJSON')
 
