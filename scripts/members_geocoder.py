@@ -112,6 +112,17 @@ class NpEncoder(json.JSONEncoder):
             return obj.tolist()
         return super(NpEncoder, self).default(obj)
 
+def convert_types(entry):
+    if isinstance(entry, np.integer):
+        entry = int(entry)
+    if isinstance(entry, np.floating):
+        entry = float(entry)
+    if isinstance(entry, np.ndarray):
+        entry = entry.tolist()
+    if isinstance(entry, list):
+        entry = str(entry)
+    return entry
+
 def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, GEOAPIFY_API_KEY):
     """
     Generate members' information by geocoding their addresses.
@@ -257,8 +268,8 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
         # Exclude 'lat' and 'lon' from the properties
         gdf = gdf.drop(columns=['lat', 'lon'])
 
-        gdf['Legislation'] = gdf['Legislation'].apply(lambda x: str(x))
-        gdf['Membership Status'] = gdf['Membership Status'].apply(lambda x: str(x))
+        df = pd.DataFrame(members_list).applymap(convert_types)
+
 
         # Export to GeoJSON
         gdf.to_file(path / 'rtc_members.geo.json', driver='GeoJSON')
