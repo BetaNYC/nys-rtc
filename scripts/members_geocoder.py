@@ -233,7 +233,7 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
 
                     member.update(find_geographical_info(member['lat'], member['lon'], senate_geojson, senate_key, assembly_geojson, assembly_key, counties_geojson, county_key, zipcode_geojson, zipcode_key))
                     
-                    result = member
+                    result = member.copy()
                     result['address_code'] = address_code
 
                     if couldGeocode:
@@ -245,9 +245,20 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
                     print(f"Error loading page")
                 # count = count + 1
 
+        # Create a DataFrame from the list
+        df = pd.DataFrame(members_list)
 
-        with open(path / "rtc_members_info.json", 'w') as fout:
-            json.dump(members_list, fout, cls=NpEncoder)
+        # Create geometry column using 'lat' and 'lon'
+        df['geometry'] = [Point(lon, lat) for lon, lat in zip(df['lon'], df['lat'])]
+
+        # Convert DataFrame to GeoDataFrame
+        gdf = gpd.GeoDataFrame(df, geometry='geometry')
+
+        # Exclude 'lat' and 'lon' from the properties
+        gdf = gdf.drop(columns=['lat', 'lon'])
+
+        # Export to GeoJSON
+        gdf.to_file(path / 'rtc_members.geo.json', driver='GeoJSON')
 
         address_cache.dropna(axis=1, how='all').to_csv(path / "address_cache.csv")
 
