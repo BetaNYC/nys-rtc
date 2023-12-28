@@ -2,6 +2,7 @@ import os
 import pyairtable
 import pandas as pd
 import geopandas as gpd
+import re
 
 def generate_legislative_support_geojson(API_KEY, APP_KEY, TBL_KEY):
     """
@@ -58,7 +59,10 @@ def generate_legislative_support_geojson(API_KEY, APP_KEY, TBL_KEY):
 
     # Rename columns for clarity
     gdf_senate = gdf_senate.rename(columns = {'Which HCMC legislation do they support?':'HCMC support'})
-    gdf_assembly = gdf_assembly.rename(columns = {'Which HCMC legislation do they support?':'HCMC support'})
+    gdf_assembly = gdf_assembly.rename(columns = {'Which HCMC legislation do they support?':'HCMC support', 'Name_x':"NAME"})
+
+    gdf_assembly['HCMC support'] = gdf_assembly['HCMC support'].apply(lambda x: re.sub(r'DEFEND RTC', 'Defend RTC', str(x)))
+    gdf_senate['HCMC support'] = gdf_senate['HCMC support'].apply(lambda x: re.sub(r'DEFEND RTC', 'Defend RTC', str(x)))
 
     # Export the new GeoJSONs for Assembly and Senate districts
     gdf_assembly.to_file('public/assembly.geo.json', driver='GeoJSON')    
@@ -66,4 +70,4 @@ def generate_legislative_support_geojson(API_KEY, APP_KEY, TBL_KEY):
 
 if __name__ == '__main__':
     API_KEY = os.environ['LEGISLATIVE_SUPPORT']
-    generate_legislative_support_geojson(API_KEY, 'appD3YhFHjmqJKtZ6', 'tblgyOlrTfYRaodyb')
+    generate_legislative_support_geojson(API_KEY, 'appa1eUzR6s744OIz', 'tblNw4Yl324yvIyhE')

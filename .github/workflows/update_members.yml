@@ -36,6 +36,6 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
       
           # Git commands to add, commit, and push
-          git add 'public/rtc_members_info.json' 'public/address_cache.csv' "public/airtable.pkl" "public/nongeocoded_members.csv"
+          git add 'public/rtc_members.geo.json' 'public/address_cache.csv' "public/airtable.pkl" "public/nongeocoded_members.csv"
           git commit -m "Update RTC member files" || echo "No changes to commit"
           git push

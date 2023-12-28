@@ -112,6 +112,17 @@ class NpEncoder(json.JSONEncoder):
             return obj.tolist()
         return super(NpEncoder, self).default(obj)
 
+def convert_types(entry):
+    if isinstance(entry, np.integer):
+        entry = int(entry)
+    if isinstance(entry, np.floating):
+        entry = float(entry)
+    if isinstance(entry, np.ndarray):
+        entry = entry.tolist()
+    if isinstance(entry, list):
+        entry = str(entry)
+    return entry
+
 def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, GEOAPIFY_API_KEY):
     """
     Generate members' information by geocoding their addresses.
@@ -135,7 +146,7 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
 
     members = table.all()
 
-    members_list = hash([x['fields'] for x in members])
+    members_list = [x['fields'] for x in members]
 
     path = Path("public")
 
@@ -174,6 +185,11 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
         airtable_members = members_list.copy()
 
         for member in members_list:
+            if 'Address' not in member or not member['Address'] or member['Address']=='':
+                print(f"{member['Name']} has no address value on Airtable")
+                nongeocoded_members = pd.concat([nongeocoded_members,pd.DataFrame([member])], ignore_index=True)
+                continue
+
             print(f"Address:{member['Address']}")
 
             address_code = member['Address'].lower()
@@ -228,7 +244,7 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
 
                     member.update(find_geographical_info(member['lat'], member['lon'], senate_geojson, senate_key, assembly_geojson, assembly_key, counties_geojson, county_key, zipcode_geojson, zipcode_key))
                     
-                    result = member
+                    result = member.copy()
                     result['address_code'] = address_code
 
                     if couldGeocode:
@@ -240,9 +256,22 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
                     print(f"Error loading page")
                 # count = count + 1
 
+        # Create a DataFrame from the list
+        df = pd.DataFrame(members_list)
 
-        with open(path / "rtc_members_info.json", 'w') as fout:
-            json.dump(members_list, fout, cls=NpEncoder)
+        # Create geometry column using 'lat' and 'lon'
+        df['geometry'] = [Point(lon, lat) for lon, lat in zip(df['lon'], df['lat'])]
+
+        # Convert DataFrame to GeoDataFrame
+        gdf = gpd.GeoDataFrame(df, geometry='geometry')
+
+        # Exclude 'lat' and 'lon' from the properties
+        gdf = gdf.drop(columns=['lat', 'lon'])
+
+        gdf = gdf.applymap(convert_types)
+
+        # Export to GeoJSON
+        gdf.to_file(path / 'rtc_members.geo.json', driver='GeoJSON')
 
         address_cache.dropna(axis=1, how='all').to_csv(path / "address_cache.csv")
 

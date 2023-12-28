@@ -1,6 +1,7 @@
 import geopandas as gpd
 import pandas as pd
 import json
+import os
 
 def create_summary_data(counts, house):
     """
@@ -76,8 +77,6 @@ def extract_unique_bills(features):
         hcmc_support = feature['properties'].get('HCMC support', [])
         unique_bills.update(hcmc_support)
     return unique_bills
-
-import json
 
 def generate_legislation_votes():
     """
