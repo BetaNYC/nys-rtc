@@ -244,7 +244,7 @@ const Map = () => {
                     "circle-radius": 4,
                     'circle-color': [
                         "case",
-                        ["all", ["in", "Member", ["get", "Membership Status"]]],
+                        ["all", ["in", "Campaign Member", ["get", "Membership Status"]]],
                         "#812948",
                         "white"
                     ],
