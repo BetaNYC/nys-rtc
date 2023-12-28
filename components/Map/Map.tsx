@@ -128,10 +128,10 @@ const Map = () => {
             })
 
             m.addSource("counties_label", {
-                type:"geojson",
+                type: "geojson",
                 data: {
-                    type:"FeatureCollection",
-                    features:[]
+                    type: "FeatureCollection",
+                    features: []
                 }
             })
 
@@ -395,6 +395,7 @@ const Map = () => {
             })
 
             m.on('click', "members", (e: MapMouseEvent & EventData) => {
+                console.log(e.features[0].properties.Name)
                 setSelectedMemberFeatures(e.features[0])
                 setPanelShown({ geopanelShown: false, memberpanelShown: true })
 
@@ -408,7 +409,7 @@ const Map = () => {
                             },
                             "geometry": {
                                 'type': 'Point',
-                                'coordinates': [e.features[0].properties.lon, e.features[0].properties.lat]
+                                'coordinates': [e.features[0].geometry.coordinates[0], e.features[0].geometry.coordinates[1]]
                             }
                         }
                     ]
@@ -505,7 +506,7 @@ const Map = () => {
                     <div class="w-[150px] font-bold text-[14px]">${properties.Name}</div>
                     <div class="flex flex-col items-center">
                         <img src=${properties['Membership Status'].includes('Member') ? "/icons/checked_member.svg" : "/icons/empty_member.svg"} alt="" className="w-[16px] h-[16px]" />
-                        <div class="font-regular text-[8px] text-center">${properties['Membership Status']}</div>
+                        <div class="font-regular text-[8px] text-center">${properties['Membership Status'].replaceAll(`"`, "").replaceAll(`[`, "").replaceAll(`]`, "")}</div>
                     </div>
                 </div>
                 <div class="px-[17px] pt-[8px] pb-[12px] text-navy bg-white rounded-b-[20px]">

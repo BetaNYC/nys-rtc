@@ -11,8 +11,8 @@ import senate from "../../public/senate.geo.json"
 
 import assemblyOverlapped from "../../public/assembly_overlapping_boundaries.json"
 import senateOverlapped from "../../public/senate_overlapping_boundaries.json"
-import membersOverlapped from "../../public/rtc_members_info.json"
-
+import membersOverlapped from "../../public/rtc_members.geo.json"
+import membersInfo from "../../public/rtc_members_info.json"
 import { EventData, MapMouseEvent } from 'mapbox-gl';
 
 
@@ -25,7 +25,7 @@ type Props = {
 const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: Props) => {
 
     const { map, setDistricts, legislations, panelShown, setPanelShown, defaultMapHandler, mapClickHandler, setSelectedDistrictFeatures, setSelectedDistrictOverlappedData } = useContext(MapContext) as MapContextType
-    const selectedMemberOverlappedData = (membersOverlapped).filter(m => m.Name === selectedMemberFeatures?.properties.Name)[0]
+    const selectedMemberOverlappedData = (membersOverlapped.features).filter(m => m.properties.Name === selectedMemberFeatures?.properties.Name)[0]?.properties
 
 
     const districtClickHandler = (e: MouseEvent<HTMLElement>, district: Districts) => {
@@ -151,7 +151,7 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
             setSelectedMemberFeatures(e.features[0])
             setPanelShown({ ...panelShown, geopanelShown: false, memberpanelShown: true })
 
-            const targetCentroid = [e.features[0].properties.lon, e.features[0].properties.lat]
+            const targetCentroid = [e.features[0].geometry.coordinates[0], e.features[0].geometry.coordinates[1]]
             map?.flyTo({
                 center: targetCentroid as [number, number],
                 zoom: targetCentroid[0] > -74.15 && targetCentroid[1] < 41.05 ? 13 : 8
@@ -237,24 +237,28 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
                         <div>
                             <div className='mb-[5px] text-[10px] text-grey_1'>Senate Districts</div>
                             <div className='grid grid-cols-4 gap-[8px]'>
+                                 {/* @ts-ignore */}
                                 <GeoInfoBtns name={selectedMemberOverlappedData['Senate_District'].toString()} clickHandler={(e) => districtClickHandler(e, "senate")} mouseEnterHandler={(e) => districtMouseEnverHandler(e, "senate")} mouseOutHandler={removeHoverEventHandler} />
                             </div>
                         </div>
                         <div className='my-[16px]'>
                             <div className='mb-[5px] text-[10px] text-grey_1'>Assembly Districts</div>
                             <div className='grid grid-cols-4 gap-[8px]'>
+                                 {/* @ts-ignore */}
                                 <GeoInfoBtns name={selectedMemberOverlappedData['Assembly_District'].toString()} clickHandler={(e) => districtClickHandler(e, "assembly")} mouseEnterHandler={(e) => districtMouseEnverHandler(e, "assembly")} mouseOutHandler={removeHoverEventHandler} />
                             </div>
                         </div>
                         <div className='my-[16px]'>
                             <div className='mb-[5px] text-[10px] text-grey_1'>Counties</div>
                             <div className='grid grid-cols-2 gap-[12px]'>
+                                 {/* @ts-ignore */}
                                 <GeoInfoBtns name={selectedMemberOverlappedData['County'].toString().replace(" County", "")} mouseEnterHandler={countyMouseEnterHandler} mouseOutHandler={removeHoverEventHandler} />
                             </div>
                         </div>
                         <div>
                             <div className='mb-[5px] text-[10px] text-grey_1'>Zip Codes</div>
                             <div className='grid grid-cols-3 gap-[12px]'>
+                                 {/* @ts-ignore */}
                                 <GeoInfoBtns name={selectedMemberOverlappedData['Zip_Code'].toString()} mouseEnterHandler={zipcodeMouseEnterHandler} mouseOutHandler={removeHoverEventHandler} />
                             </div>
                         </div>
