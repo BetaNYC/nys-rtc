@@ -1,20 +1,22 @@
-,Website,Name,Legislation,Address,Membership Status,lat,lon,Phone
-0,,NY Council of Housing Development Fund Companies,['Winter Eviction Moratorium'],"New York, NY",['Endorser'],,,
-1,https://www.facebook.com/profile.php?id=100064544210388,Solidarity Committee of the Capital District,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']","Albany, New York",['Campaign Member'],,,
-2,https://capitaldistrictdsa.org/,Capital District Democratic Socialists of America,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']",P.O. Box 3821 · Albany NY 12203,['Campaign Member'],,,
-3,https://www.instagram.com/astoriatenantunion/?hl=en,Astoria Tenants Union,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']","Astoria, New York",['Campaign Member'],,,
-4,"https://utalbany.org/housing-for-all/#:~:text=Housing%20for%20All%20is%20a,in%20the%20City%20of%20Albany.",Housing for All Albany,['Statewide Right to Counsel'],"Albany, NY",['Endorser'],,,
-5,https://antievictionmap.com/?category=New+York+City,Anti-Eviction Mapping Project,['Statewide Right to Counsel'],,['Endorser'],,,
-6,https://www.syracusetenantsunion.com/about,Syracuse Tenant Union,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']","Syracuse, New York",['Campaign Member'],,,315-308-0130
-7,https://www.instagram.com/rtcwestchester/?hl=en,Westchester Right to Counsel Coalition,['Statewide Right to Counsel'],"Westchester, NY",['Endorser'],,,
-8,https://www.ridgewoodtenantsunion.org/,Ridgewood Tenants Union,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']","Ridgewood, Queens, NY",['Coalition Member'],,,732-835-2344
-9,https://www.vocal-ny.org/chapter/syracuse/,VOCAL-NY - Syracuse,['Statewide Right to Counsel'],"Syracuse, NY, USA",['Endorser'],,,718-802-9540
-10,https://longislandactivists.org/,Long Island Activists,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']","Long Island, NY",['Campaign Member'],,,
-11,www.chhayacdc.org,Chhaya CDC Richmond Hill Center,['Statewide Right to Counsel'],"121-18 Liberty Ave 2nd floor, South Richmond Hill, NY 11419",['Supporter'],,,718-374-3371
-12,https://buffalo-dsa.org/,Buffalo Democratic Socialists of America,['Statewide Right to Counsel'],"Buffalo, NY",['Endorser'],,,
-13,https://mcah.squarespace.com/,Mamaroneck Coalition for Affordable Housing,"['Winter Eviction Moratorium', 'Statewide Right to Counsel']","Mamaroneck, NY",['Endorser'],,,
-14,https://www.lhvdsa.org/,Lower Hudson Valley Democratic Socialists of America,['Statewide Right to Counsel'],"Yonkers, NY",['Endorser'],,,
-15,https://www.vocal-ny.org/chapter/buffalo/,VOCAL-NY - Buffalo,['Statewide Right to Counsel'],"Buffalo, NY, USA",['Endorser'],,,718-802-9540
-16,http://civilrighttocounsel.org/about,National Coalition for a Civil Right to Counsel,['Statewide Right to Counsel'],,['Endorser'],,,
-17,https://syracusedsa.org/contact/,Syracuse Democratic Socialists of America,['Winter Eviction Moratorium'],"Syracuse, NY",['Endorser'],,,
-18,https://housingcourtanswers.org/,Housing Court Answers,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']","New York, New York",['Coalition Member'],,,212-962-4795
+,Unnamed: 0,Website,Name,Legislation,Address,Membership Status,lat,lon,Phone
+0,0.0,,NY Council of Housing Development Fund Companies,['Winter Eviction Moratorium'],"New York, NY",['Endorser'],,,
+1,1.0,https://www.facebook.com/profile.php?id=100064544210388,Solidarity Committee of the Capital District,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']","Albany, New York",['Campaign Member'],,,
+2,2.0,https://capitaldistrictdsa.org/,Capital District Democratic Socialists of America,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']",P.O. Box 3821 · Albany NY 12203,['Campaign Member'],,,
+3,3.0,https://www.instagram.com/astoriatenantunion/?hl=en,Astoria Tenants Union,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']","Astoria, New York",['Campaign Member'],,,
+4,4.0,"https://utalbany.org/housing-for-all/#:~:text=Housing%20for%20All%20is%20a,in%20the%20City%20of%20Albany.",Housing for All Albany,['Statewide Right to Counsel'],"Albany, NY",['Endorser'],,,
+5,5.0,https://antievictionmap.com/?category=New+York+City,Anti-Eviction Mapping Project,['Statewide Right to Counsel'],,['Endorser'],,,
+6,6.0,https://www.syracusetenantsunion.com/about,Syracuse Tenant Union,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']","Syracuse, New York",['Campaign Member'],,,315-308-0130
+7,7.0,https://www.instagram.com/rtcwestchester/?hl=en,Westchester Right to Counsel Coalition,['Statewide Right to Counsel'],"Westchester, NY",['Endorser'],,,
+8,8.0,https://www.ridgewoodtenantsunion.org/,Ridgewood Tenants Union,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']","Ridgewood, Queens, NY",['Coalition Member'],,,732-835-2344
+9,9.0,https://www.vocal-ny.org/chapter/syracuse/,VOCAL-NY - Syracuse,['Statewide Right to Counsel'],"Syracuse, NY, USA",['Endorser'],,,718-802-9540
+10,10.0,https://longislandactivists.org/,Long Island Activists,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']","Long Island, NY",['Campaign Member'],,,
+11,11.0,www.chhayacdc.org,Chhaya CDC Richmond Hill Center,['Statewide Right to Counsel'],"121-18 Liberty Ave 2nd floor, South Richmond Hill, NY 11419",['Supporter'],,,718-374-3371
+12,12.0,https://buffalo-dsa.org/,Buffalo Democratic Socialists of America,['Statewide Right to Counsel'],"Buffalo, NY",['Endorser'],,,
+13,13.0,https://mcah.squarespace.com/,Mamaroneck Coalition for Affordable Housing,"['Winter Eviction Moratorium', 'Statewide Right to Counsel']","Mamaroneck, NY",['Endorser'],,,
+14,14.0,https://www.lhvdsa.org/,Lower Hudson Valley Democratic Socialists of America,['Statewide Right to Counsel'],"Yonkers, NY",['Endorser'],,,
+15,15.0,https://www.vocal-ny.org/chapter/buffalo/,VOCAL-NY - Buffalo,['Statewide Right to Counsel'],"Buffalo, NY, USA",['Endorser'],,,718-802-9540
+16,16.0,http://civilrighttocounsel.org/about,National Coalition for a Civil Right to Counsel,['Statewide Right to Counsel'],,['Endorser'],,,
+17,17.0,https://syracusedsa.org/contact/,Syracuse Democratic Socialists of America,['Winter Eviction Moratorium'],"Syracuse, NY",['Endorser'],,,
+18,18.0,https://housingcourtanswers.org/,Housing Court Answers,"['Clean Hands', 'Statewide Right to Counsel', 'Defend Right to Counsel', 'Winter Eviction Moratorium']","New York, New York",['Coalition Member'],,,212-962-4795
+19,,https://antievictionmap.com/?category=New+York+City,Anti-Eviction Mapping Project,['Statewide Right to Counsel'],,['Endorser'],,,
+20,,http://civilrighttocounsel.org/about,National Coalition for a Civil Right to Counsel,['Statewide Right to Counsel'],,['Endorser'],,,
