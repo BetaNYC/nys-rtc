@@ -28,7 +28,7 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
             <div className={`flex justify-between items-center px-[20px] cursor-pointer`}>
                 <h2 className="font-semibold text-[13px] lg:text-title ">ABOUT</h2>
                 {
-                    expand["About"] ? <ChevronUpIcon className="w-[20px] h-[20px] cursor-pointer" onClick={() => legislationsClickHandler("About")} /> : <ChevronDownIcon className="w-[20px] h-[20px] cursor-pointer"  />
+                    expand["About"] ? <ChevronUpIcon className="w-[20px] h-[20px] cursor-pointer" onClick={() => legislationsClickHandler("About")} /> : <ChevronDownIcon className="w-[20px] h-[20px] cursor-pointer" />
                 }
             </div>
             <div className="flex justify-between items-start my-[16px] px-[20px]">
@@ -77,10 +77,21 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                             <p>BetaNYC is a civic organization dedicated to improving lives in New York through civic design, technology, and data. With an aim to improve access to public interest technology, the Civic Innovation Lab at BetaNYC provides assistance with research, data analysis, and data visualization. The Civic Innovation Lab at BetaNYC created this project in response to a Research and Data Assistance Request (RADAR) submitted by the Right to Counsel NYC Coalition.Follow this link&#20;
                                 <a className='underline' target='_blank' href={"https://beta.nyc/products/research-and-data-assistance-requests/"}>to learn more about RADARs and how to submit a request!</a></p>
                         </div>
-                        <div className="m-[20px] mb-[40px] ">
+                        <div className="m-[20px] ">
                             <p className='font-semibold text-body'>BetaNYC Civic Innovation Lab Team</p>
                             <p>Ashley Louie (Director), Hao Lun Hung (Project Lead), Erik Brown, Hailee Hoa Luong</p>
-
+                        </div>
+                        <div className="m-[20px] mb-[40px] ">
+                            <p className='mb-[8px] font-semibold text-title'>Data Sources</p>
+                            <p>This website visualizes and maps the New York statewide support for the Housing Courts Must Change! Campaign launched by Right to Counsel NYC Coalition. Much of the data visualized on this website is collected and maintained by staff and members of the Right to Counsel NYC Coalition. This website was launched in December 2023, and the data is updated periodically to reflect sponsorship updates to Senate, Assembly, and Right to Counsel NYC Coalition members and endorsers.</p>
+                            <div className='flex flex-col gap-[5px] mt-[10px]'>
+                                <li>Right to Counsel NYC Coalition. (2023). <p className='italic'>Housing Courts Must Change! Legislation.</p> Updated December 28, 2023.</li>
+                                <li>Right to Counsel NYC Coalition. (2023). <p className='italic'>Housing Courts Must Change! Public Legislation Tracker.</p> Updated December 28, 2023.</li>
+                                <li>Right to Counsel NYC Coalition. (2023). <p className='italic'>Right to Counsel NYC Coalition Membership.</p> Updated December 28, 2023.</li>
+                                <li>NY Assembly districts [<a className='cursor-pointer' target='_blank' href='https://www.nyc.gov/site/planning/data-maps/open-data/districts-download-metadata.page'>link to dataset</a>]<br />  NYC Planning <p className='italic'>Political and Administrative Districts</p>Updated October 6, 2022</li>
+                                <li>NY Senate districts [<a className='cursor-pointer' target='_blank' href='https://www.nyc.gov/site/planning/data-maps/open-data/districts-download-metadata.page'>link to dataset</a>] <br />  NYC Planning <p className='italic'>Political and Administrative Districts</p>Updated October 6, 2022</li>
+                                <li>Zip code boundaries [<a className='cursor-pointer' target='_blank' href='https://github.com/OpenDataDE/State-zip-code-GeoJSON/blob/master/ny_new_york_zip_codes_geo.min.json'>link to dataset</a>]<br /> Open Data Delaware <p className='italic'>Zip code boundaries for each of the 50 states</p></li>
+                            </div>
                         </div>
                     </div>
                 )

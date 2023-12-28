@@ -75,11 +75,11 @@ const MapProvider = ({ children }: Props) => {
         const targetPolygon = turf.polygon([coordinatesArray])
         /* @ts-ignore */
         let targetCentroid = turf.center(targetPolygon).geometry.coordinates
-        if(district === 48) targetCentroid[1] = targetCentroid[1] - 0.25
-        if(district === 49) {
+        if (district === 48) targetCentroid[1] = targetCentroid[1] - 0.25
+        if (district === 49) {
             targetCentroid[0] = targetCentroid[0] - 0.275
             targetCentroid[1] = targetCentroid[1] + 0.1
-        } 
+        }
         const labelData = {
             'type': 'FeatureCollection',
             'features': [
@@ -159,7 +159,9 @@ const MapProvider = ({ children }: Props) => {
 
         map?.setPaintProperty("members", "circle-color", [
             "case",
-            ["all", ["in", "Member", ["get", "Membership Status"]]],
+            ["all", ["in", "Coalition Member", ["get", "Membership Status"]]],
+            "#812948",
+            ["all", ["in", "Campaign Member", ["get", "Membership Status"]]],
             "#812948",
             "white"
         ],)

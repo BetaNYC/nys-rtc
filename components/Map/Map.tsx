@@ -244,6 +244,8 @@ const Map = () => {
                     "circle-radius": 4,
                     'circle-color': [
                         "case",
+                        ["all", ["in", "Coalition Member", ["get", "Membership Status"]]],
+                        "#812948",
                         ["all", ["in", "Campaign Member", ["get", "Membership Status"]]],
                         "#812948",
                         "white"
@@ -423,9 +425,13 @@ const Map = () => {
 
                 m.setPaintProperty("members", "circle-color", [
                     "case",
-                    ["all", ["==", ["get", "Name"], e.features[0].properties.Name], ["in", "Member", ["get", "Membership Status"]]],
+                    ["all", ["==", ["get", "Name"], e.features[0].properties.Name], ["in", "Coalition Member", ["get", "Membership Status"]]],
                     "#812948",
-                    ["all", ["!=", ["get", "Name"], e.features[0].properties.Name], ["in", "Member", ["get", "Membership Status"]]],
+                    ["all", ["==", ["get", "Name"], e.features[0].properties.Name], ["in", "Campaign Member", ["get", "Membership Status"]]],
+                    "#812948",
+                    ["all", ["!=", ["get", "Name"], e.features[0].properties.Name], ["in", "Coalition Member", ["get", "Membership Status"]]],
+                    "#AB8190",
+                    ["all", ["!=", ["get", "Name"], e.features[0].properties.Name], ["in", "Campaign Member", ["get", "Membership Status"]]],
                     "#AB8190",
                     "white"
                 ])
