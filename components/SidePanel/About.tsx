@@ -81,18 +81,18 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                             <p className='font-semibold text-body'>BetaNYC Civic Innovation Lab Team</p>
                             <p>Ashley Louie (Director), Hao Lun Hung (Project Lead), Erik Brown, Hailee Hoa Luong</p>
                         </div>
-                        {/* <div className="m-[20px] mb-[40px] ">
+                        <div className="m-[20px] mb-[40px] ">
                             <p className='mb-[8px] font-semibold text-title'>Data Sources</p>
                             <p>This website visualizes and maps the New York statewide support for the Housing Courts Must Change! Campaign launched by Right to Counsel NYC Coalition. Much of the data visualized on this website is collected and maintained by staff and members of the Right to Counsel NYC Coalition. This website was launched in December 2023, and the data is updated periodically to reflect sponsorship updates to Senate, Assembly, and Right to Counsel NYC Coalition members and endorsers.</p>
                             <div className='flex flex-col gap-[5px] mt-[10px]'>
                                 <li>Right to Counsel NYC Coalition. (2023). <p className='italic'>Housing Courts Must Change! Legislation.</p> Updated December 28, 2023.</li>
                                 <li>Right to Counsel NYC Coalition. (2023). <p className='italic'>Housing Courts Must Change! Public Legislation Tracker.</p> Updated December 28, 2023.</li>
                                 <li>Right to Counsel NYC Coalition. (2023). <p className='italic'>Right to Counsel NYC Coalition Membership.</p> Updated December 28, 2023.</li>
-                                <li>NY Assembly districts [<a className='cursor-pointer' target='_blank' href='https://www.nyc.gov/site/planning/data-maps/open-data/districts-download-metadata.page'>link to dataset</a>]<br />  NYC Planning <p className='italic'>Political and Administrative Districts</p>Updated October 6, 2022</li>
-                                <li>NY Senate districts [<a className='cursor-pointer' target='_blank' href='https://www.nyc.gov/site/planning/data-maps/open-data/districts-download-metadata.page'>link to dataset</a>] <br />  NYC Planning <p className='italic'>Political and Administrative Districts</p>Updated October 6, 2022</li>
-                                <li>Zip code boundaries [<a className='cursor-pointer' target='_blank' href='https://github.com/OpenDataDE/State-zip-code-GeoJSON/blob/master/ny_new_york_zip_codes_geo.min.json'>link to dataset</a>]<br /> Open Data Delaware <p className='italic'>Zip code boundaries for each of the 50 states</p></li>
+                                <li>NYS ITS Geospatial Services. (2022). <p className='italic'>New York State Assembly Districts.</p> Updated October 31, 2022. [<a className='cursor-pointer' target='_blank' href='https://data.gis.ny.gov/datasets/sharegisny::nys-assembly-districts/about'>link to dataset</a>]<br /></li>
+                                <li>NYS ITS Geospatial Services. (2022). <p className='italic'></p>New York State Senate Districts. Updated October 31, 2022. [<a className='cursor-pointer' target='_blank' href='https://data.gis.ny.gov/datasets/sharegisny::nys-senate-districts/about'>link to dataset</a>]</li>
+                                <li>United States Census Bureau. (2022). <p className='italic'>Zip Code Tabulation Areas (ZCTAs).</p> Revised May 23, 2023 [<a className='cursor-pointer' target='_blank' href='https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html'>link to dataset</a>]</li>
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                 )
             }
