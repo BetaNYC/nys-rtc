@@ -2,29 +2,29 @@
     {
         "House": "Senate",
         "Party": "Democrat",
+        "Defend RTC": "5",
         "Statewide RTC": "31",
-        "Winter Eviction Moratorium": "4",
-        "Defend RTC": "2"
+        "Winter Eviction Moratorium": "4"
     },
     {
         "House": "Senate",
         "Party": "Republican",
+        "Defend RTC": "0",
         "Statewide RTC": "0",
-        "Winter Eviction Moratorium": "0",
-        "Defend RTC": "0"
+        "Winter Eviction Moratorium": "0"
     },
     {
         "House": "Assembly",
         "Party": "Democrat",
-        "Statewide RTC": " 59",
-        "Winter Eviction Moratorium": " 10",
-        "Defend RTC": "3"
+        "Defend RTC": "13",
+        "Statewide RTC": "61",
+        "Winter Eviction Moratorium": "10"
     },
     {
         "House": "Assembly",
         "Party": "Republican",
-        "Statewide RTC": " 2",
-        "Winter Eviction Moratorium": " 0",
-        "Defend RTC": "0"
+        "Defend RTC": "0",
+        "Statewide RTC": "2",
+        "Winter Eviction Moratorium": "0"
     }
 ]
