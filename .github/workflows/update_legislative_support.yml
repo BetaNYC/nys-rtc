@@ -24,8 +24,11 @@ jobs:
         run: |
           pip install -r requirements.txt  # If you have dependencies
   
-      - name: Run legislation support generator script
-        run: python scripts/legislative_support_generator.py scripts/legislation_votes_generator.py
+      - name: Run legislative_support_generator.py
+        run: python scripts/legislative_support_generator.py
+  
+      - name: Run legislation_votes_generator.py
+        run: python scripts/legislation_votes_generator.py
 
       - name: Commit and push if changes
         run: |
