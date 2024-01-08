@@ -122,8 +122,12 @@ def generate_legislation_votes():
     output_file_path_dynamic = "public/legislations_votes.json"
 
     # Writing the data to a new JSON file
-    with open(output_file_path_dynamic, 'w') as file:
+    with open(output_file_path_dynamic, 'w+') as file:
+        print("Before:")
+        print(file.read())
         json.dump(final_summary_data, file, indent=4)
+        print("After:")
+        print(file.read())
 
 
 if __name__ == '__main__':
