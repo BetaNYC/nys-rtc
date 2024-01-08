@@ -72,27 +72,27 @@ const VotesVisualization = ({ legislation }: Props) => {
 
 
 
-    const labelMouseoverHandler = (l: labels) => {
-        console.log('bb')
-        let newLabelShown = { ...labelShown }
-        let keys = Object.keys({ ...labelShown }) as labels[]
-        keys.forEach(n => n === l ? newLabelShown[n] = true : newLabelShown[n] = false)
-        setLabelShown(newLabelShown)
-    }
+    // const labelMouseoverHandler = (l: labels) => {
+    //     console.log('bb')
+    //     let newLabelShown = { ...labelShown }
+    //     let keys = Object.keys({ ...labelShown }) as labels[]
+    //     keys.forEach(n => n === l ? newLabelShown[n] = true : newLabelShown[n] = false)
+    //     setLabelShown(newLabelShown)
+    // }
 
-    const labelMouseoutHandler = () => {
-        console.log('aaa')
-        setLabelShown({
-            senateDemoVotes: false,
-            senateRepVotes: false,
-            assemblyDemoVotes: false,
-            assemblyRepVotes: false,
-            simpleMajority: false,
-            superMajority: false,
-            senateTotalVotes: true,
-            assemblyTotalVotes: true
-        })
-    }
+    // const labelMouseoutHandler = () => {
+    //     console.log('aaa')
+    //     setLabelShown({
+    //         senateDemoVotes: false,
+    //         senateRepVotes: false,
+    //         assemblyDemoVotes: false,
+    //         assemblyRepVotes: false,
+    //         simpleMajority: false,
+    //         superMajority: false,
+    //         senateTotalVotes: true,
+    //         assemblyTotalVotes: true
+    //     })
+    // }
 
 
     const senateRef = useRef<SVGSVGElement | null>(null)
