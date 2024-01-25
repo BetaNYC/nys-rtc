@@ -212,7 +212,7 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
                     member['Assembly_District'] = None
                     member['County'] = None
                     member['Zip_Code'] = None
-                    nongeocoded_members = pd.concat([nongeocoded_members,pd.Dataframe([member])], ignore_index=True)
+                    nongeocoded_members = pd.concat([nongeocoded_members,pd.DataFrame([member])], ignore_index=True)
                     print(f"Could not geocode address (cached)")
             
             else: 
