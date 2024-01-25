@@ -196,14 +196,14 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
 
             if not cached_data.empty:
                 # If the address is in the cache, use the cached latitude and longitude
-                if cached_data.iloc[0]['lat'] != np.nan:
+                if  !(np.isnan(cached_data.iloc[0]['lat'])):
                     member['lat'] = cached_data.iloc[0]['lat']
                     member['lon'] = cached_data.iloc[0]['lon']  # Assuming 'long' is the column name
                     member['Senate_District'] = cached_data.iloc[0]['Senate_District']
                     member['Assembly_District'] = cached_data.iloc[0]['Assembly_District']
                     member['County'] = cached_data.iloc[0]['County']
                     member['Zip_Code'] = cached_data.iloc[0]['Zip_Code']
-                    print(f"Lat: {member['lat']} {member['lat'] != np.nan} | Lon: {member['lon']} | Senate_District: {member['Senate_District']} | Assembly_District: {member['Assembly_District']} | County: {member['County']} |  Zip_Code: {member['Zip_Code']} (cached)")
+                    print(f"Lat: {member['lat']} | Lon: {member['lon']} | Senate_District: {member['Senate_District']} | Assembly_District: {member['Assembly_District']} | County: {member['County']} |  Zip_Code: {member['Zip_Code']} (cached)")
 
                 else:
                     member['lat'] = None
