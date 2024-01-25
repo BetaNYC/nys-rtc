@@ -196,7 +196,7 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
 
             if not cached_data.empty:
                 # If the address is in the cache, use the cached latitude and longitude
-                if cached_data.iloc[0]['lat'] != np.nan:
+                if  not np.isnan(cached_data.iloc[0]['lat']):
                     member['lat'] = cached_data.iloc[0]['lat']
                     member['lon'] = cached_data.iloc[0]['lon']  # Assuming 'long' is the column name
                     member['Senate_District'] = cached_data.iloc[0]['Senate_District']
@@ -212,7 +212,7 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
                     member['Assembly_District'] = None
                     member['County'] = None
                     member['Zip_Code'] = None
-                    nongeocoded_members = pd.concat([nongeocoded_members,pd.Dataframe([member])], ignore_index=True)
+                    nongeocoded_members = pd.concat([nongeocoded_members,pd.DataFrame([member])], ignore_index=True)
                     print(f"Could not geocode address (cached)")
             
             else: 
