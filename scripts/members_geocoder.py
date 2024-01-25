@@ -269,14 +269,13 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
         # Export to GeoJSON
         gdf.to_file(path / 'rtc_members.geo.json', driver='GeoJSON')
 
-        address_cache.dropna(axis=1, how='all').to_csv(path / "address_cache.csv")
+        address_cache[['address_code','lat', 'lon', 'Senate_District', 'Assembly_District', 'County', 'Zip_Code', 'Website', 'Name', 'Legislation', 'Phone', 'Address', 'Membership Status']].dropna(axis=1, how='all').to_csv(path / "address_cache.csv")
 
         nongeocoded_members.to_csv(path / "nongeocoded_members.csv")
 
         with open(path / "airtable.pkl", 'wb') as f:
             pickle.dump(airtable_members, f)
 
-        
 if __name__ == '__main__':
     MEMBERS_INFO = os.environ['MEMBERS_INFO']
     GEOCODER_KEY = os.environ['GEOCODER_KEY']
