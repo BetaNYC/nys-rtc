@@ -164,11 +164,7 @@ def generate_members_info(AIRTABLE_API_KEY, AIRTABLE_APP_KEY, AIRTABLE_TBL_KEY, 
         else:
             address_cache = pd.DataFrame(columns=['address_code', 'lat', 'lon', 'Senate_District', 'Assembly_District', 'County', 'Zip_Code'])
 
-        if os.path.isfile(path / "nongeocoded_members.csv"):
-            nongeocoded_members = pd.read_csv(path / "nongeocoded_members.csv")
-
-        else:
-            nongeocoded_members = pd.DataFrame(columns=['Website', 'Name', 'Legislation', 'Address', 'Membership Status', 'lat', 'lon', 'Phone'])
+        nongeocoded_members = pd.DataFrame(columns=['Website', 'Name', 'Legislation', 'Address', 'Membership Status', 'lat', 'lon', 'Phone'])
             
         #count = 0
 
