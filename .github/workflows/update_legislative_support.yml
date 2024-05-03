@@ -20,9 +20,10 @@ jobs:
         with:
           python-version: '3.x'  # Specify the Python version if needed
   
-      - name: Install dependencies
+      - name: Install dependencies and pull repo
         run: |
           pip install -r requirements.txt  # If you have dependencies
+          git pull
   
       - name: Run legislative_support_generator.py
         run: python scripts/legislative_support_generator.py
@@ -38,7 +39,6 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
       
           # Git commands to add, commit, and push
-          git pull
           git add 'public/assembly.geo.json' 'public/senate.geo.json' 'public/legislations_votes.json'
           git commit -m "Update legislative support jsons" || echo "No changes to commit"
           git push
