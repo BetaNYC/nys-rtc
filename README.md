@@ -18,6 +18,18 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Deploy on GitHub Pages
+
+Make sure to add the [nextjs.yml](https://github.com/BetaNYC/nys-rtc/blob/main/.github/workflows/nextjs.yml) in the .github/ workflows doc path
+
+### In the next config.js file please add:  
+    const nextConfig = {
+      trailingSlash: true,
+      output: "export",
+    };
+
+module.exports = nextConfig;
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -27,8 +39,4 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
