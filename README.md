@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RTC Map Tool
+RTC Map Tool is the website that visualizes the support for these three pieces of legislation from both grassroots and elected leadership: Statewide Support for Housing Courts Must Change! Campaign: [hcmustchange.beta.nyc.](https://hcmustchange.beta.nyc/?_gl=1*k0170f*_ga*MTEzMDc3NzIxOC4xNjkwODIwMzQz*_ga_HF010MPRW7*MTcxNTU3NjQ0Ni4xOC4xLjE3MTU1NzY0ODAuMC4wLjA.) 
+
+The website allows viewers to:
+- Visualize the districts of state legislators, including the counties and zip codes their districts cover; learn which pieces of legislation on the HCMC platform they support; and contact their legislators to advocate for the legislation. 
+- Visualize where Right to Counsel member and endorser organizations are located throughout the state; see which legislation they support; and get in touch with them.
 
 ## Getting Started
 
