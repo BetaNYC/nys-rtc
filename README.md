@@ -30,6 +30,8 @@ Make sure to add the [nextjs.yml](https://github.com/BetaNYC/nys-rtc/blob/main/.
 
 module.exports = nextConfig;
 
+Push your changes from the local file and the GitHub Action will automatically run the deployment
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
