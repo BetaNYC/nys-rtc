@@ -1,38 +1,38 @@
 [
     {
-        "Assembly Sponsor": "Latoya Joyner",
-        "Senate Number": "S2721",
-        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2023/S2721",
-        "Assembly Number": "A1493",
         "Bill Name": "Statewide Right to Counsel",
+        "Assembly Number": "A1493",
+        "Senate Number": "S2721",
+        "Assembly Sponsor": "Latoya Joyner",
         "Senate Sponsor": "Rachel May",
+        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2023/S2721",
         "Bill Description": "New York communities need long term solutions that will keep them safe and securely housed. We're calling on NY State to pass Statewide Right to Counsel (S2721 / A1493), so ALL tenants across New York State have the right to a lawyer when facing an eviction."
     },
     {
-        "Assembly Sponsor": "Linda Rosenthal",
-        "Senate Number": "N/A",
-        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2023/A1853",
-        "Assembly Number": "A1853",
         "Bill Name": "Clean Hands",
+        "Assembly Number": "A1853",
+        "Senate Number": "N/A",
+        "Assembly Sponsor": "Linda Rosenthal",
         "Senate Sponsor": "N/A",
+        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2023/A1853",
         "Bill Description": "Assembly Bill A1853 requires a landlord to have \"clean hands\" to bring action for rent or eviction in certain cases. This legislation would prohibit a landlord for suing for nonpayment if there are housing code violations in the tenant's unit or the common areas of the building. "
     },
     {
-        "Assembly Sponsor": "Linda Rosenthal",
-        "Senate Number": "S3254",
-        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2023/S3254",
-        "Assembly Number": "A4993",
         "Bill Name": "Defend Right to Counsel",
+        "Assembly Number": "A4993",
+        "Senate Number": "S3254",
+        "Assembly Sponsor": "Linda Rosenthal",
         "Senate Sponsor": "Brad Hoylman-Sigal",
+        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2023/S3254",
         "Bill Description": "Local Right to Counsel laws must be defended! We know that 84% of tenants who have a lawyer are able to stay in their home. Tenants must be given the time they need to find a lawyer. To ensure this, the NYS legislature should pass our Defend Right to Counsel Legislation (S3254 / A4993) to ensure that tenants in localities that have passed a Right to Counsel law are given the time they need to be connected to legal representation!"
     },
     {
-        "Assembly Sponsor": "Anna Kelles",
-        "Senate Number": "S1403",
-        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2023/S1403#:~:text=2023%2DS1403%20(ACTIVE)%20%2D%20Summary,properties%20during%20the%20winter%20months.",
-        "Assembly Number": "A4093",
         "Bill Name": "Winter Eviction Moratorium",
+        "Assembly Number": "A4093",
+        "Senate Number": "S1403",
+        "Assembly Sponsor": "Anna Kelles",
         "Senate Sponsor": "Zellnor Myrie",
+        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2023/S1403#:~:text=2023%2DS1403%20(ACTIVE)%20%2D%20Summary,properties%20during%20the%20winter%20months.",
         "Bill Description": "Evictions tear apart families and communities, result in homelessness, and can cause serious mental and physical health problems. Especially during the winter months, New Yorkers need stable housing to keep kids in school, protect from infectious disease, and stay safe from the brutal cold. We're calling on NY State to pass a Winter Eviction Moratorium (S1403/A4093), to keep New Yorkers in their homes and out of the cold."
     }
 ]
