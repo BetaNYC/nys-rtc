@@ -44,10 +44,10 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                             </p>
                             <div className="my-[20px]">
                                 NYS legislative support for the HCMC campaign platform is shown on the map through Senate and Assembly districts. The HCMC campaign focuses on our legislative demands:
-                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2023/S2721'>Statewide Right to Counsel (S2721 / A1493)</a></li>
+                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S6772'>Statewide Right to Counsel (S6772 / A4669)</a></li>
                                 <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2023/S1403#:~:text=2023%2DS1403%20(ACTIVE)%20%2D%20Summary,properties%20during%20the%20winter%20months.'>Defend Right to Counsel (S3254 / A4993)</a></li>
-                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2023/S3254'>Winter Eviction Moratorium (S1403 / A4093)</a></li>
-                                <li><a className='hover:underline' target='_blank' href='https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=A00490&term=&Summary=Y&Actions=Y'>Clean Hands (A490)</a></li>
+                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2023/S1403/amendment/A'>Winter Eviction Moratorium (S1403 / A4093)</a></li>
+                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S4098'>Clean Hands (A1621 / S4098)</a></li>
                             </div>
                             <p className='mb-[20px]'>
                                 Explore the map to view co-located geographic support between the Right to Counsel NYC Coalition’s base support, zip code boundaries, counties, assembly districts, and senate districts.
