@@ -2,32 +2,28 @@
     {
         "House": "Senate",
         "Party": "Democrat",
-        "Clean Hands": "0",
-        "Defend RTC": "9",
-        "Statewide RTC": "32",
-        "Winter Eviction Moratorium": "4"
+        "Clean Hands": "8",
+        "Statewide RTC": "28",
+        "Winter Eviction Moratorium": "2"
     },
     {
         "House": "Senate",
         "Party": "Republican",
         "Clean Hands": "0",
-        "Defend RTC": "0",
         "Statewide RTC": "0",
         "Winter Eviction Moratorium": "0"
     },
     {
         "House": "Assembly",
         "Party": "Democrat",
-        "Clean Hands": "6",
-        "Defend RTC": "18",
-        "Statewide RTC": "61",
-        "Winter Eviction Moratorium": "12"
+        "Clean Hands": "7",
+        "Statewide RTC": "55",
+        "Winter Eviction Moratorium": "1"
     },
     {
         "House": "Assembly",
         "Party": "Republican",
         "Clean Hands": "0",
-        "Defend RTC": "0",
         "Statewide RTC": "2",
         "Winter Eviction Moratorium": "0"
     }
