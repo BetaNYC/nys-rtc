@@ -1,30 +1,21 @@
 [
     {
-        "Assembly Sponsor": "Michaelle Solages",
-        "Senate Number": "S6772",
-        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2025/S6772",
-        "Assembly Number": "A4669",
         "Bill Name": "Statewide Right to Counsel",
+        "Assembly Number": "A4669",
+        "Senate Number": "S6772",
+        "Assembly Sponsor": "Michaelle Solages",
         "Senate Sponsor": "Robert Jackson",
-        "Bill Description": "Introduced by Senator Jackson and Assemblymember Solages, our statewide Right to Counsel legislation would guarantee every tenant in New York State a free lawyer when facing eviction. It would also require courts to enforce local Right to Counsel laws – addressing the widespread denial of tenants’ right to an attorney in NYC’s state-run housing courts."
+        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2025/S6772",
+        "Bill Description": "Introduced by Senator Jackson and Assemblymember Solages, our statewide Right to Counsel legislation would guarantee every tenant in New York State a free lawyer when facing eviction. It would also require courts to enforce local Right to Counsel laws \u2013 addressing the widespread denial of tenants\u2019 right to an attorney in NYC\u2019s state-run housing courts."
     },
     {
-        "Assembly Sponsor": "Linda Rosenthal",
-        "Senate Number": "S4098",
-        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2025/S4098",
-        "Assembly Number": "A1621",
         "Bill Name": "Clean Hands Act",
-        "Senate Sponsor": "Kevin Parker",
-        "Bill Description": "Introduced by Senator Parker and Assemblymember Rosenthal, our Clean Hands Act would stop landlords from suing tenants for eviction when housing violations exist in the tenant’s apartment or building. It makes clear that landlords cannot ignore unsafe conditions and still use the courts to collect rent and displace tenants. "
-    },
-    {
-        "Bill Name": "Defend Right to Counsel",
-        "Assembly Number": "A4993",
-        "Senate Number": "S3254",
+        "Assembly Number": "A1621",
+        "Senate Number": "S4098",
         "Assembly Sponsor": "Linda Rosenthal",
-        "Senate Sponsor": "Brad Hoylman-Sigal",
-        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2023/S3254",
-        "Bill Description": "Local Right to Counsel laws must be defended! We know that 84% of tenants who have a lawyer are able to stay in their home. Tenants must be given the time they need to find a lawyer. To ensure this, the NYS legislature should pass our Defend Right to Counsel Legislation (S3254 / A4993) to ensure that tenants in localities that have passed a Right to Counsel law are given the time they need to be connected to legal representation!"
+        "Senate Sponsor": "Kevin Parker",
+        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2025/S4098",
+        "Bill Description": "Introduced by Senator Parker and Assemblymember Rosenthal, our Clean Hands Act would stop landlords from suing tenants for eviction when housing violations exist in the tenant\u2019s apartment or building. It makes clear that landlords cannot ignore unsafe conditions and still use the courts to collect rent and displace tenants."
     },
     {
         "Bill Name": "Winter Eviction Moratorium",
@@ -32,7 +23,7 @@
         "Senate Number": "S9090",
         "Assembly Sponsor": "Anna Kelles",
         "Senate Sponsor": "Jabari Brisport",
-        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2025/S9090",
+        "Link to bill text": "https://www.nysenate.gov/legislation/bills/2025/S9090 ",
         "Bill Description": "Introduced by Senator Brisport and Assemblymember Kelles, our Winter Eviction Moratorium legislation would pause the execution of evictions from November 1 through April 15. It protects public health and safety by keeping families housed during the coldest months, while providing tenants and landlords time to pursue rental assistance, repayment plans, or mediation."
     }
 ]
