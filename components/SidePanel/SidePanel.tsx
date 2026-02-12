@@ -9,7 +9,7 @@ import Image from 'next/image'
 
 import legislationsInfo from "../../public/legislations_info.json"
 
-export type Columns = "About" | "Statewide RTC" | "Winter Eviction Moratorium" | "Defend RTC" | "Clean Hands"
+export type Columns = "About" | "Statewide RTC" | "Winter Eviction Moratorium" | "Clean Hands"
 
 
 const SidePanel = () => {
@@ -18,7 +18,6 @@ const SidePanel = () => {
         "About": true,
         "Statewide RTC": false,
         "Winter Eviction Moratorium": false,
-        "Defend RTC": false,
         "Clean Hands": false,
     })
 
@@ -28,13 +27,12 @@ const SidePanel = () => {
             "About": boolean,
             "Statewide RTC": boolean,
             "Winter Eviction Moratorium": boolean,
-            "Defend RTC": boolean,
             "Clean Hands": boolean
         }
         (Object.keys(newExpand) as Columns[]).forEach((e: Columns) => e === l ? newExpand[e] = true : newExpand[e] = false)
         setExpand(newExpand)
 
-        if (l !== "About" && l !== "Clean Hands") {
+        if (l !== "About") {
             setLegislations(l)
             setMapShown(true)
 
@@ -57,7 +55,6 @@ const SidePanel = () => {
             ])
         }
 
-        if (l === "Clean Hands") setMapShown(false)
     }
 
 
@@ -80,10 +77,9 @@ const SidePanel = () => {
                 </div>
                 <div className="flex-1">
                     <About expand={expand} legislationsClickHandler={legislationsClickHandler} />
+                    <LegislationColumns legislation={"Clean Hands"} name={legislationsInfo[1]["Bill Name"]} number={legislationsInfo[1]["Senate Number"] + " / " + legislationsInfo[1]["Assembly Number"]} content={legislationsInfo[1]["Bill Description"]} expand={expand["Clean Hands"]} legislationsClickHandler={() => legislationsClickHandler("Clean Hands")} calulated={true} />
                     <LegislationColumns legislation={"Statewide RTC"} name={legislationsInfo[0]["Bill Name"]} number={legislationsInfo[0]["Senate Number"] + " / " + legislationsInfo[0]["Assembly Number"]} content={legislationsInfo[0]["Bill Description"]} expand={expand["Statewide RTC"]} legislationsClickHandler={() => legislationsClickHandler("Statewide RTC")} calulated={true} />
-                    <LegislationColumns legislation={"Defend RTC"} name={legislationsInfo[2]["Bill Name"]} number={legislationsInfo[2]["Senate Number"] + " / " + legislationsInfo[2]["Assembly Number"]} content={legislationsInfo[2]["Bill Description"]} expand={expand["Defend RTC"]} legislationsClickHandler={() => legislationsClickHandler("Defend RTC")} calulated={true} />
                     <LegislationColumns legislation={"Winter Eviction Moratorium"} name={legislationsInfo[3]["Bill Name"]} number={legislationsInfo[3]["Senate Number"] + " / " + legislationsInfo[3]["Assembly Number"]} content={legislationsInfo[3]["Bill Description"]} expand={expand["Winter Eviction Moratorium"]} legislationsClickHandler={() => legislationsClickHandler("Winter Eviction Moratorium")} calulated={true} />
-                    <LegislationColumns legislation={"Clean Hands"} name={legislationsInfo[1]["Bill Name"]} number={legislationsInfo[1]["Senate Number"] + " / " + legislationsInfo[1]["Assembly Number"]} content={legislationsInfo[1]["Bill Description"]} expand={expand["Clean Hands"]} legislationsClickHandler={() => legislationsClickHandler("Clean Hands")} calulated={false} />
                 </div>
                 <div className=" flex items-center gap-[15px] px-[20px] pb-[5px]">
                     <Image

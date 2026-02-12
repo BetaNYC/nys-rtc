@@ -19,8 +19,8 @@ import "./voteVisualization.css"
 
 type Props = {
     legislation: | "Statewide RTC"
-    | "Defend RTC"
-    | "Winter Eviction Moratorium";
+    | "Winter Eviction Moratorium"
+    | "Clean Hands";
 };
 
 

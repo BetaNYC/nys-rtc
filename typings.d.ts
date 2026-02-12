@@ -7,7 +7,6 @@ type GeoJson = {
 
 type Legislations =
   | "Statewide RTC"
-  | "Defend RTC"
   | "Winter Eviction Moratorium"
   | "Clean Hands";
 

@@ -11,7 +11,7 @@ type Props = {
         "About": boolean,
         "Statewide RTC": boolean,
         "Winter Eviction Moratorium": boolean,
-        "Defend RTC": boolean
+        "Clean Hands": boolean
     },
     legislationsClickHandler: (l: Columns) => void
 }
@@ -40,17 +40,16 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                     <div className='flex-1 flex flex-col justify-between  overflow-y-auto'>
                         <div className="text-[12px] lg:text-body mx-[20px]">
                             <p>
-                                <a className='hover:underline' target='_blank' href='https://www.righttocounselnyc.org/hcmc'>Housing Courts Must Change! (HCMC)</a> is a statewide campaign launched by the Right to Counsel NYC Coalition in 2020 to transform the courts across New York State (NYS) from an “eviction machine” to a place that holds landlords accountable, upholds tenants’ rights, and enables tenants to remain in their homes.
+                                <a className='hover:underline' target='_blank' href='https://www.righttocounselnyc.org/hcmc'>Housing Courts Must Change! (HCMC)</a> is a statewide campaign launched by the Right to Counsel NYC Coalition in 2020 to transform the courts across New York State (NYS) from an eviction machine to a place that holds landlords accountable, upholds tenants’ rights, and enables tenants to remain in their homes.
                             </p>
                             <div className="my-[20px]">
                                 NYS legislative support for the HCMC campaign platform is shown on the map through Senate and Assembly districts. The HCMC campaign focuses on our legislative demands:
+                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S4098'>Clean Hands (S4098 / A1621)</a></li>
                                 <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S6772'>Statewide Right to Counsel (S6772 / A4669)</a></li>
-                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2023/S1403#:~:text=2023%2DS1403%20(ACTIVE)%20%2D%20Summary,properties%20during%20the%20winter%20months.'>Defend Right to Counsel (S3254 / A4993)</a></li>
-                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2023/S1403/amendment/A'>Winter Eviction Moratorium (S1403 / A4093)</a></li>
-                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S4098'>Clean Hands (A1621 / S4098)</a></li>
+                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S9090'>Winter Eviction Moratorium (S9090 / A10121)</a></li>
                             </div>
                             <p className='mb-[20px]'>
-                                Explore the map to view co-located geographic support between the Right to Counsel NYC Coalition’s base support, zip code boundaries, counties, assembly districts, and senate districts.
+                                Explore the map to view co-located geographic support between the Right to Counsel Coalition’s base of support, zip code boundaries, counties, assembly districts, and senate districts.
                             </p>
                             <p>
                                 To take action in support of our campaign, go to:<a className='underline' target='_blank' href='https://www.righttocounselnyc.org/takeaction' >https://www.righttocounselnyc.org/takeaction</a>
@@ -66,11 +65,11 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                 selectedContent === "credits" && (
                     <div className="text-[12px] lg:text-body overflow-y-scroll">
                         <p className='mx-[20px]'>
-                            This project was designed and developed by BetaNYC’s Civic Innovation Lab in collaboration with the Right to Counsel NYC Coalition, through a BetaNYC service called Research and Data Assistance Request (RADAR).
+                            This project was designed and developed by BetaNYC’s Civic Innovation Lab in collaboration with the Right to Counsel Coalition, through a BetaNYC service called Research and Data Assistance Request (RADAR).
                         </p>
                         <div className="m-[20px]">
-                            <p className='mb-[8px] font-semibold text-title'><a className='hover:text-grey_1 hover:underline' target='_blank' href="https://www.righttocounselnyc.org/hcmc">Right to Counsel NYC Coalition</a></p>
-                            <p>The Right to Counsel NYC Coalition is a tenant-led coalition that formed in 2014 to disrupt Housing Court as a center of displacement and stop the eviction crisis that has threatened our families, our neighborhoods, and our homes for too long. Our Coalition is made up of tenants, organizers, advocates, legal services organizations and more! Our work is rooted in principles of dignity, diversity, equity, humanity, and justice. After a hard fought, three-year grassroots campaign, we won and became the first city in the nation to establish a Right to Counsel for tenants facing eviction.</p>
+                            <p className='mb-[8px] font-semibold text-title'><a className='hover:text-grey_1 hover:underline' target='_blank' href="https://www.righttocounselnyc.org/hcmc">Right to Counsel NYS Coalition</a></p>
+                            <p><b>Right to Counsel NYS</b> is a statewide coalition of tenants, organizers, advocates, and legal services organizations fighting for an eviction-free New York. After winning the nation’s first Right to Counsel law for tenants facing eviction in NYC in 2017, we launched the Housing Courts Must Change! campaign to dismantle the eviction machine, hold landlords accountable, and transform housing courts into places where tenants’ rights are upheld and people can stay in their homes.</p>
                         </div>
                         <div className="m-[20px]">
                             <p className='mb-[8px] font-semibold text-title'><a className='hover:text-grey_1 hover:underline' target='_blank' href="https://beta.nyc/">BetaNYC</a></p>
