@@ -3,11 +3,11 @@ import React, { useState } from 'react'
 import { ChevronDownIcon, ChevronUpIcon, ChevronLeftIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image'
 
-const name = ["STATEWIDE RIGHT TO COUNSEL", "WINTER EVICTION MORATORIUM", "DEFEND RIGHT TO COUNSEL"]
+const name = ["STATEWIDE RIGHT TO COUNSEL", "WINTER EVICTION MORATORIUM", "CLEAN HANDS"]
 const content = [
     "The COVID-19 pandemic made New York State's eviction crisis even worse. With more than 175,000 active eviction cases across the state (as of September 2023), New York communities need long term solutions that will keep them safe and securely housed. We're calling on NY State to pass Statewide Right to Counsel (S6772 / (A4669), so ALL tenants across New York State have the right to a lawyer when facing an eviction.",
-    "Local Right to Counsel laws must be defended! We know that 84% of tenants who have a lawyer are able to stay in their home. RTC is only effective if tenants are given the time they need to find a lawyer. The NYS legislature must pass our Defend Right to Counsel Legislation (S3254 / A4993)  to ensure that tenants in localities that have passed a Right to Counsel law are given the time they need to be connected to legal representation!",
-    "Evictions tear apart families and communities, result in homelessness, and can cause serious mental and physical health problems. Especially during the winter months, New Yorkers need stable housing to keep kids in school, protect from infectious disease, and stay safe from the brutal cold. We're calling on NY State to pass a Winter Eviction Moratorium (S1403/A4093), to keep New Yorkers in their homes and out of the cold."
+    "Evictions tear apart families and communities, result in homelessness, and can cause serious mental and physical health problems. Especially during the winter months, New Yorkers need stable housing to keep kids in school, protect from infectious disease, and stay safe from the brutal cold. We're calling on NY State to pass a Winter Eviction Moratorium (S9090/A10121), to keep New Yorkers in their homes and out of the cold.",
+    "The Clean Hands Act (S4098 / A1621) would stop landlords from suing tenants for eviction when housing violations exist in the tenant's apartment or building. It makes clear that landlords cannot ignore unsafe conditions and still use the courts to collect rent and displace tenants."
 ]
 
 

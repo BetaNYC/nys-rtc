@@ -57,7 +57,7 @@ function Selection() {
             <select className='absolute py-[5px] top-[120px] left-[20px] text-black z-50' onChange={legislationsChnageHandler}>
                 <option value="Statewide RTC">Statewide RTC</option>
                 <option value="Winter Eviction Moratorium">Winter Eviction Moratorium</option>
-                <option value="DEFEND RTC">Defend RTC</option>
+                <option value="Clean Hands">Clean Hands</option>
             </select>
         </>
 

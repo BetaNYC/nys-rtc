@@ -40,7 +40,7 @@ const Legend = () => {
                 <div className='absolute left-[37%] md:left-[34%] lg:left-[32%] xl:left-[30%] top-[20px] p-[15px] text-rtc_navy bg-white rounded-[8px] drop-shadow-xl z-20'>
                     <div className='flex justify-between'>
                         <h2 className='w-[220px] mb-[8px] font-bold text-[13px] lg:text-title leading-[22.5px]'>
-                            {legislations === "Statewide RTC" ? "Statewide Right to Counsel " : legislations === "Defend RTC" ? "Defend Right to Counsel " : "Winter Eviction Moratorium "}
+                            {legislations === "Statewide RTC" ? "Statewide Right to Counsel " : legislations === "Clean Hands" ? "Clean Hands " : "Winter Eviction Moratorium "}
                             {districts.charAt(0).toUpperCase() + districts.slice(1)} District Support Map
                         </h2>
                         <XMarkIcon className='w-[22px] h-[22px] text-grey_2 cursor-pointer' onClick={() => panelClickHandler(false)} />

@@ -464,8 +464,8 @@ const Map = () => {
                         <div class="font-bold text-rtc_navy text-[12px]">Statewide Right to Counsel</div>
                     </div>
                     <div class="flex items-center gap-[5px]">
-                        <img src=${properties["HCMC support"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                        <div class="font-bold text-rtc_navy text-[12px]">Defend Right to Counsel</div>
+                        <img src=${properties["HCMC support"].includes("Clean Hands") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                        <div class="font-bold text-rtc_navy text-[12px]">Clean Hands</div>
                     </div>
                     <div class="flex items-center gap-[5px]">
                         <img src=${properties["HCMC support"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"}  alt="" className="w-[16px] h-[16px]" />
@@ -523,8 +523,8 @@ const Map = () => {
                         <div class="font-bold text-rtc_navy text-[12px]">Statewide Right to Counsel</div>
                     </div>
                     <div class="flex items-start gap-[5px]">
-                        <img src=${properties["Legislation"].includes("Defend Right to Counsel") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                        <div class="font-bold text-rtc_navy text-[12px]">Defend Right to Counsel</div>
+                        <img src=${properties["Legislation"].includes("Clean Hands") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                        <div class="font-bold text-rtc_navy text-[12px]">Clean Hands</div>
                     </div>
                     <div class="flex items-start gap-[5px]">
                     <img src=${properties["Legislation"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"}  alt="" className="w-[16px] h-[16px]" />

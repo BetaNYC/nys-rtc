@@ -212,8 +212,8 @@ const Geopanel = () => {
                                 <div className="font-bold text-label">Statewide Right to Counsel</div>
                             </div>
                             <div className="flex items-start gap-[5px]">
-                                <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Defend RTC") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                                <div className="font-bold text-label">Defend Right to Counsel</div>
+                                <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Clean Hands") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                                <div className="font-bold text-label">Clean Hands</div>
                             </div>
                             <div className="flex items-start gap-[5px]">
                                 <img src={selectedDistrictFeatures?.properties!["HCMC support"].includes("Winter Eviction Moratorium") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />

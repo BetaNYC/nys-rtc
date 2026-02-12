@@ -192,8 +192,8 @@ const Membershippanel = ({ selectedMemberFeatures, setSelectedMemberFeatures }: 
                             </div>
                             <div className="flex items-start gap-[5px]">
                                 {/* @ts-ignore */}
-                                <img src={selectedMemberFeatures?.properties!["Legislation"].includes("Defend Right to Counsel") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
-                                <div className="font-bold text-label">Defend Right to Counsel</div>
+                                <img src={selectedMemberFeatures?.properties!["Legislation"].includes("Clean Hands") ? "/icons/checked.svg" : "/icons/empty.svg"} alt="" className="w-[16px] h-[16px]" />
+                                <div className="font-bold text-label">Clean Hands</div>
                             </div>
                             <div className="flex items-start gap-[5px]">
                                 {/* @ts-ignore */}
