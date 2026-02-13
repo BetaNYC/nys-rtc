@@ -44,9 +44,10 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                             </p>
                             <div className="my-[20px]">
                                 State legislative support for the HCMC campaign platform is shown on the map through Senate and Assembly districts. The HCMC campaign focuses on our legislative demands:
-                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S4098'>Clean Hands Act(S4098 / A1621)</a></li>
-                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S6772'>Statewide Right to Counsel (S6772 / A4669)</a></li>
-                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S9090'>Winter Eviction Moratorium (S9090 / A10121)</a></li>
+                                <br /><br /> 
+                                <a className='font-bold hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S4098'>Clean Hands Act(S4098 / A1621)</a><br />
+                                <a className='font-bold hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S6772'>Statewide Right to Counsel (S6772 / A4669)</a><br />
+                                <a className='font-bold hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S9090'>Winter Eviction Moratorium (S9090 / A10121)</a>
                             </div>
                             <p className='mb-[20px]'>
                                 Explore the map to view co-located geographic support between the Right to Counsel Coalition’s base of support, zip code boundaries, counties, assembly districts, and senate districts.
