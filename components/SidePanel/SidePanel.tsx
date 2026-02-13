@@ -72,14 +72,14 @@ const SidePanel = () => {
                 <div>
                     <div className="mt-[20px] mb-[20px] px-[25px]">
                         <h1 className="mb-[5px] font-bold text-[24px] text-rtc_purple">Housing Courts Must Change!</h1>
-                        <h2 className="font-bold text-subheadline text-rtc_navy">NY State Right to Counsel Map for HCMC Support</h2>
+                        <h2 className="font-bold text-subheadline text-rtc_navy">Statewide Map of Campaign Support</h2>
                     </div>
                 </div>
                 <div className="flex-1">
                     <About expand={expand} legislationsClickHandler={legislationsClickHandler} />
                     <LegislationColumns legislation={"Clean Hands"} name={legislationsInfo[1]["Bill Name"]} number={legislationsInfo[1]["Senate Number"] + " / " + legislationsInfo[1]["Assembly Number"]} content={legislationsInfo[1]["Bill Description"]} expand={expand["Clean Hands"]} legislationsClickHandler={() => legislationsClickHandler("Clean Hands")} calulated={true} />
                     <LegislationColumns legislation={"Statewide RTC"} name={legislationsInfo[0]["Bill Name"]} number={legislationsInfo[0]["Senate Number"] + " / " + legislationsInfo[0]["Assembly Number"]} content={legislationsInfo[0]["Bill Description"]} expand={expand["Statewide RTC"]} legislationsClickHandler={() => legislationsClickHandler("Statewide RTC")} calulated={true} />
-                    <LegislationColumns legislation={"Winter Eviction Moratorium"} name={legislationsInfo[3]["Bill Name"]} number={legislationsInfo[3]["Senate Number"] + " / " + legislationsInfo[3]["Assembly Number"]} content={legislationsInfo[3]["Bill Description"]} expand={expand["Winter Eviction Moratorium"]} legislationsClickHandler={() => legislationsClickHandler("Winter Eviction Moratorium")} calulated={true} />
+                    <LegislationColumns legislation={"Winter Eviction Moratorium"} name={legislationsInfo[2]["Bill Name"]} number={legislationsInfo[2]["Senate Number"] + " / " + legislationsInfo[2]["Assembly Number"]} content={legislationsInfo[2]["Bill Description"]} expand={expand["Winter Eviction Moratorium"]} legislationsClickHandler={() => legislationsClickHandler("Winter Eviction Moratorium")} calulated={true} />
                 </div>
                 <div className=" flex items-center gap-[15px] px-[20px] pb-[5px]">
                     <Image

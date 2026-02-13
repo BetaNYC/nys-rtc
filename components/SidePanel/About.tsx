@@ -40,11 +40,11 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                     <div className='flex-1 flex flex-col justify-between  overflow-y-auto'>
                         <div className="text-[12px] lg:text-body mx-[20px]">
                             <p>
-                                <a className='hover:underline' target='_blank' href='https://www.righttocounselnyc.org/hcmc'>Housing Courts Must Change! (HCMC)</a> is a statewide campaign launched by the Right to Counsel NYC Coalition in 2020 to transform the courts across New York State (NYS) from an eviction machine to a place that holds landlords accountable, upholds tenants’ rights, and enables tenants to remain in their homes.
+                                <a className='hover:underline' target='_blank' href='https://www.righttocounselnyc.org/hcmc'>Housing Courts Must Change! (HCMC)</a> is a statewide campaign launched by the Right to Counsel NYS Coalition in 2020 to transform the courts across New York State (NYS) from an eviction machine to a place that holds landlords accountable, upholds tenants’ rights, and enables tenants to remain in their homes.
                             </p>
                             <div className="my-[20px]">
-                                NYS legislative support for the HCMC campaign platform is shown on the map through Senate and Assembly districts. The HCMC campaign focuses on our legislative demands:
-                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S4098'>Clean Hands (S4098 / A1621)</a></li>
+                                State legislative support for the HCMC campaign platform is shown on the map through Senate and Assembly districts. The HCMC campaign focuses on our legislative demands:
+                                <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S4098'>Clean Hands Act(S4098 / A1621)</a></li>
                                 <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S6772'>Statewide Right to Counsel (S6772 / A4669)</a></li>
                                 <li><a className='hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S9090'>Winter Eviction Moratorium (S9090 / A10121)</a></li>
                             </div>
@@ -87,8 +87,8 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                                 <li>Right to Counsel NYC Coalition. (2023). <p className='italic'>Housing Courts Must Change! Legislation.</p> Updated December 28, 2023.</li>
                                 <li>Right to Counsel NYC Coalition. (2023). <p className='italic'>Housing Courts Must Change! Public Legislation Tracker.</p> Updated December 28, 2023.</li>
                                 <li>Right to Counsel NYC Coalition. (2023). <p className='italic'>Right to Counsel NYC Coalition Membership.</p> Updated December 28, 2023.</li>
-                                <li>NYS ITS Geospatial Services. (2022). <p className='italic'>New York State Assembly Districts.</p> Updated October 31, 2022. [<a className='cursor-pointer' target='_blank' href='https://data.gis.ny.gov/datasets/sharegisny::nys-assembly-districts/about'>link to dataset</a>]<br /></li>
-                                <li>NYS ITS Geospatial Services. (2022). <p className='italic'>New York State Senate Districts.</p> Updated October 31, 2022. [<a className='cursor-pointer' target='_blank' href='https://data.gis.ny.gov/datasets/sharegisny::nys-senate-districts/explore?location=42.739307%2C-74.343735%2C6.97'>link to dataset</a>]</li>
+                                <li>NYS ITS Geospatial Services. (2022). <p className='italic'>New York State Assembly Districts.</p> Updated February 13, 2026. [<a className='cursor-pointer' target='_blank' href='https://data.gis.ny.gov/datasets/sharegisny::nys-assembly-districts/about'>link to dataset</a>]<br /></li>
+                                <li>NYS ITS Geospatial Services. (2022). <p className='italic'>New York State Senate Districts.</p> Updated February 13, 2026. [<a className='cursor-pointer' target='_blank' href='https://data.gis.ny.gov/datasets/sharegisny::nys-senate-districts/explore?location=42.739307%2C-74.343735%2C6.97'>link to dataset</a>]</li>
                                 <li>United States Census Bureau. (2022). <p className='italic'>Zip Code Tabulation Areas (ZCTAs).</p> Revised May 23, 2023 [<a className='cursor-pointer' target='_blank' href='https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html'>link to dataset</a>]</li>
                             </div>
                         </div>
