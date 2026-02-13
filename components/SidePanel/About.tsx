@@ -43,9 +43,9 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                                 <a className='hover:underline' target='_blank' href='https://www.righttocounselnyc.org/hcmc'>Housing Courts Must Change! (HCMC)</a> is a statewide campaign launched by the Right to Counsel NYS Coalition in 2020 to transform the courts across New York State (NYS) from an eviction machine to a place that holds landlords accountable, upholds tenants’ rights, and enables tenants to remain in their homes.
                             </p>
                             <div className="my-[20px]">
-                                State legislative support for the HCMC campaign platform is shown on the map through Senate and Assembly districts. The HCMC campaign focuses on our legislative demands:
+                                State legislative support for the HCMC campaign platform is shown on the map through Senate and Assembly districts. The HCMC campaign has three legislative demands:
                                 <br /><br /> 
-                                <a className='font-bold hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S4098'>Clean Hands Act(S4098 / A1621)</a><br />
+                                <a className='font-bold hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S4098'>Clean Hands Act (S4098 / A1621)</a><br />
                                 <a className='font-bold hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S6772'>Statewide Right to Counsel (S6772 / A4669)</a><br />
                                 <a className='font-bold hover:underline' target='_blank' href='https://www.nysenate.gov/legislation/bills/2025/S9090'>Winter Eviction Moratorium (S9090 / A10121)</a>
                             </div>
@@ -53,7 +53,7 @@ const About = ({ expand, legislationsClickHandler }: Props) => {
                                 Explore the map to view co-located geographic support between the Right to Counsel Coalition’s base of support, zip code boundaries, counties, assembly districts, and senate districts.
                             </p>
                             <p>
-                                To take action in support of our campaign, go to:<a className='underline' target='_blank' href='https://www.righttocounselnyc.org/takeaction' >https://www.righttocounselnyc.org/takeaction</a>
+                                To take action in support of our campaign, go to: <a className='underline' target='_blank' href='https://www.righttocounselnyc.org/takeaction' >https://www.righttocounselnyc.org/takeaction</a>
                             </p>
                         </div>
                         <div className="mx-[20px] mt-[20px] mb-[60px] font-semibold text-title text-rtc_purple">
