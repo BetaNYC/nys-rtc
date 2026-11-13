@@ -59,7 +59,10 @@ export default function Home() {
         {
           (windowSize.width < 820) &&
           <div className='absolute top-0 left-0 flex justify-center items-center w-full h-full leading-[1.2] font-bold text-headline text-black bg-background_blue z-[100]'>
-            This website is best viewed on desktop
+            <div className='text-center px-[20px]'>
+              <p>This website is best viewed on desktop</p>
+              <a href="/whats-changed.html" className='inline-flex items-center min-h-[44px] mt-[12px] text-[16px] font-normal underline'>What&apos;s changed</a>
+            </div>
           </div>
         }
       </div>
