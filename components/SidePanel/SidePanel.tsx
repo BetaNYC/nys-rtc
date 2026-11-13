@@ -94,6 +94,8 @@ const SidePanel = () => {
                         height={40}
                         alt="BetaNYC"
                     />
+                    {/* What's changed page (BetaNYC's What's changed standard), a static file in public/. */}
+                    <a href="/whats-changed.html" className="ml-auto inline-flex items-center min-h-[44px] text-[14px] text-rtc_navy underline">What&apos;s changed</a>
                 </div>
             </div>
             {mapShown === false &&
