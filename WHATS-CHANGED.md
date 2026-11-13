@@ -1,8 +1,8 @@
 # What's changed
 
-This page lists the changes to the Housing Courts Must Change! map that a reader would notice: bills added or removed, new text, data fixes, and corrections when we published something wrong. Newest first. BetaNYC built the map with the Right to Counsel NYC Coalition. It shows which state legislators and coalition members support the campaign's bills.
+This page lists the changes to the Housing Courts Must Change! map that a reader would notice: bills added or removed, new text, data fixes, and corrections when we published something wrong. Newest first. BetaNYC built the map with Right to Counsel NYS, a statewide coalition. It shows which state legislators and coalition members support the campaign's bills.
 
-- **History begins:** 2023-11-28, the day the first version of the map went online. Older years are summarized; corrections before that date may be missing.
+- **History begins:** 2023-09-11, the first deployment on Vercel, where working versions were published until December 2023. GitHub Pages has served the map since 2023-11-28. Older years are summarized; corrections before 2023-09-11 may be missing.
 - **Data refresh:** by hand, from time to time. BetaNYC runs a script that refreshes the legislators, their support for each bill, and the coalition's members. Those refreshes are not listed here.
 
 To report a bug in this map or ask for a new feature, [open an issue on GitHub](https://github.com/BetaNYC/nys-rtc/issues).
@@ -31,15 +31,21 @@ To report a bug in this map or ask for a new feature, [open an issue on GitHub](
 - **What changed:** The bills on the map were updated to their numbers in the 2025 legislative session, with their current sponsors.
 - **More detail:** [Pull request](https://github.com/BetaNYC/nys-rtc/pull/10)
 
-## 2024-01-09: Every legislator was labeled a Democrat
+## 2024-01-09: The district panel labeled every legislator a Democrat
 
 - **Tags:** Site, Correction
 - **What changed:** From November 28, 2023 to January 9, 2024, the panel that opens when you pick a district said "Democrat" under every legislator's name, including Republicans. The color of the name was right. The panel now shows each legislator's own party.
 - **If you used the old numbers:** If you took a legislator's party from that panel before January 9, 2024, check it on the map now or on the State Senate's or Assembly's website.
 - **More detail:** [The fix](https://github.com/BetaNYC/nys-rtc/commit/970a079)
 
-## 2023-11-28: The map goes online
+## 2023-11-28: The map moves to GitHub Pages
 
 - **Tags:** Site, Data
-- **What changed:** A statewide map of New York's Senate and Assembly districts that shows which legislators support each bill in the Housing Courts Must Change! campaign, and where the coalition's member and endorsing organizations are, with ways to contact them. It is at hcmustchange.beta.nyc. This was the first version online; the map's credits say it launched in December 2023.
+- **What changed:** The map was first deployed on GitHub Pages, which serves it today. It is a statewide map of New York's Senate and Assembly districts that shows which legislators support each bill in the Housing Courts Must Change! campaign, and where the coalition's member and endorsing organizations are, with ways to contact them. It is at hcmustchange.beta.nyc. The map's credits say it launched in December 2023.
 - **More detail:** [The map](https://hcmustchange.beta.nyc/) · [The README](README.md)
+
+## 2023-09-11: Working versions on Vercel
+
+- **Tags:** Site
+- **What changed:** BetaNYC began publishing working versions of the map on Vercel the day the repository started, and kept doing so until December 21, 2023. The record does not show which address readers used for them.
+- **More detail:** [The first commit](https://github.com/BetaNYC/nys-rtc/commit/c1bb2a1)
